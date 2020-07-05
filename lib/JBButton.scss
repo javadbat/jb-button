@@ -1,0 +1,94 @@
+.jb-button-web-component{
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    margin: 16px 0;
+    margin: var( --jb-button-margin, 16px 0);
+    button{
+        width: 100%;
+        height: 44px;
+        height: var(--jb-button-height, 44px);
+        box-sizing: border-box;
+        font-family: inherit;
+        border-radius: 16px;
+        background-color: #ff1229;
+        border: none;
+        color:#fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2em;
+        font-weight: bold;
+        cursor: pointer;
+        transition: ease 0.3s all;
+        &:focus{
+            outline: none;
+        }
+        &:hover{
+            background-color:#da1124;
+            transition: ease 0.3s all;
+        }
+        &.--loading{
+            .button-content {
+                display: none;
+            }
+            .loading-wrapper{
+                display: flex;
+            }
+        }
+        &[type="secendary"]{
+            background-color: #f7f6f6;
+            color:#828282;
+            &:hover{
+                background-color: #d3d3d3;
+                color:#1e2832;
+            }
+        }
+        &[type="create"]{
+            background-color: #1AB752;
+        }
+        .button-content {
+            display: block;
+        }
+        .loading-wrapper{
+            display: none;
+            font-size: 0.8em;
+            justify-content: center;
+            align-items: center;
+
+            .loading-icon{
+                width: 24px;
+                height: 24px;
+                padding: 0 8px;
+                svg{
+                    width: 100%;
+                    height: 100%;
+                    fill:transparent;
+                    circle{
+                        stroke: #fff;
+                        stroke-width: 8px;
+                        stroke-linecap: round;
+                        stroke-dasharray: 1px 50px;
+                        animation: loading 1s infinite ease-in-out;
+                        transform-box: center;
+                        transform-origin: center;
+                        @keyframes loading {
+                            0%{
+                                stroke-dasharray: 1px 50px;
+                                transform: rotate(0deg);
+                            }
+                            50%{
+                                stroke-dasharray: 50px 1px;
+                                transform: rotate(180deg);
+                            }
+                            100%{
+                                stroke-dasharray: 1px 50px;
+                                transform: rotate(359deg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
