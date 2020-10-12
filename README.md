@@ -22,3 +22,15 @@ the other way of injecting style to jb-button is by providing css variable to se
     --jb-button-margin: 0 0;
 }
 ```
+in some cases in your project you need to change defualt style of web-component for example you need zero margin or different border-radius and etc.    
+if you want to set a custom style to this web-component all you need is to set css variable in parent scope of web-component 
+| css variable name                  | description                                                                                   |
+| -------------                      | -------------                                                                                 |
+| --jb-button-margin                 | web-component margin defualt is `16px 0`                                                      |
+| --jb-button-border-radius          | web-component border-radius defualt is `16px`                                                 |
+| --jb-button-primary-bgcolor        | background color of button in primary                                                         |
+| --jb-button-primary-hover-bgcolor  | background color of button in primary                                                         |
+| --jb-button-height                 | button height defualt is 44px                                                                 |
+| --jb-button-text-shadow            | button text shadow defualt is `none`                                                          |
+| --jb-button-color                  | color of text in button defualt is `#fff`                                                     |
+| --jb-button-box-shadow             | box shadow of the button component                                                            | 
