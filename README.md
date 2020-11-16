@@ -33,4 +33,7 @@ if you want to set a custom style to this web-component all you need is to set c
 | --jb-button-height                 | button height defualt is 44px                                                                 |
 | --jb-button-text-shadow            | button text shadow defualt is `none`                                                          |
 | --jb-button-color                  | color of text in button defualt is `#fff`                                                     |
-| --jb-button-box-shadow             | box shadow of the button component                                                            | 
+| --jb-button-box-shadow             | box shadow of the button component                                                            |
+| --jb-button-font-weight            | font weight of button defualt is `bold`                                                       |
+| --jb-button-font-size              | font size of button defualt is `1.2em`                                                        | 
+ 

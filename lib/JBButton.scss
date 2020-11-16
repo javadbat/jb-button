@@ -18,8 +18,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 1.2em;
-        font-weight: bold;
+        font-size: var(--jb-button-font-size , 1.2em) ;
+        font-weight: var(--jb-button-font-weight , bold);
         cursor: pointer;
         transition: ease 0.3s all;
         text-shadow: var(--jb-button-text-shadow , none);
