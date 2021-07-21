@@ -1,1 +1,1 @@
-import './dist/JBButton'
+import './dist/JBButton.js';

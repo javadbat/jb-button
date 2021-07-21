@@ -1,6 +1,7 @@
 {
   "name": "jb-button",
   "description": "button web component",
+  "type": "module",
   "author": {
 		"name": "mohammad javad bathaei",
 		"email": "javadbat@gmail.com"
@@ -11,7 +12,7 @@
     "button",
     "web component"
   ],
-  "version": "1.0.7",
+  "version": "1.0.8",
   "bugs": "https://github.com/javadbat/jb-button/issues",
   "license": "MIT",
   "files": [
