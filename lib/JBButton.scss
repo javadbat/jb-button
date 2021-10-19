@@ -28,6 +28,7 @@
         }
         &:hover{
             background-color: var(--jb-button-primary-hover-bgcolor , #da1124);
+            color:var( --jb-button-color-hover, var(--jb-button-color, #fff));
             transition: ease 0.3s all;
         }
         &.--loading{
