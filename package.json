@@ -12,7 +12,7 @@
     "button",
     "web component"
   ],
-  "version": "1.0.8",
+  "version": "1.0.9",
   "bugs": "https://github.com/javadbat/jb-button/issues",
   "license": "MIT",
   "files": [
