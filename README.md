@@ -15,6 +15,13 @@ sample: <https://codepen.io/javadbat/pen/NWdeMwY>
 you can show loading by `element.isLoading = true`
 you can add text to loading by `<jb-button loading-text="در حال ثبت">your button text</jb-button>`
 
+### other attribute
+
+| atribute name  | description                                                                                                         |
+| -------------  | -------------                                                                                                       |
+| type           | change button HTML type                                                                                             |
+| disabled       | disable the button                                                                                                  |
+
 ### change button style
 
 you can inject your custom style by attribute to button.
@@ -48,3 +55,8 @@ if you want to set a custom style to this web-component all you need is to set c
 | --jb-button-font-size              | font size of button defualt is `1.2em`                                                        |
 | --jb-button-color-hover            | color of buttton in hover state                                                               |
 | --jb-button-cursor                 | change button cursor defualt is `pointer`                                                     |
+| --jb-button-bgcolor-disabled       | background color of button when disabled                                                      |
+| --jb-button-color-disabled         | color of button when disabled                                                                 |
+| --jb-button-cursor-disabled        | cursor of button when disabled                                                                |
+| --jb-button-border-disabled        | border of button when disabled                                                                |
+| --jb-button-text-shadow-disabled   | text shadow of button when disabled                                                           |

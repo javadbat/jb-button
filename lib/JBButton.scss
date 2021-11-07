@@ -50,6 +50,13 @@
         // &[type="create"]{
         //     background-color: #1AB752;
         // }
+        &:disabled{
+            background-color: var(--jb-button-bgcolor-disabled, #f7f6f6);
+            color:var(--jb-button-color-disabled, #828282);
+            cursor: var(--jb-button-cursor-disabled, not-allowed);
+            border: var(--jb-button-border-disabled, var(--jb-button-border, none));
+            text-shadow: var(--jb-button-text-shadow-disabled, var(--jb-button-text-shadow, none));
+        }
         .button-content {
             display: block;
         }
