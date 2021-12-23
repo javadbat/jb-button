@@ -6,6 +6,8 @@ simple button web-component with some additional feature
 
 - loading state
 
+- typescript ready
+
 sample: <https://codepen.io/javadbat/pen/NWdeMwY>
 
 ## instruction
@@ -25,8 +27,11 @@ you can add text to loading by `<jb-button loading-text="در حال ثبت">you
 ### change button style
 
 you can inject your custom style by attribute to button.
-`<jb-button button-style="height:36px;"></jb-button>`
-you can do change web-component style by set `component-style` too  
+
+```HTML
+<jb-button button-style="height:36px;"></jb-button>
+```
+
 the other way of injecting style to jb-button is by providing css variable in component parent element to set some atttribute for example to set button height:
 
 ```css
