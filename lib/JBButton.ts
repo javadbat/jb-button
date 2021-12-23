@@ -1,11 +1,14 @@
 import HTML from './JBButton.html';
 import CSS from './JBButton.scss';
-class JBButtonWebComponent extends HTMLElement {
+import { ElementsObject } from './Types';
+export class JBButtonWebComponent extends HTMLElement {
+    elements:ElementsObject
+    #isLoading:Boolean = false;
     get isLoading() {
-        return this._isLoading;
+        return this.#isLoading;
     }
     set isLoading(value) {
-        this._isLoading = value;
+        this.#isLoading = value;
         if (value == true) {
             this.elements.button.classList.add('--loading');
         } else {
@@ -23,7 +26,7 @@ class JBButtonWebComponent extends HTMLElement {
         this.initWebComponent();
     }
     initWebComponent() {
-        const shadowRoot = this.attachShadow({ mode: 'open' });
+        const shadowRoot = this.attachShadow({ mode: 'open' });     
         const html = `<style>${CSS}</style>` + '\n' + HTML;
         const element = document.createElement('template');
         element.innerHTML = html;
@@ -33,13 +36,13 @@ class JBButtonWebComponent extends HTMLElement {
         };
     }
     static get observedAttributes() {
-        return ['isLoading', 'loading-text', 'type', 'button-style', 'component-style','disabled'];
+        return ['isLoading', 'loading-text', 'type', 'button-style','disabled'];
     }
-    attributeChangedCallback(name, oldValue, newValue) {
+    attributeChangedCallback(name:string, oldValue:string, newValue:string) {
         // do something when an attribute has changed
         this.onAttributeChange(name, newValue);
     }
-    onAttributeChange(name, value) {
+    onAttributeChange(name:string, value:string) {
         switch (name) {
             case 'isLoading':
                 this.isLoading = Boolean(value);
@@ -51,10 +54,7 @@ class JBButtonWebComponent extends HTMLElement {
                 this.elements.button.setAttribute('type', value);
                 break;
             case 'button-style':
-                this.elements.button.style = value;
-                break;
-            case 'component-style':
-                this.style = value;
+                this.elements.button.setAttribute('style',value);
                 break;
             case 'disabled':
                 if(value == "true" || value == "" || value == "disabled"){
