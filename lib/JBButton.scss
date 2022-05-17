@@ -30,6 +30,10 @@
             background-color: var(--jb-button-primary-hover-bgcolor , #da1124);
             color:var( --jb-button-color-hover, var(--jb-button-color, #fff));
             transition: ease 0.3s all;
+            .loading-wrapper .loading-icon svg circle{
+                stroke: var(--jb-button-loading-color-hover, var(--jb-button-loading-color, #fff));
+            }
+
         }
         &.--loading{
             .button-content {
@@ -75,7 +79,7 @@
                     height: 100%;
                     fill:transparent;
                     circle{
-                        stroke: #fff;
+                        stroke: var(--jb-button-loading-color, #fff);
                         stroke-width: 8px;
                         stroke-linecap: round;
                         stroke-dasharray: 1px 50px;

@@ -65,3 +65,5 @@ if you want to set a custom style to this web-component all you need is to set c
 | --jb-button-cursor-disabled        | cursor of button when disabled                                                                |
 | --jb-button-border-disabled        | border of button when disabled                                                                |
 | --jb-button-text-shadow-disabled   | text shadow of button when disabled                                                           |
+| --jb-button-loading-color          | jb-loading icon color default is `#fff`                                                       |
+| --jb-button-loading-color-hover    | jb-loading icon color on hover default is `#fff`                                              |
