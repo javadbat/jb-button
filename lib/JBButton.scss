@@ -2,8 +2,7 @@
     width: 100%;
     height: auto;
     box-sizing: border-box;
-    margin: 16px 0;
-    margin: var( --jb-button-margin, 16px 0);
+    margin: var( --jb-button-margin, 0 0);
     box-shadow: var(--jb-button-box-shadow , none);
     button{
         width: 100%;
