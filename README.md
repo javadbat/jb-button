@@ -1,6 +1,6 @@
 # jb-button
 
-simple button web-component with some additional feature
+simple button web-component with some additional features:
 
 - custom styling
 
