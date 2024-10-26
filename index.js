@@ -1,1 +1,1 @@
-import './dist/JBButton.js';
+import './dist/jb-button.js';

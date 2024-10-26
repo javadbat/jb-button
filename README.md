@@ -4,9 +4,11 @@ simple button web-component with some additional features:
 
 - custom styling
 
-- loading state
+- suppor loading state
 
 - typescript ready
+
+- compatible with form elements
 
 sample: <https://codepen.io/javadbat/pen/NWdeMwY>
 
