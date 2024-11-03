@@ -1,6 +1,6 @@
 import HTML from './jb-button.html';
 import CSS from './jb-button.scss';
-import { ElementsObject } from './types1';
+import { ElementsObject } from './types';
 export class JBButtonWebComponent extends HTMLElement {
   #internals?: ElementInternals;
   static formAssociated = true
