@@ -1,6 +1,6 @@
 {
-  "name": "jb-button",
-  "description": "button web component",
+  "name": "jb-button-react",
+  "description": "button react component",
   "type": "module",
   "author": {
 		"name": "mohammad javad bathaei",
@@ -10,24 +10,25 @@
     "jb",
     "jb-button",
     "button",
-    "form button",
-    "web component"
+    "web component",
+    "react button"
   ],
-  "version": "2.3.0",
+  "version": "2.2.2",
   "bugs": "https://github.com/javadbat/jb-button/issues",
   "license": "MIT",
   "files": [
     "LICENSE",
     "README.md",
     "lib/",
-    "dist/",
-    "react/",
-    "react/dist/"
+    "dist/"
   ],
   "main": "index.js",
-  "types": "./dist/web-component/jb-button/lib/jb-button.d.ts",
+  "types": "./dist/web-component/jb-button/react/lib/JBButton.d.ts",
   "repository": {
 		"type": "git",
 		"url": "git@github.com:javadbat/jb-button.git"
+  },
+  "dependencies": {
+    "jb-button": ">=2.2.0"
   }
 }

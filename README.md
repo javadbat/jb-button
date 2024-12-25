@@ -4,13 +4,17 @@ simple button web-component with some additional features:
 
 - custom styling
 
-- suppor loading state
+- support loading state
 
 - typescript ready
 
 - compatible with form elements
 
 sample: <https://codepen.io/javadbat/pen/NWdeMwY>
+
+## using with JS frameworks
+
+to use this component in **react** see [`jb-button/react`](https://github.com/javadbat/jb-button/tree/main/react);
 
 ## instruction
 
@@ -69,3 +73,11 @@ if you want to set a custom style to this web-component all you need is to set c
 | --jb-button-text-shadow-disabled   | text shadow of button when disabled                                                           |
 | --jb-button-loading-color          | jb-loading icon color default is `#fff`                                                       |
 | --jb-button-loading-color-hover    | jb-loading icon color on hover default is `#fff`                                              |
+
+## Other Related Docs:
+
+- see [`jb-button/react`](https://github.com/javadbat/jb-button/tree/main/react); if you want to use this component in react
+
+- see [All JB Design system Component List](https://github.com/javadbat/design-system/blob/master/docs/component-list.md) for more components
+
+- use [Contribution Guide](https://github.com/javadbat/design-system/blob/master/docs/contribution-guide.md) if you want to contribute in this component.
