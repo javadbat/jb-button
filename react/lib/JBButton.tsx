@@ -2,7 +2,7 @@ import React, { PropsWithChildren, useEffect, useImperativeHandle, useState } fr
 import 'jb-button';
 // eslint-disable-next-line no-duplicate-imports
 import { JBButtonWebComponent } from 'jb-button';
-import { useBindEvent } from '../../../../common/hooks/use-event.js';
+import { EventProps, useEvents } from './events-hook.js';
 
 declare global {
     // eslint-disable-next-line @typescript-eslint/no-namespace
@@ -29,11 +29,6 @@ export const JBButton = React.forwardRef((props:JBButtonProps, ref) => {
   useEffect(() => {
     refChangeCountSetter(refChangeCount + 1);
   }, [element.current]);
-  function handleClick(event:MouseEvent) {
-    if (typeof props.onClick == "function") {
-      props.onClick(event);
-    }
-  }
   useEffect(() => {
     if (props.disabled) {
       element.current?.setAttribute('disabled', 'disabled');
@@ -47,17 +42,16 @@ export const JBButton = React.forwardRef((props:JBButtonProps, ref) => {
     }
   }, [props.isLoading]);
 
-  useBindEvent(element, 'click', handleClick);
+  useEvents(element,props);
 
   return (
     <jb-button ref={element} loading-text={props.loadingText ? props.loadingText : ''} type={props.type ? props.type : 'primary'} class={props.className}>{props.children}</jb-button>
   );
 });
 JBButton.displayName = 'JBButton';
-type JBButtonBaseProps = {
+type JBButtonBaseProps = EventProps & {
     name?:string,
     type?: string,
-    onClick?: (e:MouseEvent)=>void,
     isLoading?: boolean,
     className?:string,
     loadingText?: string,
