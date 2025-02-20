@@ -14,10 +14,9 @@ export const reactComponentList: ReactComponentBuildConfig[] = [
     name: "jb-button-react",
     path: "./react/lib/JBButton.tsx",
     outputPath: "./react/dist/JBButton.js",
-    external: ["jb-button", "prop-types", "react"],
+    external: ["jb-button", "react"],
     globals: {
       react: "React",
-      "prop-types": "PropTypes",
     },
     umdName:"JBButtonReact",
     dir:"./react"
