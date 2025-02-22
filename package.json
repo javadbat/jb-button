@@ -26,6 +26,9 @@
   ],
   "main": "index.js",
   "types": "./dist/web-component/jb-button/lib/jb-button.d.ts",
+  "dependencies": {
+    "jb-core":">=0.2.0"
+  },
   "repository": {
 		"type": "git",
 		"url": "git@github.com:javadbat/jb-button.git"
