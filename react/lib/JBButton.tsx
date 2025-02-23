@@ -18,7 +18,7 @@ declare global {
     }
 }
 
-export const JBButton = React.forwardRef((props:JBButtonProps, ref) => {
+export const JBButton = React.forwardRef((props:Props, ref) => {
   const element = React.useRef<JBButtonWebComponent>(null);
   const [refChangeCount, refChangeCountSetter] = useState(0);
   useImperativeHandle(
@@ -57,5 +57,5 @@ type JBButtonBaseProps = EventProps & {
     loadingText?: string,
     disabled?: boolean,
 }
-export type JBButtonProps = PropsWithChildren<JBButtonBaseProps>
+export type Props = PropsWithChildren<JBButtonBaseProps>
 
