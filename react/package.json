@@ -23,7 +23,7 @@
     "dist/"
   ],
   "main": "index.js",
-  "types": "./dist/web-component/jb-button/react/lib/JBButton.d.ts",
+  "types": "./dist/JBButton.d.ts",
   "repository": {
 		"type": "git",
 		"url": "git@github.com:javadbat/jb-button.git"

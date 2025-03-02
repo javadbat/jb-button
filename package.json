@@ -25,7 +25,7 @@
     "react/dist/"
   ],
   "main": "index.js",
-  "types": "./dist/web-component/jb-button/lib/jb-button.d.ts",
+  "types": "./dist/jb-button.d.ts",
   "dependencies": {
     "jb-core":">=0.2.0"
   },
