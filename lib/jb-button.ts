@@ -46,7 +46,7 @@ export class JBButtonWebComponent extends HTMLElement {
     this.#registerEventListener();
   }
   static get observedAttributes() {
-    return ['isLoading', 'loading-text', 'type', 'button-style', 'disabled'];
+    return ['name','isLoading', 'loading-text', 'type', 'button-style', 'disabled'];
   }
   attributeChangedCallback(name: string, oldValue: string, newValue: string) {
     // do something when an attribute has changed
@@ -54,6 +54,9 @@ export class JBButtonWebComponent extends HTMLElement {
   }
   onAttributeChange(name: string, value: string) {
     switch (name) {
+      case 'name':
+        this.elements.button.setAttribute('name', value);
+        break;
       case 'isLoading':
         this.isLoading = Boolean(value);
         break;
