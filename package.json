@@ -13,7 +13,7 @@
     "form button",
     "web component"
   ],
-  "version": "3.0.0",
+  "version": "3.0.1",
   "bugs": "https://github.com/javadbat/jb-button/issues",
   "license": "MIT",
   "files": [

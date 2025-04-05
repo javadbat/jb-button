@@ -7,7 +7,10 @@ JBButton is a simple button `react component` with some additional feature.
 
 - loading state
 
-sample: <https://codepen.io/javadbat/pen/NWdeMwY>
+sample in codepen: <https://codepen.io/javadbat/pen/NWdeMwY>
+
+Demo :  Demo: [codeSandbox preview](https://3f63dj.csb.app/samples/jb-button) for just see the demo and [codeSandbox editor](https://codesandbox.io/p/sandbox/jb-design-system-3f63dj?file=%2Fsrc%2Fsamples%2FJBButton.tsx) if you want to see and play with code
+
 ## installation
 
 ```command
@@ -23,7 +26,7 @@ in your jsx file
 ## instruction
 #### set loading
 
-you can show loading by setting props , isLoading = true you can add text to loading by <JBButton loading-text="در حال ثبت">your button text</JBButton>
+you can show loading by setting props , isLoading = true you can add text to loading by <JBButton loading-text="...your loading text">your button text</JBButton>
 
 #### other props
 
@@ -39,38 +42,7 @@ you can show loading by setting props , isLoading = true you can add text to loa
   <JBButton onClick={(event) => console.log(event)}></JBButton>
 ```
 ## change button style
-the way of injecting style to jb-button is by providing css variable in component parent element to set some atttribute for example to set button height:
-
-```css
-.your-jb-button-wrapper{
-    /*degualt height of button is 44px but it will change it to 40px*/
-    --jb-button-height: 40px;
-    /* set button marging for example for zero margin:*/
-    --jb-button-margin: 0 0;
-}
-```
-
-in some cases in your project you need to change the defualt style of the component for example you need zero margin or different border-radius and etc. if you want to set a custom style to this component all you need is to set css variable in parent scope of the component.
-
-
-|css variable name	                | description                                    |  
-|------------------                 | --------------------------------------         |
-|--jb-button-margin	                | component margin defualt is 16px 0             |
-|--jb-button-border-radius	        | component border-radius defualt is 16px        |
-|--jb-button-border	                | component css border attribute default is none |
-|--jb-button-primary-bgcolor        | background color of button in primary          |
-|--jb-button-primary-hover-bgcolor	| background color of button in primary          |
-|--jb-button-height	                | button height defualt is 44px                  |
-|--jb-button-text-shadow		    | button text shadow defualt is none             |
-|--jb-button-font-weight		    | font weight of button defualt is bold          |
-|--jb-button-font-size	            | font size of button defualt is 1.2em           |
-|--jb-button-color-hover	        | color of buttton in hover state                |
-|--jb-button-cursor		            | change button cursor defualt is pointer        |
-|--jb-button-bgcolor-disabled		| background color of button when disabled       |
-|--jb-button-color-disabled		    | color of button when disabled                  |
-|--jb-button-cursor-disabled		| cursor of button when disabled                 |
-|--jb-button-border-disabled	    | border of button when disabled                 |
-|--jb-button-text-shadow-disabled	| text shadow of button when disabled            |
+    react component depends on css variable for customization so there is no difference between react component and web-component in styling . to learn more about styling jb-button see [jb-button](https://github.com/javadbat/jb-button) styling section.
 
 
 
