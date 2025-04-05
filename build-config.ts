@@ -5,9 +5,10 @@ export const webComponentList: WebComponentBuildConfig[] = [
     name: "jb-button",
     path: "./lib/jb-button.ts",
     outputPath: "./dist/jb-button.js",
-    external: ["jb-core"],
+    external: ["jb-core","jb-loading"],
     globals:{
-      "jb-core":"JBCore"
+      "jb-core":"JBCore",
+      "jb-loading":"JBLoading"
     },
     umdName: "JBButton",
   },

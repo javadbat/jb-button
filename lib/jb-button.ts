@@ -1,8 +1,9 @@
 import HTML from './jb-button.html';
 import CSS from './jb-button.scss';
 import { ElementsObject } from './types';
-
+import { defineColors } from 'jb-core/theme/colors.js';
 export * from "./types.js";
+import 'jb-loading';
 export class JBButtonWebComponent extends HTMLElement {
   #internals?: ElementInternals;
   static formAssociated = true
@@ -25,6 +26,22 @@ export class JBButtonWebComponent extends HTMLElement {
   set loadingText(value) {
     this.elements!.loadingText.innerHTML = value;
   }
+  #disabled = false;
+  get disabled() {
+    return this.#disabled;
+  }
+  set disabled(value: boolean) {
+    this.#disabled = value;
+    this.elements.button.disabled = value;
+    if (value) {
+      //TODO: remove as any when typescript support
+      // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+      this.#internals.states?.add("disabled");
+    } else {
+      // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+      this.#internals.states?.delete("disabled");
+    }
+  }
   constructor() {
     super();
     if (typeof this.attachInternals == "function") {
@@ -35,6 +52,7 @@ export class JBButtonWebComponent extends HTMLElement {
   }
   initWebComponent() {
     const shadowRoot = this.attachShadow({ mode: 'open',delegatesFocus:true, });
+    defineColors();
     const html = `<style>${CSS}</style>` + '\n' + HTML;
     const element = document.createElement('template');
     element.innerHTML = html;
@@ -71,9 +89,9 @@ export class JBButtonWebComponent extends HTMLElement {
         break;
       case 'disabled':
         if (value == "true" || value == "" || value == "disabled") {
-          this.elements!.button.setAttribute('disabled', "disabled");
+          this.disabled = true;
         } else {
-          this.elements!.button.removeAttribute('disabled');
+          this.disabled = false;
         }
         break;
     }

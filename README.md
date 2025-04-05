@@ -1,5 +1,9 @@
 # jb-button
 
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/jb-button)
+[![GitHub license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://raw.githubusercontent.com/javadbat/jb-button/main/LICENSE)
+[![NPM Downloads](https://img.shields.io/npm/dw/jb-button)](https://www.npmjs.com/package/jb-button)
+
 simple button web-component with some additional features:
 
 - custom styling
@@ -42,9 +46,9 @@ the other way of injecting style to jb-button is by providing css variable in co
 
 ```css
 .your-jb-button-wrapper{
-    /*degualt height of button is 44px but it will change it to 40px*/
+    /*default height of button is 44px but it will change it to 40px*/
     --jb-button-height: 40px;
-    /* set button marging for example for zero margin:*/
+    /* set button margin for example for zero margin:*/
     --jb-button-margin: 0 0;
 }
 ```
@@ -53,26 +57,27 @@ in some cases in your project you need to change defualt style of web-component 
 if you want to set a custom style to this web-component all you need is to set css variable in parent scope of web-component
 | css variable name                  | description                                                                                   |
 | -------------                      | -------------                                                                                 |
-| --jb-button-margin                 | web-component margin defualt is `16px 0`                                                      |
-| --jb-button-border-radius          | web-component border-radius defualt is `16px`                                                 |
+| --jb-button-margin                 | web-component margin default is `0`                                                      |
+| --jb-button-padding                 | web-component margin default is `0.5rem 1rem`                                                      |
+| --jb-button-border-radius          | web-component border-radius default is `16px`                                                 |
 | --jb-button-border                 | web-component css border attribute default is `none`                                          |
 | --jb-button-primary-bgcolor        | background color of button in primary                                                         |
-| --jb-button-primary-hover-bgcolor  | background color of button in primary                                                         |
-| --jb-button-height                 | button height defualt is 44px                                                                 |
-| --jb-button-text-shadow            | button text shadow defualt is `none`                                                          |
-| --jb-button-color                  | color of text in button defualt is `#fff`                                                     |
+| --jb-button-primary-bgcolor-hover  | background color of button in primary                                                         |
+| --jb-button-height                 | button height default is 44px                                                                 |
+| --jb-button-text-shadow            | button text shadow                                                                            |
+| --jb-button-color                  | color of text in button                                                                       |
 | --jb-button-box-shadow             | box shadow of the button component                                                            |
-| --jb-button-font-weight            | font weight of button defualt is `bold`                                                       |
-| --jb-button-font-size              | font size of button defualt is `1.2em`                                                        |
-| --jb-button-color-hover            | color of buttton in hover state                                                               |
-| --jb-button-cursor                 | change button cursor defualt is `pointer`                                                     |
+| --jb-button-font-weight            | font weight of button default is `bold`                                                       |
+| --jb-button-font-size              | font size of button default is `1.2em`                                                        |
+| --jb-button-color-hover            | color of button in hover state                                                                |
+| --jb-button-cursor                 | change button cursor default is `pointer`                                                     |
 | --jb-button-bgcolor-disabled       | background color of button when disabled                                                      |
 | --jb-button-color-disabled         | color of button when disabled                                                                 |
 | --jb-button-cursor-disabled        | cursor of button when disabled                                                                |
 | --jb-button-border-disabled        | border of button when disabled                                                                |
 | --jb-button-text-shadow-disabled   | text shadow of button when disabled                                                           |
-| --jb-button-loading-color          | jb-loading icon color default is `#fff`                                                       |
-| --jb-button-loading-color-hover    | jb-loading icon color on hover default is `#fff`                                              |
+| --jb-button-loading-color          | jb-loading icon color default is text color value                                             |
+| --jb-button-loading-color-disabled | jb-loading icon color when disabled default is text color value                               |
 
 ## Other Related Docs:
 

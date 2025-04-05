@@ -20,21 +20,20 @@ export const Primary: Story = {
     type: "primary",
     children: "primary button",
     loadingText: "loading text",
-    disabled: true,
+    disabled: false,
   }
 };
 
 export const Secondary: Story = {
   args: {
-    type: "secondary button",
-    children: "submit information",
+    type: "secondary",
+    children: "secondary button",
     loadingText: "",
   }
 };
 
 export const Disabled: Story = {
   args: {
-    type: "secondary",
     loadingText: "",
     disabled: true,
   }
@@ -43,17 +42,25 @@ export const Disabled: Story = {
 export const Loading: Story = {
   args: {
     type: "primary",
-    children: "ثبت محتوی",
+    children: "with loading",
     isLoading: true,
-    loadingText: "لطفا صبر کنید",
+    loadingText: "please wait",
   }
 };
 
 export const LoadingSecondary:Story = {
   args:{
     type: "secondary",
-    children: "ثبت اطلاعات",
+    children: "secondary button",
     isLoading: true,
-    loadingText: "لطفا صبر کنید",
+    loadingText: "please wait",
+  }
+};
+export const LoadingDisabled:Story = {
+  args:{
+    children: "disabled button",
+    isLoading: true,
+    disabled: true,
+    loadingText: "please wait",
   }
 };
