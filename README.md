@@ -57,12 +57,17 @@ in some cases in your project you need to change default style of web-component 
 if you want to set a custom style to this web-component all you need is to set css variable in parent scope of web-component
 | css variable name                  | description                                                                                   |
 | -------------                      | -------------                                                                                 |
-| --jb-button-margin                 | web-component margin default is `0`                                                      |
-| --jb-button-padding                 | web-component margin default is `0.5rem 1rem`                                                      |
+| --jb-button-margin                 | web-component margin default is `0`                                                           |
+| --jb-button-padding                | web-component margin default is `0.5rem 1rem`                                                 |
 | --jb-button-border-radius          | web-component border-radius default is `16px`                                                 |
 | --jb-button-border                 | web-component css border attribute default is `none`                                          |
-| --jb-button-primary-bgcolor        | background color of button in primary                                                         |
-| --jb-button-primary-bgcolor-hover  | background color of button in primary                                                         |
+| --jb-button-bgcolor-primary        | background color of button in primary                                                         |
+| --jb-button-bgcolor-positive       | background color of button in positive                                                        |
+| --jb-button-bgcolor-danger         | background color of button in danger                                                          |
+| --jb-button-bgcolor-light          | background color of button in light                                                           |
+| --jb-button-bgcolor-dark           | background color of button in dark                                                            |
+| --jb-button-bgcolor-hover          | button bg-color when user hover                                                               |
+| --jb-button-bgcolor-pressed        | button bg-color when user pressed                                                             |
 | --jb-button-height                 | button height default is 44px                                                                 |
 | --jb-button-text-shadow            | button text shadow                                                                            |
 | --jb-button-color                  | color of text in button                                                                       |

@@ -1,7 +1,7 @@
 :host{
   --bgcolor: var(--jb-button-bgcolor-primary, var(--jb-primary));
-  --bgcolor-hover: oklch(from var(--jb-button-primary-bgcolor-hover, var(--bgcolor)) calc(l + 0.07) calc(c + 0.07) h);
-  --bgcolor-pressed: oklch(from var(--jb-button-primary-bgcolor-pressed, var(--bgcolor)) calc(l - 0.1) calc(c - 0.05) h);
+  --bgcolor-hover: oklch(from var(--jb-button-bgcolor-hover, var(--bgcolor)) calc(l + 0.07) calc(c + 0.07) h);
+  --bgcolor-pressed: oklch(from var(--jb-button-bgcolor-pressed, var(--bgcolor)) calc(l - 0.1) calc(c - 0.05) h);
   --color:var(--jb-button-color, var(--jb-white));
   --color-hover:var(--jb-button-color-hover, var(--color));
   --loading-color:var(--jb-button-loading-color, var(--color));

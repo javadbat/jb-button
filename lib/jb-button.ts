@@ -1,7 +1,7 @@
 import HTML from './jb-button.html';
 import CSS from './jb-button.scss';
 import { ElementsObject } from './types';
-import { defineColors } from 'jb-core/theme/colors.js';
+import { defineColors } from 'jb-core/theme';
 export * from "./types.js";
 import 'jb-loading';
 export class JBButtonWebComponent extends HTMLElement {
