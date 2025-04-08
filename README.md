@@ -53,7 +53,7 @@ the other way of injecting style to jb-button is by providing css variable in co
 }
 ```
 
-in some cases in your project you need to change defualt style of web-component for example you need zero margin or different border-radius and etc.
+in some cases in your project you need to change default style of web-component for example you need zero margin or different border-radius and etc.
 if you want to set a custom style to this web-component all you need is to set css variable in parent scope of web-component
 | css variable name                  | description                                                                                   |
 | -------------                      | -------------                                                                                 |

@@ -24,11 +24,28 @@ export const Primary: Story = {
   }
 };
 
-export const Secondary: Story = {
+export const LightColor: Story = {
   args: {
-    type: "secondary",
+    color: "light",
     children: "secondary button",
-    loadingText: "",
+  }
+};
+export const DarkColor: Story = {
+  args: {
+    color: "dark",
+    children: "secondary button",
+  }
+};
+export const Positive: Story = {
+  args: {
+    color: "positive",
+    children: "positive button",
+  }
+};
+export const Danger: Story = {
+  args: {
+    color: "danger",
+    children: "danger button",
   }
 };
 
@@ -40,6 +57,14 @@ export const Disabled: Story = {
 };
 
 export const Loading: Story = {
+  args: {
+    type: "primary",
+    children: "with loading",
+    isLoading: true,
+  }
+};
+
+export const LoadingWithText: Story = {
   args: {
     type: "primary",
     children: "with loading",
@@ -62,5 +87,17 @@ export const LoadingDisabled:Story = {
     isLoading: true,
     disabled: true,
     loadingText: "please wait",
+  }
+};
+export const HightOverflow: Story = {
+  args: {
+    children: "primary button With Height overflow",
+    style:{width:'7rem'}
+  }
+};
+export const CustomizedWidth: Story = {
+  args: {
+    children: "with 100% width",
+    style:{width:'100%'}
   }
 };

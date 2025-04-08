@@ -6,3 +6,4 @@ export type ElementsObject = {
     [key: string]: HTMLElement;
 }
 export type JBButtonEventType<TEvent> = EventTypeWithTarget<TEvent,JBButtonWebComponent>;
+export type ColorVariants = 'primary' | 'positive' | 'danger'| 'light' | 'dark';

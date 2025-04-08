@@ -1,20 +1,11 @@
+@use './variables.css';
+
 :host {
   width: fit-content;
-  --bgcolor: var(--jb-button-primary-bgcolor, var(--jb-primary));
-  --bgcolor-hover: oklch(from var(--jb-button-primary-bgcolor-hover, var(--bgcolor)) calc(l + 0.07) calc(c + 0.07) h);
-  --bgcolor-pressed: oklch(from var(--jb-button-primary-bgcolor-pressed, var(--bgcolor)) calc(l - 0.1) calc(c - 0.05) h);
-  --color:var(--jb-button-color, var(--jb-white));
-  --color-hover:var(--jb-button-color-hover, var(--color));
-  --loading-color:var(--jb-button-loading-color, var(--color));
+  height:44px;
+
 }
-:host(:state(disabled)){
-  //TODO: after css function become standard, remove direct color value and use css function for neutral color
-  --bgcolor:var(--jb-button-bgcolor-disabled, oklch(0.726 0.01463 258.36));
-  --bgcolor-hover:var(--bgcolor);
-  --bgcolor-pressed:var(--bgcolor);
-  --color:var(--jb-button-color-disabled, oklch(0.4140000000000001 0.01427 258.36));
-  --loading-color:var(--jb-button-loading-color-disabled, var(--color));
-}
+
 .jb-button-web-component {
   width: inherit;
   height: auto;
@@ -24,8 +15,7 @@
 
   button {
     width: inherit;
-    height: 44px;
-    height: var(--jb-button-height, 44px);
+    height: var(--jb-button-height, inherit);
     box-sizing: border-box;
     font-family: inherit;
     border-radius: var(--jb-button-border-radius, 16px);
@@ -65,20 +55,6 @@
       }
     }
 
-    &[type="secondary"] {
-      /*TODO: refactor these after you officially add secondary color*/
-      background-color: #f7f6f6;
-      color: #828282;
-
-      &:hover {
-        background-color: #d3d3d3;
-        color: #1e2832;
-      }
-    }
-
-    // &[type="create"]{
-    //     background-color: #1AB752;
-    // }
     &:disabled {
       cursor: var(--jb-button-cursor-disabled, not-allowed);
       border: var(--jb-button-border-disabled, var(--jb-button-border, none));
@@ -99,6 +75,11 @@
         width: 24px;
         height: 24px;
         --jb-loading-color:var(--loading-color);
+      }
+      .loading-text{
+        &:empty{
+          display: none;
+        }
       }
     }
   }

@@ -10,10 +10,12 @@
     "jb",
     "jb-button",
     "button",
+    "loading button",
     "form button",
-    "web component"
+    "web component",
+    "react component"
   ],
-  "version": "3.0.1",
+  "version": "3.1.0",
   "bugs": "https://github.com/javadbat/jb-button/issues",
   "license": "MIT",
   "files": [

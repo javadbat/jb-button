@@ -1,0 +1,29 @@
+:host{
+  --bgcolor: var(--jb-button-bgcolor-primary, var(--jb-primary));
+  --bgcolor-hover: oklch(from var(--jb-button-primary-bgcolor-hover, var(--bgcolor)) calc(l + 0.07) calc(c + 0.07) h);
+  --bgcolor-pressed: oklch(from var(--jb-button-primary-bgcolor-pressed, var(--bgcolor)) calc(l - 0.1) calc(c - 0.05) h);
+  --color:var(--jb-button-color, var(--jb-white));
+  --color-hover:var(--jb-button-color-hover, var(--color));
+  --loading-color:var(--jb-button-loading-color, var(--color));
+}
+:host(:state(disabled)){
+  --bgcolor:var(--jb-button-bgcolor-disabled, oklch(0.726 0.01463 258.36));
+  --bgcolor-hover:var(--bgcolor);
+  --bgcolor-pressed:var(--bgcolor);
+  --color:var(--jb-button-color-disabled, oklch(0.4140000000000001 0.01427 258.36));
+  --loading-color:var(--jb-button-loading-color-disabled, var(--color));
+}
+:host([color="positive"]){
+  --bgcolor: var(--jb-button-bgcolor-positive, var(--jb-green));
+}
+:host([color="danger"]){
+  --bgcolor: var(--jb-button-bgcolor-danger, var(--jb-red));
+}
+:host([color="light"]){
+  --bgcolor: var(--jb-button-bgcolor-light, var(--jb-neutral-10));
+  --color:var(--jb-button-color, var(--jb-black));
+
+}
+:host([color="dark"]){
+  --bgcolor: var(--jb-button-bgcolor-dark, var(--jb-neutral));
+}

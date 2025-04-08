@@ -1,8 +1,9 @@
-import React, { PropsWithChildren, useEffect, useImperativeHandle, useState } from 'react';
+import React, { CSSProperties, PropsWithChildren, useEffect, useImperativeHandle, useState } from 'react';
 import 'jb-button';
 // eslint-disable-next-line no-duplicate-imports
-import { JBButtonWebComponent } from 'jb-button';
+import { ColorVariants, JBButtonWebComponent } from 'jb-button';
 import { EventProps, useEvents } from './events-hook.js';
+import { JBButtonAttributes, useJBButtonAttribute } from './attributes-hook.js';
 
 declare global {
     // eslint-disable-next-line @typescript-eslint/no-namespace
@@ -29,33 +30,22 @@ export const JBButton = React.forwardRef((props:Props, ref) => {
   useEffect(() => {
     refChangeCountSetter(refChangeCount + 1);
   }, [element.current]);
-  useEffect(() => {
-    if (props.disabled) {
-      element.current?.setAttribute('disabled', 'disabled');
-    } else {
-      element.current?.removeAttribute('disabled');
-    }
-  }, [props.disabled]);
-  useEffect(() => {
-    if(element.current){
-      element.current.isLoading = props.isLoading || false;
-    }
-  }, [props.isLoading]);
 
+  useJBButtonAttribute(element,props);
   useEvents(element,props);
 
   return (
-    <jb-button ref={element} loading-text={props.loadingText ? props.loadingText : ''} type={props.type ? props.type : 'primary'} class={props.className}>{props.children}</jb-button>
+    <jb-button color={props.color} style={props.style} ref={element} loading-text={props.loadingText ? props.loadingText : ''} type={props.type ? props.type : 'primary'} class={props.className}>{props.children}</jb-button>
   );
 });
 JBButton.displayName = 'JBButton';
-type JBButtonBaseProps = EventProps & {
+type JBButtonBaseProps = EventProps & JBButtonAttributes & {
     name?:string,
+    style?:CSSProperties,
+    color?:ColorVariants,
     type?: string,
-    isLoading?: boolean,
     className?:string,
     loadingText?: string,
-    disabled?: boolean,
 }
 export type Props = PropsWithChildren<JBButtonBaseProps>
 
