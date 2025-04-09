@@ -32,6 +32,7 @@
     transition: ease 0.3s all;
     text-shadow: var(--jb-button-text-shadow, none);
     padding: var(--padding);
+    box-sizing: border-box;
     &:focus {
       outline: none;
     }
@@ -61,14 +62,13 @@
 
     &:disabled {
       cursor: var(--jb-button-cursor-disabled, not-allowed);
-      border: var(--jb-button-border-disabled, var(--jb-button-border, none));
       text-shadow: var(--jb-button-text-shadow-disabled, var(--jb-button-text-shadow, none));
     }
 
     .button-content {
-      display: block;
+      display: flex;
+      gap:0.5rem;
     }
-
     .loading-wrapper {
       display: none;
       font-size: 0.8em;
@@ -86,5 +86,6 @@
         }
       }
     }
+    
   }
 }

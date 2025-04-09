@@ -23,11 +23,17 @@
   --border-width: var(--jb-button-border-width, 0);
 }
 :host(:state(disabled)){
-  --bgcolor:var(--jb-button-bgcolor-disabled, oklch(0.726 0.01463 258.36));
-  --bgcolor-hover:var(--bgcolor);
-  --bgcolor-pressed:var(--bgcolor);
-  --color:var(--jb-button-color-disabled, oklch(0.4140000000000001 0.01427 258.36));
+  --base-color: var(--jb-button-disabled, var(--jb-neutral-7));
+  --base-color-hover:var(--base-color);
+  --base-color-pressed:var(--base-color);
+  --color:var(--jb-button-color-disabled, var(--jb-neutral-3));
   --loading-color:var(--jb-button-loading-color-disabled, var(--color));
+}
+:host(:state(disabled)[variant="outline"]){
+  --color:var(--base-color);
+  --loading-color:var(--color);
+  --bgcolor-hover: var(--bgcolor);
+  --bgcolor-pressed: var(--bgcolor);
 }
 
 /*colors*/
