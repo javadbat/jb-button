@@ -1,7 +1,7 @@
 import React, { CSSProperties, PropsWithChildren, useEffect, useImperativeHandle, useState } from 'react';
 import 'jb-button';
 // eslint-disable-next-line no-duplicate-imports
-import { ColorVariants, JBButtonWebComponent } from 'jb-button';
+import { ColorVariants, JBButtonWebComponent, SizeVariants, StyleVariants } from 'jb-button';
 import { EventProps, useEvents } from './events-hook.js';
 import { JBButtonAttributes, useJBButtonAttribute } from './attributes-hook.js';
 
@@ -14,7 +14,9 @@ declare global {
       interface JBButtonType extends React.DetailedHTMLProps<React.HTMLAttributes<JBButtonWebComponent>, JBButtonWebComponent> {
         "class"?:string,
         "loading-text"?:string;
-        "type"?:string;
+        "variant"?:StyleVariants;
+        "size"?:SizeVariants;
+        "color"?:ColorVariants;
       }
     }
 }
@@ -35,7 +37,7 @@ export const JBButton = React.forwardRef((props:Props, ref) => {
   useEvents(element,props);
 
   return (
-    <jb-button color={props.color} style={props.style} ref={element} loading-text={props.loadingText ? props.loadingText : ''} type={props.type ? props.type : 'primary'} class={props.className}>{props.children}</jb-button>
+    <jb-button variant={props.variant} size={props.size} color={props.color} style={props.style} ref={element} loading-text={props.loadingText ? props.loadingText : ''} class={props.className}>{props.children}</jb-button>
   );
 });
 JBButton.displayName = 'JBButton';
@@ -43,6 +45,8 @@ type JBButtonBaseProps = EventProps & JBButtonAttributes & {
     name?:string,
     style?:CSSProperties,
     color?:ColorVariants,
+    variant?:StyleVariants,
+    size?:SizeVariants,
     type?: string,
     className?:string,
     loadingText?: string,

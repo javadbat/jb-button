@@ -7,3 +7,5 @@ export type ElementsObject = {
 }
 export type JBButtonEventType<TEvent> = EventTypeWithTarget<TEvent,JBButtonWebComponent>;
 export type ColorVariants = 'primary' | 'positive' | 'danger'| 'light' | 'dark';
+export type StyleVariants = 'solid' | 'outline' | 'ghost'| 'text';
+export type SizeVariants = 'xs' | 'sm' | 'md' | 'lg' | 'xl';

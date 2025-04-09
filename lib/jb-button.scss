@@ -12,25 +12,26 @@
   box-sizing: border-box;
   margin: var(--jb-button-margin, 0 0);
   box-shadow: var(--jb-button-box-shadow, none);
-
   button {
     width: inherit;
-    height: var(--jb-button-height, inherit);
+    min-height: var(--height, inherit);
     box-sizing: border-box;
     font-family: inherit;
-    border-radius: var(--jb-button-border-radius, 16px);
+    border-radius: var(--border-radius, 16px);
     background-color: var(--bgcolor);
-    border: var(--jb-button-border, none);
+    border-color: var(--border-color);
+    border-width: var(--border-width);
+    border-style: var(--jb-button-border-style, solid);
     color: var(--color);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: var(--jb-button-font-size, 1.2em);
+    font-size: var(--font-size);
     font-weight: var(--jb-button-font-weight, bold);
     cursor: var(--jb-button-cursor, pointer);
     transition: ease 0.3s all;
     text-shadow: var(--jb-button-text-shadow, none);
-    padding: var(--jb-button-padding, 0.5rem 1rem);
+    padding: var(--padding);
     &:focus {
       outline: none;
     }
@@ -38,11 +39,14 @@
     &:hover {
       background-color: var(--bgcolor-hover);
       color: var(--color-hover);
+      border-color: var(--border-color-hover);
       transition: ease 0.3s all;
     }
 
     &:active {
       background-color: var(--bgcolor-pressed);
+      color: var(--color-pressed);
+      border-color: var(--border-color-pressed);
     }
 
     &.--loading {

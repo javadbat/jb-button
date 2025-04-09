@@ -27,13 +27,13 @@ export const Primary: Story = {
 export const LightColor: Story = {
   args: {
     color: "light",
-    children: "secondary button",
+    children: "light button",
   }
 };
 export const DarkColor: Story = {
   args: {
     color: "dark",
-    children: "secondary button",
+    children: "dark button",
   }
 };
 export const Positive: Story = {
@@ -49,6 +49,66 @@ export const Danger: Story = {
   }
 };
 
+export const Outline: Story = {
+  args: {
+    variant: "outline",
+    children: "outline button",
+  }
+};
+
+export const Ghost: Story = {
+  args: {
+    variant: "ghost",
+    children: "ghost button",
+  }
+};
+
+export const Text: Story = {
+  args: {
+    variant: "text",
+    children: "text button",
+  }
+};
+export const PositiveGhost: Story = {
+  args: {
+    variant: "ghost",
+    color: "positive",
+    children: "positive ghost button",
+  }
+};
+
+export const ExtraSmall: Story = {
+  args: {
+    size: "xs",
+    children: "extra small button",
+  }
+};
+
+export const Small: Story = {
+  args: {
+    size: "sm",
+    children: "small button",
+  }
+};
+
+export const Medium: Story = {
+  args: {
+    size: "md",
+    children: "medium button",
+  }
+};
+export const Large: Story = {
+  args: {
+    size: "lg",
+    children: "large button",
+  }
+};
+export const ExtraLarge: Story = {
+  args: {
+    size: "xl",
+    children: "extra large button",
+  }
+};
 export const Disabled: Story = {
   args: {
     loadingText: "",

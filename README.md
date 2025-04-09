@@ -33,6 +33,9 @@ you can add text to loading by `<jb-button loading-text="در حال ثبت">you
 | -------------  | -------------                                                                                                       |
 | type           | change button HTML type                                                                                             |
 | disabled       | disable the button                                                                                                  |
+| color          | 'primary', 'positive', 'danger', 'light', 'dark' |
+| variant        | 'solid', 'outline', 'ghost', 'text'              |
+| size           | 'xs' , 'sm' , 'md' , 'lg' , 'xl'                 |
 
 ### change button style
 

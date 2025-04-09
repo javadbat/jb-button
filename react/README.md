@@ -30,11 +30,14 @@ you can show loading by setting props , isLoading = true you can add text to loa
 
 #### other props
 
-| props name	 | description             |
-| -------------  | ----------------------- |
-| type           | change button HTML type |
-| disabled       | disable the button      |
-| isLoading      | set loading state of button |
+| props name	 | description                                      |
+| -------------  | -----------------------                          |
+| type           | change button HTML type                          |
+| disabled       | disable the button                               |
+| isLoading      | set loading state of button                      |
+| color          | 'primary', 'positive', 'danger', 'light', 'dark' |
+| variant        | 'solid', 'outline', 'ghost', 'text'              |
+| size           | 'xs' , 'sm' , 'md' , 'lg' , 'xl'                 |
 
 ### events
 - onClick

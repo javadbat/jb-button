@@ -1,10 +1,26 @@
 :host{
-  --bgcolor: var(--jb-button-bgcolor-primary, var(--jb-primary));
-  --bgcolor-hover: oklch(from var(--jb-button-bgcolor-hover, var(--bgcolor)) calc(l + 0.07) calc(c + 0.07) h);
-  --bgcolor-pressed: oklch(from var(--jb-button-bgcolor-pressed, var(--bgcolor)) calc(l - 0.1) calc(c - 0.05) h);
+  /*base variables to set other variables (!DO NOT USE IN ELEMENT STYLE)*/
+  --base-color:var(--jb-button-primary,var(--jb-primary));
+  --base-color-hover: oklch(from var(--base-color) calc(l + 0.07) calc(c + 0.07) h);
+  --base-color-pressed: oklch(from var(--base-color) calc(l - 0.1) calc(c - 0.05) h);
+  /*variable used in elements*/
+  --height: var(--jb-button-height, 2.5rem);
+  --font-size: var(--jb-button-font-size, 1rem);
+  --padding: var(--jb-button-padding, 0.5rem 1rem);
+  --border-radius: var(--jb-button-border-radius, 1rem);
+  /*colors variables*/
+  --bgcolor: var(--jb-button-bgcolor,var(--base-color));
+  --bgcolor-hover: var(--jb-button-bgcolor-hover, var(--base-color-hover));
+  --bgcolor-pressed: var(--jb-button-bgcolor-pressed,var(--base-color-pressed));
   --color:var(--jb-button-color, var(--jb-white));
   --color-hover:var(--jb-button-color-hover, var(--color));
+  --color-pressed:var(--jb-button-color-pressed, var(--color));
   --loading-color:var(--jb-button-loading-color, var(--color));
+  /**border variables*/
+  --border-color: var(--jb-button-border-color, var(--base-color));
+  --border-color-hover: var(--jb-button-border-color-hover, var(--base-color-hover));
+  --border-color-pressed: var(--jb-button-border-color-pressed, var(--base-color-pressed));
+  --border-width: var(--jb-button-border-width, 0);
 }
 :host(:state(disabled)){
   --bgcolor:var(--jb-button-bgcolor-disabled, oklch(0.726 0.01463 258.36));
@@ -13,17 +29,76 @@
   --color:var(--jb-button-color-disabled, oklch(0.4140000000000001 0.01427 258.36));
   --loading-color:var(--jb-button-loading-color-disabled, var(--color));
 }
+
+/*colors*/
 :host([color="positive"]){
-  --bgcolor: var(--jb-button-bgcolor-positive, var(--jb-green));
+  --base-color: var(--jb-button-positive, var(--jb-green))
 }
 :host([color="danger"]){
-  --bgcolor: var(--jb-button-bgcolor-danger, var(--jb-red));
+  --base-color: var(--jb-button-danger, var(--jb-red));
 }
 :host([color="light"]){
-  --bgcolor: var(--jb-button-bgcolor-light, var(--jb-neutral-10));
+  --base-color: var(--jb-button-light, var(--jb-neutral-10));
   --color:var(--jb-button-color, var(--jb-black));
-
 }
 :host([color="dark"]){
-  --bgcolor: var(--jb-button-bgcolor-dark, var(--jb-neutral));
+  --base-color: var(--jb-button-dark, var(--jb-neutral));
+}
+
+/*variants*/
+:host([variant="outline"]){
+  --bgcolor: var(--jb-button-bgcolor-outline, var(--jb-white));
+  --bgcolor-hover: var(--jb-button-bgcolor-outline-hover, var(--jb-neutral-10));
+  --bgcolor-pressed: var(--jb-button-bgcolor-outline-pressed, var(--jb-neutral-9));
+  --color:var(--base-color);
+  --color-hover:var(--base-color-hover);
+  --color-pressed:var(--base-color-pressed);
+  --loading-color:var(--base-color);
+  --border-width: var(--jb-button-border-width, 1px);
+}
+:host([variant="ghost"]){
+  --bgcolor: var(--jb-button-bgcolor-ghost, transparent);
+  --bgcolor-hover: var(--jb-button-bgcolor-ghost-hover, var(--jb-neutral-10));
+  --bgcolor-pressed: var(--jb-button-bgcolor-ghost-pressed, var(--jb-neutral-9));
+  --color:var(--base-color);
+  --color-hover:var(--base-color-hover);
+  --color-pressed:var(--base-color-pressed);
+  --loading-color:var(--base-color);
+  --border-width: 0px;
+}
+:host([variant="text"]){
+  --bgcolor:  transparent;
+  --bgcolor-hover: transparent;
+  --bgcolor-pressed: transparent;
+  --color:var(--base-color);
+  --color-hover:var(--base-color-hover);
+  --color-pressed:var(--base-color-pressed);
+  --loading-color:var(--base-color);
+  --border-width: 0px;
+}
+
+/*size*/
+:host([size="xs"]){
+  --height: var(--jb-button-height-xs, 1.5rem);
+  --font-size: var(--jb-button-font-size-xs, 0.75rem);
+  --padding: var(--jb-button-padding-xs, 0.125rem 0.25rem);
+  --border-radius: var(--jb-button-border-radius-xs, 0.5rem);
+}
+:host([size="sm"]){
+  --height: var(--jb-button-height-sm, 2rem);
+  --font-size: var(--jb-button-font-size-sm, 0.875rem);
+  --padding: var(--jb-button-padding-sm, 0.25rem 0.5rem);
+  --border-radius: var(--jb-button-border-radius-sm, 0.75rem);
+}
+:host([size="lg"]){
+  --height: var(--jb-button-height-lg, 3rem);
+  --font-size: var(--jb-button-font-size-lg, 1.125rem);
+  --padding: var(--jb-button-padding-lg, 0.75rem 1.5rem);
+  --border-radius: var(--jb-button-border-radius-lg, 1.25rem);
+}
+:host([size="xl"]){
+  --height: var(--jb-button-height-xl, 4rem);
+  --font-size: var(--jb-button-font-size-xl, 1.25rem);
+  --padding: var(--jb-button-padding-xl, 1rem 2rem);
+  --border-radius: var(--jb-button-border-radius-xl, 1.5rem);
 }
