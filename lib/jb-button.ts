@@ -1,7 +1,7 @@
 import HTML from './jb-button.html';
 import CSS from './jb-button.scss';
 import { ElementsObject } from './types';
-import { defineColors } from 'jb-core/theme';
+import { registerDefaultVariables } from 'jb-core/theme';
 export * from "./types.js";
 import 'jb-loading';
 export class JBButtonWebComponent extends HTMLElement {
@@ -53,7 +53,7 @@ export class JBButtonWebComponent extends HTMLElement {
   }
   initWebComponent() {
     const shadowRoot = this.attachShadow({ mode: 'open',delegatesFocus:true, });
-    defineColors();
+    registerDefaultVariables();
     const html = `<style>${CSS}</style>` + '\n' + HTML;
     const element = document.createElement('template');
     element.innerHTML = html;

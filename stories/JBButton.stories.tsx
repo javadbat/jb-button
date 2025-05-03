@@ -3,7 +3,7 @@ import { JBButton, Props } from "jb-button/react";
 import React ,{ Fragment } from 'react';
 
 const meta: Meta<Props> = {
-  title: "Example/form elements/JBButton",
+  title: "Components/form elements/JBButton",
   component: JBButton,
   argTypes: {
     loadingText: { control: 'text' },
@@ -36,6 +36,12 @@ export const WithIcon: Story = {
     </Fragment>,
   }
 };
+export const Secondary: Story = {
+  args: {
+    color: "secondary",
+    children: "secondary button",
+  }
+};
 export const LightColor: Story = {
   args: {
     color: "light",
@@ -58,6 +64,12 @@ export const Danger: Story = {
   args: {
     color: "danger",
     children: "danger button",
+  }
+};
+export const Warning: Story = {
+  args: {
+    color: "warning",
+    children: "warning button",
   }
 };
 
