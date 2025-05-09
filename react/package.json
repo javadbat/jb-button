@@ -29,6 +29,7 @@
 		"url": "git@github.com:javadbat/jb-button.git"
   },
   "dependencies": {
-    "jb-button": ">=2.2.0"
+    "jb-button": ">=2.2.0",
+    "jb-core":">=0.14.0"
   }
 }
