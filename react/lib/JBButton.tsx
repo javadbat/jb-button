@@ -23,21 +23,17 @@ declare global {
 
 export const JBButton = React.forwardRef((props:Props, ref) => {
   const element = React.useRef<JBButtonWebComponent>(null);
-  const [refChangeCount, refChangeCountSetter] = useState(0);
   useImperativeHandle(
     ref,
-    () => (element ? element.current : {}),
+    () => (element ? element.current : undefined),
     [element],
   );
-  useEffect(() => {
-    refChangeCountSetter(refChangeCount + 1);
-  }, [element.current]);
 
   useJBButtonAttribute(element,props);
   useEvents(element,props);
 
   return (
-    <jb-button variant={props.variant} size={props.size} color={props.color} style={props.style} ref={element} loading-text={props.loadingText ? props.loadingText : ''} class={props.className}>{props.children}</jb-button>
+    <jb-button slot={props.slot} variant={props.variant} size={props.size} color={props.color} style={props.style} ref={element} loading-text={props.loadingText ? props.loadingText : ''} class={props.className}>{props.children}</jb-button>
   );
 });
 JBButton.displayName = 'JBButton';
@@ -50,6 +46,7 @@ type JBButtonBaseProps = EventProps & JBButtonAttributes & {
     type?: string,
     className?:string,
     loadingText?: string,
+    slot?: string,
 }
 export type Props = PropsWithChildren<JBButtonBaseProps>
 
