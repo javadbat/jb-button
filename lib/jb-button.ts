@@ -34,8 +34,6 @@ export class JBButtonWebComponent extends HTMLElement {
     this.#disabled = value;
     this.elements.button.disabled = value;
     if (value) {
-      //TODO: remove as any when typescript support
-      // biome-ignore lint/suspicious/noExplicitAny: <explanation>
       this.#internals.states?.add("disabled");
     } else {
       // biome-ignore lint/suspicious/noExplicitAny: <explanation>
