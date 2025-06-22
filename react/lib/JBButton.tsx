@@ -1,3 +1,4 @@
+'use client';
 import React, { CSSProperties, PropsWithChildren, useEffect, useImperativeHandle, useState } from 'react';
 import 'jb-button';
 // eslint-disable-next-line no-duplicate-imports
@@ -5,7 +6,7 @@ import { ColorVariants, JBButtonWebComponent, SizeVariants, StyleVariants } from
 import { EventProps, useEvents } from './events-hook.js';
 import { JBButtonAttributes, useJBButtonAttribute } from './attributes-hook.js';
 
-declare global {
+declare module "react" {
     // eslint-disable-next-line @typescript-eslint/no-namespace
     namespace JSX {
       interface IntrinsicElements {
