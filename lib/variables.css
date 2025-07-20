@@ -1,6 +1,9 @@
 :host{
   /*base variables to set other variables (!DO NOT USE IN ELEMENT STYLE)*/
-  --base-color:var(--jb-button-primary,var(--jb-primary));
+  /*theme color change base on user selected color attribute*/
+  --theme-color:var(--jb-button-primary, var(--jb-primary));
+  /*--base-color will change in different status like disabled ,...*/
+  --base-color:var(--theme-color);
   --base-color-hover: oklch(from var(--base-color) calc(l + 0.07) calc(c + 0.07) h);
   --base-color-pressed: oklch(from var(--base-color) calc(l - 0.1) calc(c - 0.05) h);
   /*variable used in elements*/
@@ -22,8 +25,31 @@
   --border-color-pressed: var(--jb-button-border-color-pressed, var(--base-color-pressed));
   --border-width: var(--jb-button-border-width, 0);
 }
+
+/*colors*/
+:host([color="positive"]){
+  --theme-color:var(--jb-button-positive, var(--jb-green))
+}
+:host([color="danger"]){
+  --theme-color: var(--jb-button-danger, var(--jb-red));
+}
+:host([color="warning"]){
+  --theme-color: var(--jb-button-warning, var(--jb-yellow))
+}
+:host([color="secondary"]){
+  --theme-color: var(--jb-button-secondary, var(--jb-secondary))
+}
+:host([color="light"]){
+  --theme-color: var(--jb-button-light, var(--jb-neutral-10));
+  --color:var(--jb-button-color, var(--jb-black));
+}
+:host([color="dark"]){
+  --theme-color: var(--jb-button-dark, var(--jb-neutral));
+}
+
+/* states */
 :host(:state(disabled)){
-  --base-color: var(--jb-button-disabled, var(--jb-neutral-7));
+  --base-color: var(--jb-button-disabled, hsl(from var(--theme-color) h 12% 66.1));
   --base-color-hover:var(--base-color);
   --base-color-pressed:var(--base-color);
   --color:var(--jb-button-color-disabled, var(--jb-neutral-3));
@@ -34,27 +60,6 @@
   --loading-color:var(--color);
   --bgcolor-hover: var(--bgcolor);
   --bgcolor-pressed: var(--bgcolor);
-}
-
-/*colors*/
-:host([color="positive"]){
-  --base-color: var(--jb-button-positive, var(--jb-green))
-}
-:host([color="danger"]){
-  --base-color: var(--jb-button-danger, var(--jb-red));
-}
-:host([color="warning"]){
-  --base-color: var(--jb-button-warning, var(--jb-yellow))
-}
-:host([color="secondary"]){
-  --base-color: var(--jb-button-secondary, var(--jb-secondary))
-}
-:host([color="light"]){
-  --base-color: var(--jb-button-light, var(--jb-neutral-10));
-  --color:var(--jb-button-color, var(--jb-black));
-}
-:host([color="dark"]){
-  --base-color: var(--jb-button-dark, var(--jb-neutral));
 }
 
 /*variants*/
@@ -88,6 +93,7 @@
   --loading-color:var(--base-color);
   --border-width: 0px;
 }
+
 
 /*size*/
 :host([size="xs"]){
