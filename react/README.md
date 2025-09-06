@@ -13,7 +13,7 @@ Demo :  Demo: [codeSandbox preview](https://3f63dj.csb.app/samples/jb-button) fo
 
 ## installation
 
-```command
+```sh
     npm i jb-button
 ```
 in your jsx file
