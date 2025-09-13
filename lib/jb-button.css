@@ -1,9 +1,6 @@
-@use './variables.css';
-
 :host {
   width: fit-content;
   height:44px;
-
 }
 
 .jb-button-web-component {

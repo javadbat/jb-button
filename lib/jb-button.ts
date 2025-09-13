@@ -1,4 +1,5 @@
-import CSS from './jb-button.scss';
+import CSS from './jb-button.css';
+import VariableCSS from './variables.css';
 import { renderHTML } from './render';
 import { ElementsObject } from './types';
 import { registerDefaultVariables } from 'jb-core/theme';
@@ -52,7 +53,7 @@ export class JBButtonWebComponent extends HTMLElement {
   initWebComponent() {
     const shadowRoot = this.attachShadow({ mode: 'open',delegatesFocus:true, });
     registerDefaultVariables();
-    const html = `<style>${CSS}</style>` + '\n' + renderHTML();
+    const html = `<style>${CSS} ${VariableCSS}</style>` + '\n' + renderHTML();
     const element = document.createElement('template');
     element.innerHTML = html;
     shadowRoot.appendChild(element.content.cloneNode(true));
