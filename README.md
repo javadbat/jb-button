@@ -31,10 +31,10 @@ you can add text to loading by `<jb-button loading-text="در حال ثبت">you
 
 ### other attribute
 
-| atribute name  | description                                                                                                         |
-| -------------  | -------------                                                                                                       |
-| type           | change button HTML type                                                                                             |
-| disabled       | disable the button                                                                                                  |
+| attribute name  | description                                                             |
+| -------------  | -------------                                                            |
+| type           | change button HTML type                                                  |
+| disabled       | disable the button                                                       |
 | color          | 'primary', 'secondary', 'positive', 'danger', 'warning', 'light', 'dark' |
 | variant        | 'solid', 'outline', 'ghost', 'text'              |
 | size           | 'xs' , 'sm' , 'md' , 'lg' , 'xl'                 |
