@@ -1,7 +1,7 @@
 import CSS from './jb-button.css';
 import VariableCSS from './variables.css';
 import { renderHTML } from './render';
-import { ElementsObject } from './types';
+import type { ElementsObject } from './types';
 import { registerDefaultVariables } from 'jb-core/theme';
 export * from "./types.js";
 import 'jb-loading';
@@ -37,7 +37,6 @@ export class JBButtonWebComponent extends HTMLElement {
     if (value) {
       this.#internals.states?.add("disabled");
     } else {
-      // biome-ignore lint/suspicious/noExplicitAny: <explanation>
       this.#internals.states?.delete("disabled");
     }
   }
@@ -53,7 +52,7 @@ export class JBButtonWebComponent extends HTMLElement {
   initWebComponent() {
     const shadowRoot = this.attachShadow({ mode: 'open',delegatesFocus:true, });
     registerDefaultVariables();
-    const html = `<style>${CSS} ${VariableCSS}</style>` + '\n' + renderHTML();
+    const html = `<style>${CSS} ${VariableCSS}</style>\n${renderHTML()}`;
     const element = document.createElement('template');
     element.innerHTML = html;
     shadowRoot.appendChild(element.content.cloneNode(true));
@@ -66,7 +65,7 @@ export class JBButtonWebComponent extends HTMLElement {
   static get observedAttributes() {
     return ['name','isLoading', 'loading-text', 'type', 'button-style', 'disabled'];
   }
-  attributeChangedCallback(name: string, oldValue: string, newValue: string) {
+  attributeChangedCallback(name: string, _oldValue: string, newValue: string) {
     // do something when an attribute has changed
     this.onAttributeChange(name, newValue);
   }

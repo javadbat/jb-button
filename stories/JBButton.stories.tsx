@@ -1,6 +1,6 @@
 import './styles.css';
 import type { Meta, StoryObj } from '@storybook/react';
-import { JBButton, Props } from "jb-button/react";
+import { JBButton, type Props } from "jb-button/react";
 import React, { Fragment } from 'react';
 
 const meta: Meta<Props> = {
@@ -26,116 +26,122 @@ export const Primary: Story = {
   }
 };
 export const WithIcon: Story = {
-  args: {
-    children:
-      <Fragment>
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M11.9998 22.6C10.8898 22.6 9.85982 22.13 9.08982 21.29L2.22982 13.75C1.25982 12.69 0.959818 10.82 1.53982 9.51003L4.09983 3.75003C4.79983 2.18003 5.96983 1.41003 7.68983 1.41003H16.2798V2.16003V1.41003C17.9998 1.41003 19.1698 2.17004 19.8698 3.74004L22.4298 9.50003C23.0098 10.81 22.7198 12.68 21.7498 13.74L14.8998 21.29C14.1498 22.13 13.1098 22.6 11.9998 22.6ZM16.2898 2.90004H7.69982C6.38982 2.90004 5.85982 3.48003 5.47982 4.35003L2.91982 10.11C2.57982 10.88 2.77982 12.11 3.33982 12.73L10.1998 20.27C10.6798 20.8 11.3198 21.09 11.9998 21.09C12.6798 21.09 13.3198 20.8 13.7998 20.27L20.6498 12.72C21.2198 12.09 21.4198 10.87 21.0698 10.1L18.5098 4.34003C18.1298 3.48003 17.5998 2.90004 16.2898 2.90004Z" fill="currentColor" />
-          <path d="M3.5 8.74999C3.09 8.74999 2.75 8.40999 2.75 7.99999C2.75 7.58999 3.09 7.24999 3.5 7.24999L20.5 7.23999C20.91 7.23999 21.25 7.57999 21.25 7.98999C21.25 8.39999 20.91 8.73999 20.5 8.73999L3.5 8.74999Z" fill="currentColor" />
-        </svg>
-        <div>With Icon</div>
-      </Fragment>,
+  render: () => {
+    const icon = (
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <title>test icon</title>
+        <path d="M11.9998 22.6C10.8898 22.6 9.85982 22.13 9.08982 21.29L2.22982 13.75C1.25982 12.69 0.959818 10.82 1.53982 9.51003L4.09983 3.75003C4.79983 2.18003 5.96983 1.41003 7.68983 1.41003H16.2798V2.16003V1.41003C17.9998 1.41003 19.1698 2.17004 19.8698 3.74004L22.4298 9.50003C23.0098 10.81 22.7198 12.68 21.7498 13.74L14.8998 21.29C14.1498 22.13 13.1098 22.6 11.9998 22.6ZM16.2898 2.90004H7.69982C6.38982 2.90004 5.85982 3.48003 5.47982 4.35003L2.91982 10.11C2.57982 10.88 2.77982 12.11 3.33982 12.73L10.1998 20.27C10.6798 20.8 11.3198 21.09 11.9998 21.09C12.6798 21.09 13.3198 20.8 13.7998 20.27L20.6498 12.72C21.2198 12.09 21.4198 10.87 21.0698 10.1L18.5098 4.34003C18.1298 3.48003 17.5998 2.90004 16.2898 2.90004Z" fill="currentColor" />
+        <path d="M3.5 8.74999C3.09 8.74999 2.75 8.40999 2.75 7.99999C2.75 7.58999 3.09 7.24999 3.5 7.24999L20.5 7.23999C20.91 7.23999 21.25 7.57999 21.25 7.98999C21.25 8.39999 20.91 8.73999 20.5 8.73999L3.5 8.74999Z" fill="currentColor" />
+      </svg>
+    )
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+        <JBButton size='xl'>{icon}<div>With Icon</div></JBButton>
+        <JBButton size='lg'>{icon}<div>With Icon</div></JBButton>
+        <JBButton size='md'>{icon}<div>With Icon</div></JBButton>
+        <JBButton size='sm'>{icon}<div>With Icon</div></JBButton>
+        <JBButton size='xs'>{icon}<div>With Icon</div></JBButton>
+      </div>
+    )
   }
 };
 export const Variants: Story = {
   render: () => {
     return (
-      <Fragment>
-        <div className='variants'>
-          <div className='variant-wrapper'>
-            <JBButton variant='solid'>Button</JBButton>
-            <JBButton variant='solid' disabled>Button</JBButton>
-            <JBButton variant='solid' isLoading>Button</JBButton>
-            <JBButton variant='solid' color='danger'>Button</JBButton>
-            <JBButton variant='solid' color='danger' disabled>Button</JBButton>
-            <JBButton variant='solid' color='danger' isLoading>Button</JBButton>
-            <JBButton variant='solid' color='dark'>Button</JBButton>
-            <JBButton variant='solid' color='dark' disabled>Button</JBButton>
-            <JBButton variant='solid' color='dark' isLoading>Button</JBButton>
-            <JBButton variant='solid' color='light'>Button</JBButton>
-            <JBButton variant='solid' color='light' disabled>Button</JBButton>
-            <JBButton variant='solid' color='light' isLoading>Button</JBButton>
-            <JBButton variant='solid' color='positive'>Button</JBButton>
-            <JBButton variant='solid' color='positive' disabled>Button</JBButton>
-            <JBButton variant='solid' color='positive' isLoading>Button</JBButton>
-            <JBButton variant='solid' color='secondary'>Button</JBButton>
-            <JBButton variant='solid' color='secondary' disabled>Button</JBButton>
-            <JBButton variant='solid' color='secondary' isLoading>Button</JBButton>
-            <JBButton variant='solid' color='warning'>Button</JBButton>
-            <JBButton variant='solid' color='warning' disabled>Button</JBButton>
-            <JBButton variant='solid' color='warning' isLoading>Button</JBButton>
-          </div>
-          <div className='variant-wrapper'>
-            <JBButton variant='outline'>Button</JBButton>
-            <JBButton variant='outline' disabled>Button</JBButton>
-            <JBButton variant='outline' isLoading>Button</JBButton>
-            <JBButton variant='outline' color='danger'>Button</JBButton>
-            <JBButton variant='outline' color='danger' disabled>Button</JBButton>
-            <JBButton variant='outline' color='danger' isLoading>Button</JBButton>
-            <JBButton variant='outline' color='dark'>Button</JBButton>
-            <JBButton variant='outline' color='dark' disabled>Button</JBButton>
-            <JBButton variant='outline' color='dark' isLoading>Button</JBButton>
-            <JBButton variant='outline' color='light'>Button</JBButton>
-            <JBButton variant='outline' color='light' disabled>Button</JBButton>
-            <JBButton variant='outline' color='light' isLoading>Button</JBButton>
-            <JBButton variant='outline' color='positive'>Button</JBButton>
-            <JBButton variant='outline' color='positive' disabled>Button</JBButton>
-            <JBButton variant='outline' color='positive' isLoading>Button</JBButton>
-            <JBButton variant='outline' color='secondary'>Button</JBButton>
-            <JBButton variant='outline' color='secondary' disabled>Button</JBButton>
-            <JBButton variant='outline' color='secondary' isLoading>Button</JBButton>
-            <JBButton variant='outline' color='warning'>Button</JBButton>
-            <JBButton variant='outline' color='warning' disabled>Button</JBButton>
-            <JBButton variant='outline' color='warning' isLoading>Button</JBButton>
-          </div>
-          <div className='variant-wrapper'>
-            <JBButton variant='ghost'>Button</JBButton>
-            <JBButton variant='ghost' disabled>Button</JBButton>
-            <JBButton variant='ghost' isLoading>Button</JBButton>
-            <JBButton variant='ghost' color='danger'>Button</JBButton>
-            <JBButton variant='ghost' color='danger' disabled>Button</JBButton>
-            <JBButton variant='ghost' color='danger' isLoading>Button</JBButton>
-            <JBButton variant='ghost' color='dark'>Button</JBButton>
-            <JBButton variant='ghost' color='dark' disabled>Button</JBButton>
-            <JBButton variant='ghost' color='dark' isLoading>Button</JBButton>
-            <JBButton variant='ghost' color='light'>Button</JBButton>
-            <JBButton variant='ghost' color='light' disabled>Button</JBButton>
-            <JBButton variant='ghost' color='light' isLoading>Button</JBButton>
-            <JBButton variant='ghost' color='positive'>Button</JBButton>
-            <JBButton variant='ghost' color='positive' disabled>Button</JBButton>
-            <JBButton variant='ghost' color='positive' isLoading>Button</JBButton>
-            <JBButton variant='ghost' color='secondary'>Button</JBButton>
-            <JBButton variant='ghost' color='secondary' disabled>Button</JBButton>
-            <JBButton variant='ghost' color='secondary' isLoading>Button</JBButton>
-            <JBButton variant='ghost' color='warning'>Button</JBButton>
-            <JBButton variant='ghost' color='warning' disabled>Button</JBButton>
-            <JBButton variant='ghost' color='warning' isLoading>Button</JBButton>
-          </div>
-          <div className='variant-wrapper'>
-            <JBButton variant='text'>Button</JBButton>
-            <JBButton variant='text' disabled>Button</JBButton>
-            <JBButton variant='text' isLoading>Button</JBButton>
-            <JBButton variant='text' color='danger'>Button</JBButton>
-            <JBButton variant='text' color='danger' disabled>Button</JBButton>
-            <JBButton variant='text' color='danger' isLoading>Button</JBButton>
-            <JBButton variant='text' color='dark'>Button</JBButton>
-            <JBButton variant='text' color='dark' disabled>Button</JBButton>
-            <JBButton variant='text' color='dark' isLoading>Button</JBButton>
-            <JBButton variant='text' color='light'>Button</JBButton>
-            <JBButton variant='text' color='light' disabled>Button</JBButton>
-            <JBButton variant='text' color='light' isLoading>Button</JBButton>
-            <JBButton variant='text' color='positive'>Button</JBButton>
-            <JBButton variant='text' color='positive' disabled>Button</JBButton>
-            <JBButton variant='text' color='positive' isLoading>Button</JBButton>
-            <JBButton variant='text' color='secondary'>Button</JBButton>
-            <JBButton variant='text' color='secondary' disabled>Button</JBButton>
-            <JBButton variant='text' color='secondary' isLoading>Button</JBButton>
-            <JBButton variant='text' color='warning'>Button</JBButton>
-            <JBButton variant='text' color='warning' disabled>Button</JBButton>
-            <JBButton variant='text' color='warning' isLoading>Button</JBButton>
-          </div>
+      <div className='variants'>
+        <div className='variant-wrapper'>
+          <JBButton variant='solid'>Button</JBButton>
+          <JBButton variant='solid' disabled>Button</JBButton>
+          <JBButton variant='solid' isLoading>Button</JBButton>
+          <JBButton variant='solid' color='danger'>Button</JBButton>
+          <JBButton variant='solid' color='danger' disabled>Button</JBButton>
+          <JBButton variant='solid' color='danger' isLoading>Button</JBButton>
+          <JBButton variant='solid' color='dark'>Button</JBButton>
+          <JBButton variant='solid' color='dark' disabled>Button</JBButton>
+          <JBButton variant='solid' color='dark' isLoading>Button</JBButton>
+          <JBButton variant='solid' color='light'>Button</JBButton>
+          <JBButton variant='solid' color='light' disabled>Button</JBButton>
+          <JBButton variant='solid' color='light' isLoading>Button</JBButton>
+          <JBButton variant='solid' color='positive'>Button</JBButton>
+          <JBButton variant='solid' color='positive' disabled>Button</JBButton>
+          <JBButton variant='solid' color='positive' isLoading>Button</JBButton>
+          <JBButton variant='solid' color='secondary'>Button</JBButton>
+          <JBButton variant='solid' color='secondary' disabled>Button</JBButton>
+          <JBButton variant='solid' color='secondary' isLoading>Button</JBButton>
+          <JBButton variant='solid' color='warning'>Button</JBButton>
+          <JBButton variant='solid' color='warning' disabled>Button</JBButton>
+          <JBButton variant='solid' color='warning' isLoading>Button</JBButton>
         </div>
-      </Fragment>
+        <div className='variant-wrapper'>
+          <JBButton variant='outline'>Button</JBButton>
+          <JBButton variant='outline' disabled>Button</JBButton>
+          <JBButton variant='outline' isLoading>Button</JBButton>
+          <JBButton variant='outline' color='danger'>Button</JBButton>
+          <JBButton variant='outline' color='danger' disabled>Button</JBButton>
+          <JBButton variant='outline' color='danger' isLoading>Button</JBButton>
+          <JBButton variant='outline' color='dark'>Button</JBButton>
+          <JBButton variant='outline' color='dark' disabled>Button</JBButton>
+          <JBButton variant='outline' color='dark' isLoading>Button</JBButton>
+          <JBButton variant='outline' color='light'>Button</JBButton>
+          <JBButton variant='outline' color='light' disabled>Button</JBButton>
+          <JBButton variant='outline' color='light' isLoading>Button</JBButton>
+          <JBButton variant='outline' color='positive'>Button</JBButton>
+          <JBButton variant='outline' color='positive' disabled>Button</JBButton>
+          <JBButton variant='outline' color='positive' isLoading>Button</JBButton>
+          <JBButton variant='outline' color='secondary'>Button</JBButton>
+          <JBButton variant='outline' color='secondary' disabled>Button</JBButton>
+          <JBButton variant='outline' color='secondary' isLoading>Button</JBButton>
+          <JBButton variant='outline' color='warning'>Button</JBButton>
+          <JBButton variant='outline' color='warning' disabled>Button</JBButton>
+          <JBButton variant='outline' color='warning' isLoading>Button</JBButton>
+        </div>
+        <div className='variant-wrapper'>
+          <JBButton variant='ghost'>Button</JBButton>
+          <JBButton variant='ghost' disabled>Button</JBButton>
+          <JBButton variant='ghost' isLoading>Button</JBButton>
+          <JBButton variant='ghost' color='danger'>Button</JBButton>
+          <JBButton variant='ghost' color='danger' disabled>Button</JBButton>
+          <JBButton variant='ghost' color='danger' isLoading>Button</JBButton>
+          <JBButton variant='ghost' color='dark'>Button</JBButton>
+          <JBButton variant='ghost' color='dark' disabled>Button</JBButton>
+          <JBButton variant='ghost' color='dark' isLoading>Button</JBButton>
+          <JBButton variant='ghost' color='light'>Button</JBButton>
+          <JBButton variant='ghost' color='light' disabled>Button</JBButton>
+          <JBButton variant='ghost' color='light' isLoading>Button</JBButton>
+          <JBButton variant='ghost' color='positive'>Button</JBButton>
+          <JBButton variant='ghost' color='positive' disabled>Button</JBButton>
+          <JBButton variant='ghost' color='positive' isLoading>Button</JBButton>
+          <JBButton variant='ghost' color='secondary'>Button</JBButton>
+          <JBButton variant='ghost' color='secondary' disabled>Button</JBButton>
+          <JBButton variant='ghost' color='secondary' isLoading>Button</JBButton>
+          <JBButton variant='ghost' color='warning'>Button</JBButton>
+          <JBButton variant='ghost' color='warning' disabled>Button</JBButton>
+          <JBButton variant='ghost' color='warning' isLoading>Button</JBButton>
+        </div>
+        <div className='variant-wrapper'>
+          <JBButton variant='text'>Button</JBButton>
+          <JBButton variant='text' disabled>Button</JBButton>
+          <JBButton variant='text' isLoading>Button</JBButton>
+          <JBButton variant='text' color='danger'>Button</JBButton>
+          <JBButton variant='text' color='danger' disabled>Button</JBButton>
+          <JBButton variant='text' color='danger' isLoading>Button</JBButton>
+          <JBButton variant='text' color='dark'>Button</JBButton>
+          <JBButton variant='text' color='dark' disabled>Button</JBButton>
+          <JBButton variant='text' color='dark' isLoading>Button</JBButton>
+          <JBButton variant='text' color='light'>Button</JBButton>
+          <JBButton variant='text' color='light' disabled>Button</JBButton>
+          <JBButton variant='text' color='light' isLoading>Button</JBButton>
+          <JBButton variant='text' color='positive'>Button</JBButton>
+          <JBButton variant='text' color='positive' disabled>Button</JBButton>
+          <JBButton variant='text' color='positive' isLoading>Button</JBButton>
+          <JBButton variant='text' color='secondary'>Button</JBButton>
+          <JBButton variant='text' color='secondary' disabled>Button</JBButton>
+          <JBButton variant='text' color='secondary' isLoading>Button</JBButton>
+          <JBButton variant='text' color='warning'>Button</JBButton>
+          <JBButton variant='text' color='warning' disabled>Button</JBButton>
+          <JBButton variant='text' color='warning' isLoading>Button</JBButton>
+        </div>
+      </div>
     )
   }
 };

@@ -11,6 +11,8 @@
   --font-size: var(--jb-button-font-size, 1rem);
   --padding: var(--jb-button-padding, 0.5rem 1rem);
   --border-radius: var(--jb-button-border-radius, var(--jb-radius));
+  --icon-size: 1.5rem;
+  --content-gap: 0.5rem;
   /*colors variables*/
   --bgcolor: var(--jb-button-bgcolor,var(--base-color));
   --bgcolor-hover: var(--jb-button-bgcolor-hover, var(--base-color-hover));
@@ -101,22 +103,30 @@
   --font-size: var(--jb-button-font-size-xs, 0.75rem);
   --padding: var(--jb-button-padding-xs, 0.125rem 0.25rem);
   --border-radius: var(--jb-button-border-radius-xs, var(--jb-radius-xs));
+  --icon-size:1rem;
+  --content-gap:0.125rem;
 }
 :host([size="sm"]){
   --height: var(--jb-button-height-sm, 2rem);
   --font-size: var(--jb-button-font-size-sm, 0.875rem);
   --padding: var(--jb-button-padding-sm, 0.25rem 0.5rem);
   --border-radius: var(--jb-button-border-radius-sm, var(--jb-radius-sm));
+  --icon-size:1.25rem;
+  --content-gap:0.25rem;
 }
 :host([size="lg"]){
   --height: var(--jb-button-height-lg, 3rem);
   --font-size: var(--jb-button-font-size-lg, 1.125rem);
   --padding: var(--jb-button-padding-lg, 0.75rem 1.5rem);
   --border-radius: var(--jb-button-border-radius-lg, var(--jb-radius-lg));
+  --icon-size:1.75rem;
+  --content-gap:0.75rem;
 }
 :host([size="xl"]){
   --height: var(--jb-button-height-xl, 4rem);
   --font-size: var(--jb-button-font-size-xl, 1.25rem);
   --padding: var(--jb-button-padding-xl, 1rem 2rem);
   --border-radius: var(--jb-button-border-radius-xl, var(--jb-radius-xl));
+  --icon-size:2.25rem;
+  --content-gap:1rem;
 }

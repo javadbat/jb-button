@@ -1,6 +1,6 @@
 :host {
   width: fit-content;
-  height:44px;
+  height: var(--height, inherit);
 }
 
 .jb-button-web-component {
@@ -9,9 +9,10 @@
   box-sizing: border-box;
   margin: var(--jb-button-margin, 0 0);
   box-shadow: var(--jb-button-box-shadow, none);
+
   button {
     width: inherit;
-    min-height: var(--height, inherit);
+    min-height:  inherit;
     box-sizing: border-box;
     font-family: inherit;
     border-radius: var(--border-radius);
@@ -30,6 +31,7 @@
     text-shadow: var(--jb-button-text-shadow, none);
     padding: var(--padding);
     box-sizing: border-box;
+
     &:focus {
       outline: none;
     }
@@ -64,25 +66,37 @@
 
     .button-content {
       display: flex;
-      gap:0.5rem;
+      gap: var(--content-gap);
+      justify-content: center;
+      align-items: center;
     }
+
     .loading-wrapper {
       display: none;
       font-size: 0.8em;
       justify-content: center;
       align-items: center;
-      gap:0.5rem;
+      gap: 0.5rem;
       --jb-loading-color: var(--loading-color);
+
       jb-loading {
         width: 1.5rem;
         height: 1.5rem;
       }
-      .loading-text{
-        &:empty{
+
+      .loading-text {
+        &:empty {
           display: none;
         }
       }
     }
-    
+    ::slotted(*){
+      text-box-trim: trim-both;
+      text-box-edge: ex alphabetic;
+    }
+    ::slotted(svg) {
+      width: var(--icon-size);
+      height: var(--icon-size);
+    }
   }
 }

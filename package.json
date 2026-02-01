@@ -20,7 +20,7 @@
     "web component",
     "react component"
   ],
-  "version": "3.6.0",
+  "version": "3.7.0",
   "bugs": "https://github.com/javadbat/jb-button/issues",
   "license": "MIT",
   "files": [
@@ -34,7 +34,7 @@
   "main": "index.js",
   "types": "./dist/jb-button.d.ts",
   "dependencies": {
-    "jb-core":">=0.14.0",
+    "jb-core":">=0.22.0",
     "jb-loading":">=1.5.0"
   }
 }
