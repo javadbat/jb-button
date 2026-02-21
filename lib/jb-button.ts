@@ -5,6 +5,8 @@ import type { ElementsObject } from './types';
 import { registerDefaultVariables } from 'jb-core/theme';
 export * from "./types.js";
 import 'jb-loading';
+import { createMouseEvent } from 'jb-core';
+
 export class JBButtonWebComponent extends HTMLElement {
   #internals?: ElementInternals;
   static formAssociated = true
@@ -47,10 +49,10 @@ export class JBButtonWebComponent extends HTMLElement {
       this.#internals = this.attachInternals();
       this.#internals.role = "button";
     }
-    this.initWebComponent();
+    this.#initWebComponent();
   }
-  initWebComponent() {
-    const shadowRoot = this.attachShadow({ mode: 'open',delegatesFocus:true, });
+  #initWebComponent() {
+    const shadowRoot = this.attachShadow({ mode: 'open', delegatesFocus: true, });
     registerDefaultVariables();
     const html = `<style>${CSS} ${VariableCSS}</style>\n${renderHTML()}`;
     const element = document.createElement('template');
@@ -63,13 +65,13 @@ export class JBButtonWebComponent extends HTMLElement {
     this.#registerEventListener();
   }
   static get observedAttributes() {
-    return ['name','isLoading', 'loading-text', 'type', 'button-style', 'disabled'];
+    return ['name', 'isLoading', 'loading-text', 'type', 'button-style', 'disabled'];
   }
   attributeChangedCallback(name: string, _oldValue: string, newValue: string) {
     // do something when an attribute has changed
-    this.onAttributeChange(name, newValue);
+    this.#onAttributeChange(name, newValue);
   }
-  onAttributeChange(name: string, value: string) {
+  #onAttributeChange(name: string, value: string) {
     switch (name) {
       case 'name':
         this.elements.button.setAttribute('name', value);
@@ -98,16 +100,21 @@ export class JBButtonWebComponent extends HTMLElement {
   #registerEventListener(): void {
     this.elements.button.addEventListener("click", (e: MouseEvent) => this.#onButtonClick(e));
   }
-  #onButtonClick(e:MouseEvent){
+  #onButtonClick(e: MouseEvent) {
     e.stopPropagation();
-    this.#dispatchClickEvent(e);
-    if(this.getAttribute('type') == "submit"){
-      this.#internals?.form?.requestSubmit();
+    const isNotCancelled = this.#dispatchClickEvent(e);
+    if (isNotCancelled) {
+      if (this.getAttribute('type') == "submit") {
+        this.#internals?.form?.requestSubmit();
+      }
+    }else{
+      e.preventDefault();
     }
+
   }
-  #dispatchClickEvent(e:MouseEvent){
-    const event = new MouseEvent('click',{...e});
-    this.dispatchEvent(event);
+  #dispatchClickEvent(e: MouseEvent) {
+    const event = createMouseEvent("click", e, {});
+    return this.dispatchEvent(event);
   }
 }
 const myElementNotExists = !customElements.get('jb-button');
