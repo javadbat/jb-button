@@ -2,7 +2,8 @@
 
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/jb-button)
 [![GitHub license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://raw.githubusercontent.com/javadbat/jb-button/main/LICENSE)
-[![NPM Downloads](https://img.shields.io/npm/dw/jb-button)](https://www.npmjs.com/package/jb-button)
+[![NPM Version](https://img.shields.io/npm/v/jb-button)](https://www.npmjs.com/package/jb-button)
+![GitHub Created At](https://img.shields.io/github/created-at/javadbat/jb-button)
 
 simple button web-component with some additional features:
 

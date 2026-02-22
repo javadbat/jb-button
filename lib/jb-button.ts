@@ -42,6 +42,17 @@ export class JBButtonWebComponent extends HTMLElement {
       this.#internals.states?.delete("disabled");
     }
   }
+
+  get name(){
+    return this.getAttribute("name")
+  }
+  set name(value: string) {
+    if(value){
+      this.setAttribute('name', value);
+    }else{
+      this.removeAttribute('name');
+    }
+  }
   constructor() {
     super();
     if (typeof this.attachInternals == "function") {

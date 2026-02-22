@@ -1,10 +1,11 @@
 'use client';
-import React, { CSSProperties, PropsWithChildren, useEffect, useImperativeHandle, useState } from 'react';
+import React, {  type PropsWithChildren, useImperativeHandle } from 'react';
 import 'jb-button';
 // eslint-disable-next-line no-duplicate-imports
-import { ColorVariants, JBButtonWebComponent, SizeVariants, StyleVariants } from 'jb-button';
-import { EventProps, useEvents } from './events-hook.js';
-import { JBButtonAttributes, useJBButtonAttribute } from './attributes-hook.js';
+import type { ColorVariants, JBButtonWebComponent, SizeVariants, StyleVariants } from 'jb-button';
+import { type EventProps, useEvents } from './events-hook.js';
+import { type JBButtonAttributes, useJBButtonAttribute } from './attributes-hook.js';
+import type { JBElementStandardProps } from 'jb-core/react';
 
 declare module "react" {
     // eslint-disable-next-line @typescript-eslint/no-namespace
@@ -13,11 +14,11 @@ declare module "react" {
         'jb-button': JBButtonType;
       }
       interface JBButtonType extends React.DetailedHTMLProps<React.HTMLAttributes<JBButtonWebComponent>, JBButtonWebComponent> {
-        "class"?:string,
         "loading-text"?:string;
         "variant"?:StyleVariants;
         "size"?:SizeVariants;
         "color"?:ColorVariants;
+        "name"?:string;
       }
     }
 }
@@ -29,25 +30,22 @@ export const JBButton = React.forwardRef((props:Props, ref) => {
     () => (element ? element.current : undefined),
     [element],
   );
-
-  useJBButtonAttribute(element,props);
-  useEvents(element,props);
+  const {disabled, loadingText,isLoading, variant, size, onClick,color,children, name, ...otherProps} = props;
+  useJBButtonAttribute(element,{disabled,isLoading});
+  useEvents(element,{onClick});
 
   return (
-    <jb-button slot={props.slot} variant={props.variant} size={props.size} color={props.color} style={props.style} ref={element} loading-text={props.loadingText ? props.loadingText : ''} class={props.className}>{props.children}</jb-button>
+    <jb-button {...otherProps} variant={variant} size={size} color={color} name={name} ref={element} loading-text={loadingText}>{children}</jb-button>
   );
 });
 JBButton.displayName = 'JBButton';
 type JBButtonBaseProps = EventProps & JBButtonAttributes & {
     name?:string,
-    style?:CSSProperties,
     color?:ColorVariants,
     variant?:StyleVariants,
     size?:SizeVariants,
     type?: string,
-    className?:string,
     loadingText?: string,
-    slot?: string,
 }
-export type Props = PropsWithChildren<JBButtonBaseProps>
+export type Props = PropsWithChildren<JBButtonBaseProps> & JBElementStandardProps<JBButtonWebComponent, keyof JBButtonBaseProps>
 

@@ -6,7 +6,6 @@
 		"name": "mohammad javad bathaei",
 		"email": "javadbat@gmail.com"
 	},
-  "homepage": "https://github.com/javadbat/jb-button",
   "repository": {
     "type": "git",
     "url": "https://github.com/javadbat/jb-button"
@@ -20,8 +19,9 @@
     "web component",
     "react component"
   ],
-  "version": "3.8.0",
+  "version": "3.9.0",
   "bugs": "https://github.com/javadbat/jb-button/issues",
+  "homepage":"https://javadbat.github.io/design-system/?path=/docs/components-form-elements-jbbutton",
   "license": "MIT",
   "files": [
     "LICENSE",
@@ -34,7 +34,7 @@
   "main": "index.js",
   "types": "./dist/jb-button.d.ts",
   "dependencies": {
-    "jb-core":">=0.23.0",
+    "jb-core":">=0.24.0",
     "jb-loading":">=1.7.0"
   }
 }
