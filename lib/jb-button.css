@@ -12,7 +12,7 @@
 
   button {
     width: inherit;
-    min-height:  inherit;
+    min-height: inherit;
     box-sizing: border-box;
     font-family: inherit;
     border-radius: var(--border-radius);
@@ -41,6 +41,10 @@
       color: var(--color-hover);
       border-color: var(--border-color-hover);
       transition: ease 0.3s all;
+
+      .loading-wrapper {
+        --jb-loading-color: var(--loading-color-hover, var(--loading-color));
+      }
     }
 
     &:active {
@@ -90,10 +94,12 @@
         }
       }
     }
-    ::slotted(*){
+
+    ::slotted(*) {
       text-box-trim: trim-both;
       text-box-edge: ex alphabetic;
     }
+
     ::slotted(svg) {
       width: var(--icon-size);
       height: var(--icon-size);

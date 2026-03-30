@@ -44,6 +44,7 @@
 :host([color="light"]){
   --theme-color: var(--jb-button-light, var(--jb-neutral-10));
   --color:var(--jb-button-color, var(--jb-black));
+  --color-hover:var(--jb-neutral);
 }
 :host([color="dark"]){
   --theme-color: var(--jb-button-dark, var(--jb-neutral));
@@ -56,12 +57,6 @@
   --base-color-pressed:var(--base-color);
   --color:var(--jb-button-color-disabled, var(--jb-neutral-3));
   --loading-color:var(--jb-button-loading-color-disabled, var(--color));
-}
-:host(:state(disabled)[variant="outline"]){
-  --color:var(--base-color);
-  --loading-color:var(--color);
-  --bgcolor-hover: var(--bgcolor);
-  --bgcolor-pressed: var(--bgcolor);
 }
 
 /*variants*/
@@ -129,4 +124,21 @@
   --border-radius: var(--jb-button-border-radius-xl, var(--jb-radius-xl));
   --icon-size: var(--jb-button-icon-size-xl, 2.25rem);
   --content-gap:1rem;
+}
+/* Combined situation */
+
+:host(:state(disabled)[variant="outline"]){
+  --color:var(--base-color);
+  --loading-color:var(--color);
+  --bgcolor-hover: var(--bgcolor);
+  --bgcolor-pressed: var(--bgcolor);
+}
+
+:host([color="light"][variant="ghost"]),
+:host([color="light"][variant="outline"])
+{
+  --base-color-hover:var(--jb-neutral-4);
+  --loading-color-hover:var(--jb-neutral-4);
+  /*formula must be the same but its's base on --base-color-hover*/
+  --base-color-pressed: oklch(from var(--base-color-hover) calc(l - 0.1) calc(c - 0.05) h);
 }
