@@ -1,6 +1,7 @@
 :host {
   width: fit-content;
   height: var(--height, inherit);
+  display: block;
 }
 
 .jb-button-web-component {
