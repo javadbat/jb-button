@@ -19,8 +19,7 @@ Demo:
 - [codepen](https://codepen.io/javadbat/pen/NWdeMwY)
 - [storybook](https://javadbat.github.io/design-system/?path=/docs/components-form-elements-jbbutton)
 
-## using with JS frameworks
-
+## Using With JS Frameworks
 - [<img src="https://img.shields.io/badge/React.js-jb--button%2Freact-000.svg?logo=react&logoColor=%2361DAFB" height="30" />](https://github.com/javadbat/jb-button/tree/main/react)
 
 ## instruction
@@ -30,7 +29,7 @@ Demo:
 you can show loading by `element.isLoading = true`
 you can add text to loading by `<jb-button loading-text="در حال ثبت">your button text</jb-button>`
 
-### other attribute
+## Attributes/Properties
 
 | attribute name  | description                                                             |
 | -------------  | -------------                                                            |
@@ -48,7 +47,7 @@ you can inject your custom style by attribute to button.
 <jb-button button-style="height:36px;"></jb-button>
 ```
 
-the other way of injecting style to jb-button is by providing css variable in component parent element to set some atttribute for example to set button height:
+the other way of injecting style to jb-button is by providing CSS variable in component parent element to set some attribute for example to set button height:
 
 ```css
 .your-jb-button-wrapper{
@@ -60,21 +59,12 @@ the other way of injecting style to jb-button is by providing css variable in co
 ```
 
 in some cases in your project you need to change default style of web-component for example you need zero margin or different border-radius and etc.
-if you want to set a custom style to this web-component all you need is to set css variable in parent scope of web-component
-| css variable name                  | description                                                                 |
+if you want to set a custom style to this web-component all you need is to set CSS variable in parent scope of web-component
+| CSS variable name                  | description                                                                 |
 | -------------                      | -------------                                                               |
 | --jb-button-margin                 | web-component margin                                                        |
 | --jb-button-padding                | web-component margin                                                        |
 | --jb-button-border-radius          | web-component border-radius                                                 |
-| --jb-button-border-radius-sm       | border-radius for sm size (also available for xl,lg,...)                    |
-| --jb-button-border                 | web-component css border attribute default is `none`                        |
-| --jb-button-bgcolor-primary        | background color of button in primary                                       |
-| --jb-button-bgcolor-secondary      | background color of button in secondary                                     |
-| --jb-button-bgcolor-positive       | background color of button in positive                                      |
-| --jb-button-bgcolor-danger         | background color of button in danger                                        |
-| --jb-button-bgcolor-warning        | background color of button in warning                                       |
-| --jb-button-bgcolor-light          | background color of button in light                                         |
-| --jb-button-bgcolor-dark           | background color of button in dark                                          |
 | --jb-button-bgcolor-hover          | button bg-color when user hover                                             |
 | --jb-button-bgcolor-pressed        | button bg-color when user pressed                                           |
 | --jb-button-height                 | button height default is 44px                                               |
@@ -85,16 +75,55 @@ if you want to set a custom style to this web-component all you need is to set c
 | --jb-button-font-size              | font size of button default is `1.2em`                                      |
 | --jb-button-color-hover            | color of button in hover state                                              |
 | --jb-button-cursor                 | change button cursor default is `pointer`                                   |
-| --jb-button-bgcolor-disabled       | background color of button when disabled                                    |
 | --jb-button-color-disabled         | color of button when disabled                                               |
 | --jb-button-cursor-disabled        | cursor of button when disabled                                              |
-| --jb-button-border-disabled        | border of button when disabled                                              |
 | --jb-button-text-shadow-disabled   | text shadow of button when disabled                                         |
 | --jb-button-loading-color          | jb-loading icon color default is text color value                           |
 | --jb-button-loading-color-disabled | jb-loading icon color when disabled default is text color value             |
+| --jb-button-bgcolor | Customize bgcolor. |
+| --jb-button-bgcolor-ghost | Customize bgcolor ghost. |
+| --jb-button-bgcolor-ghost-hover | Customize bgcolor ghost hover. |
+| --jb-button-bgcolor-ghost-pressed | Customize bgcolor ghost pressed. |
+| --jb-button-bgcolor-outline | Customize bgcolor outline. |
+| --jb-button-bgcolor-outline-hover | Customize bgcolor outline hover. |
+| --jb-button-bgcolor-outline-pressed | Customize bgcolor outline pressed. |
+| --jb-button-border-color | Customize border color. |
+| --jb-button-border-color-hover | Customize border color hover. |
+| --jb-button-border-color-pressed | Customize border color pressed. |
+| --jb-button-border-radius-lg | Customize border radius lg. |
+| --jb-button-border-radius-sm | Customize border radius sm. |
+| --jb-button-border-radius-xl | Customize border radius xl. |
+| --jb-button-border-radius-xs | Customize border radius xs. |
+| --jb-button-border-style | Customize border style. |
+| --jb-button-border-width | Customize border width. |
+| --jb-button-color-pressed | Customize color pressed. |
+| --jb-button-danger | Customize danger. |
+| --jb-button-dark | Customize dark. |
+| --jb-button-disabled | Customize disabled. |
+| --jb-button-font-size-lg | Customize font size lg. |
+| --jb-button-font-size-sm | Customize font size sm. |
+| --jb-button-font-size-xl | Customize font size xl. |
+| --jb-button-font-size-xs | Customize font size xs. |
+| --jb-button-height-lg | Customize height lg. |
+| --jb-button-height-sm | Customize height sm. |
+| --jb-button-height-xl | Customize height xl. |
+| --jb-button-height-xs | Customize height xs. |
+| --jb-button-icon-size | Customize icon size. |
+| --jb-button-icon-size-lg | Customize icon size lg. |
+| --jb-button-icon-size-sm | Customize icon size sm. |
+| --jb-button-icon-size-xl | Customize icon size xl. |
+| --jb-button-icon-size-xs | Customize icon size xs. |
+| --jb-button-light | Customize light. |
+| --jb-button-padding-lg | Customize padding lg. |
+| --jb-button-padding-sm | Customize padding sm. |
+| --jb-button-padding-xl | Customize padding xl. |
+| --jb-button-padding-xs | Customize padding xs. |
+| --jb-button-positive | Customize positive. |
+| --jb-button-primary | Customize primary. |
+| --jb-button-secondary | Customize secondary. |
+| --jb-button-warning | Customize warning. |
 
-## Other Related Docs:
-
+## Related Docs
 - see [`jb-button/react`](https://github.com/javadbat/jb-button/tree/main/react); if you want to use this component in react
 
 - see [All JB Design system Component List](https://javadbat.github.io/design-system/) for more components

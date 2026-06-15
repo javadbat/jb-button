@@ -13,10 +13,9 @@ JBButton is a simple button `react component` with some additional feature.
 
 sample in codepen: <https://codepen.io/javadbat/pen/NWdeMwY>
 
-Demo :  Demo: [codeSandbox preview](https://3f63dj.csb.app/samples/jb-button) for just see the demo and [codeSandbox editor](https://codesandbox.io/p/sandbox/jb-design-system-3f63dj?file=%2Fsrc%2Fsamples%2FJBButton.tsx) if you want to see and play with code
+Demo: [codeSandbox preview](https://3f63dj.csb.app/samples/jb-button) for just see the demo and [codeSandbox editor](https://codesandbox.io/p/sandbox/jb-design-system-3f63dj?file=%2Fsrc%2Fsamples%2FJBButton.tsx) if you want to see and play with code
 
-## installation
-
+## Installation
 ```sh
     npm i jb-button
 ```
@@ -49,4 +48,8 @@ you can show loading by setting props , isLoading = true you can add text to loa
   <JBButton onClick={(event) => console.log(event)}></JBButton>
 ```
 ## change button style
-    react component depends on css variable for customization so there is no difference between react component and web-component in styling . to learn more about styling jb-button see [jb-button](https://github.com/javadbat/jb-button) styling section.
+    react component depends on CSS variable for customization so there is no difference between react component and web-component in styling . to learn more about styling jb-button see [jb-button](https://github.com/javadbat/jb-button) styling section.
+
+## Shared Documentation
+
+For web-component behavior, events, slots, and CSS variables, see [`jb-button`](https://github.com/javadbat/jb-button).
