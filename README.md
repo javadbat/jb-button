@@ -21,7 +21,7 @@ Demo:
 
 ## using with JS frameworks
 
-to use this component in **react** see [`jb-button/react`](https://github.com/javadbat/jb-button/tree/main/react);
+- [<img src="https://img.shields.io/badge/React.js-jb--button%2Freact-000.svg?logo=react&logoColor=%2361DAFB" height="30" />](https://github.com/javadbat/jb-button/tree/main/react)
 
 ## instruction
 
