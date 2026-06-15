@@ -15,6 +15,8 @@ sample in codepen: <https://codepen.io/javadbat/pen/NWdeMwY>
 
 Demo: [codeSandbox preview](https://3f63dj.csb.app/samples/jb-button) for just see the demo and [codeSandbox editor](https://codesandbox.io/p/sandbox/jb-design-system-3f63dj?file=%2Fsrc%2Fsamples%2FJBButton.tsx) if you want to see and play with code
 
+Storybook: [JBButton docs](https://javadbat.github.io/design-system/?path=/docs/components-form-elements-jbbutton)
+
 ## Installation
 ```sh
     npm i jb-button
@@ -26,24 +28,42 @@ in your jsx file
 ``` jsx
     <JBButton></JBButton>
 ```
-## instruction
-#### set loading
+## When to use
 
-you can show loading by setting props , isLoading = true you can add text to loading by <JBButton loading-text="...your loading text">your button text</JBButton>
+Use `JBButton` for React actions that need JB Design System styling, loading state, disabled state, or form submit behavior.
 
-#### other props
+## Props
 
-| props name	 | description                                      |
-| -------------  | -----------------------                          |
-| type           | change button HTML type                          |
-| disabled       | disable the button                               |
-| isLoading      | set loading state of button                      |
-| color          | 'primary', 'positive', 'danger', 'light', 'dark' |
-| variant        | 'solid', 'outline', 'ghost', 'text'              |
-| size           | 'xs' , 'sm' , 'md' , 'lg' , 'xl'                 |
+| prop | type | description |
+| --- | --- | --- |
+| `type` | `string` | Native button type forwarded to the inner button. Use `submit` for form submit buttons. |
+| `name` | `string` | Name forwarded to the underlying web component. |
+| `disabled` | `boolean` | Disables the button. |
+| `isLoading` | `boolean` | Shows the loading UI. Does not automatically disable the button. |
+| `loadingText` | `string` | Text shown beside the loading indicator. |
+| `color` | `'primary' \| 'secondary' \| 'positive' \| 'danger' \| 'warning' \| 'light' \| 'dark'` | Visual color variant. |
+| `variant` | `'solid' \| 'outline' \| 'ghost' \| 'text'` | Visual style variant. |
+| `size` | `'xs' \| 'sm' \| 'md' \| 'lg' \| 'xl'` | Visual size variant. |
 
-### events
-- onClick
+## Loading state
+
+```jsx
+<JBButton isLoading loadingText="Saving">
+  Save
+</JBButton>
+```
+
+Set `disabled` too if the user must not click the button while loading:
+
+```jsx
+<JBButton isLoading disabled loadingText="Saving">
+  Save
+</JBButton>
+```
+
+## Events
+
+### onClick
 ```jsx
   <JBButton onClick={(event) => console.log(event)}></JBButton>
 ```
@@ -53,3 +73,10 @@ you can show loading by setting props , isLoading = true you can add text to loa
 ## Shared Documentation
 
 For web-component behavior, events, slots, and CSS variables, see [`jb-button`](https://github.com/javadbat/jb-button).
+
+## AI agent notes
+
+- Import `JBButton` from `jb-button/react`; the wrapper imports and registers the underlying `jb-button` web component.
+- Put visible button content in `children`.
+- Use `isLoading` for loading UI and `disabled` when clicks must be blocked.
+- Use `loadingText`, not `loading-text`, in React props.

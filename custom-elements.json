@@ -1,0 +1,182 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "README.md",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "lib/jb-button.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Form-associated button web component with JB Design System variants, disabled state, loading state, default content slot, and submit behavior through the associated form.",
+          "name": "JBButtonWebComponent",
+          "tagName": "jb-button",
+          "customElement": true,
+          "superclass": {
+            "name": "HTMLElement"
+          },
+          "attributes": [
+            {
+              "name": "type",
+              "description": "Native button type forwarded to the inner button. When set to submit, the component calls requestSubmit on the associated form after a non-canceled click.",
+              "type": {
+                "text": "'button' | 'submit' | 'reset' | string"
+              }
+            },
+            {
+              "name": "name",
+              "description": "Name forwarded to the inner native button.",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "name": "disabled",
+              "description": "Disables the inner button and sets the disabled custom state.",
+              "type": {
+                "text": "boolean"
+              }
+            },
+            {
+              "name": "loading-text",
+              "description": "Text shown beside the loading indicator while isLoading is true.",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "name": "button-style",
+              "description": "Inline style forwarded to the inner native button. Prefer CSS variables for reusable styling.",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "name": "color",
+              "description": "Visual color variant used by CSS.",
+              "type": {
+                "text": "'primary' | 'secondary' | 'positive' | 'danger' | 'warning' | 'light' | 'dark'"
+              }
+            },
+            {
+              "name": "variant",
+              "description": "Visual style variant used by CSS.",
+              "type": {
+                "text": "'solid' | 'outline' | 'ghost' | 'text'"
+              }
+            },
+            {
+              "name": "size",
+              "description": "Visual size variant used by CSS.",
+              "type": {
+                "text": "'xs' | 'sm' | 'md' | 'lg' | 'xl'"
+              }
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "isLoading",
+              "description": "Shows or hides the loading indicator. Loading does not automatically disable the button.",
+              "type": {
+                "text": "boolean"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "loadingText",
+              "description": "Text shown beside the loading indicator.",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "description": "Enables or disables the inner native button.",
+              "type": {
+                "text": "boolean"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "description": "Reflects the name attribute.",
+              "type": {
+                "text": "string | null"
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "click",
+              "description": "Cancelable mouse event re-dispatched from the inner native button. Prevent default to stop the component click behavior and form submit."
+            }
+          ],
+          "slots": [
+            {
+              "name": "",
+              "description": "Button content. Text, icons, or both can be placed in the default slot."
+            }
+          ],
+          "cssProperties": [
+            {
+              "name": "--jb-button-margin",
+              "description": "Host margin."
+            },
+            {
+              "name": "--jb-button-padding",
+              "description": "Inner button padding."
+            },
+            {
+              "name": "--jb-button-border-radius",
+              "description": "Inner button border radius."
+            },
+            {
+              "name": "--jb-button-height",
+              "description": "Default button height."
+            },
+            {
+              "name": "--jb-button-font-size",
+              "description": "Button font size."
+            },
+            {
+              "name": "--jb-button-color",
+              "description": "Button text color."
+            },
+            {
+              "name": "--jb-button-bgcolor",
+              "description": "Button background color."
+            },
+            {
+              "name": "--jb-button-border-color",
+              "description": "Button border color."
+            },
+            {
+              "name": "--jb-button-loading-color",
+              "description": "Loading indicator color."
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "JBButtonWebComponent",
+          "declaration": {
+            "name": "JBButtonWebComponent",
+            "module": "lib/jb-button.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "jb-button",
+          "declaration": {
+            "name": "JBButtonWebComponent",
+            "module": "lib/jb-button.ts"
+          }
+        }
+      ]
+    }
+  ]
+}

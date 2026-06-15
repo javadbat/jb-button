@@ -26,6 +26,7 @@
   "files": [
     "LICENSE",
     "README.md",
+    "custom-elements.json",
     "lib/",
     "dist/",
     "react/",
@@ -33,6 +34,7 @@
   ],
   "main": "index.js",
   "types": "./dist/jb-button.d.ts",
+  "customElements": "custom-elements.json",
   "dependencies": {
     "jb-core":">=0.25.0",
     "jb-loading":">=1.7.0"

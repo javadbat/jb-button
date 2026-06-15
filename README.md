@@ -15,6 +15,10 @@ simple button web-component with some additional features:
 
 - compatible with form elements
 
+## When to use
+
+Use `jb-button` for actions that need JB Design System styling, loading state, disabled state, or form submit behavior.
+
 Demo:
 - [codepen](https://codepen.io/javadbat/pen/NWdeMwY)
 - [storybook](https://javadbat.github.io/design-system/?path=/docs/components-form-elements-jbbutton)
@@ -22,22 +26,114 @@ Demo:
 ## Using With JS Frameworks
 - [<img src="https://img.shields.io/badge/React.js-jb--button%2Freact-000.svg?logo=react&logoColor=%2361DAFB" height="30" />](https://github.com/javadbat/jb-button/tree/main/react)
 
-## instruction
+## Installation
 
-### set loading
+### using npm
 
-you can show loading by `element.isLoading = true`
-you can add text to loading by `<jb-button loading-text="در حال ثبت">your button text</jb-button>`
+```sh
+npm i jb-button
+```
 
-## Attributes/Properties
+We must import package in one of our js files.
 
-| attribute name  | description                                                             |
-| -------------  | -------------                                                            |
-| type           | change button HTML type                                                  |
-| disabled       | disable the button                                                       |
-| color          | 'primary', 'secondary', 'positive', 'danger', 'warning', 'light', 'dark' |
-| variant        | 'solid', 'outline', 'ghost', 'text'              |
-| size           | 'xs' , 'sm' , 'md' , 'lg' , 'xl'                 |
+```js
+import 'jb-button';
+```
+
+in your html or jsx
+
+```html
+<jb-button>Save</jb-button>
+```
+
+### using cdn
+
+you can just add script tag to your html file and then use web component however you need
+
+```HTML
+<script src="https://unpkg.com/jb-button/dist/JBButton.umd.js"></script>
+```
+
+## API reference
+
+### Attributes
+
+| name | type | default | description |
+| --- | --- | --- | --- |
+| `type` | `'button' \| 'submit' \| 'reset' \| string` | browser default | Forwarded to the inner native button. When set to `submit`, `jb-button` calls the associated form `requestSubmit()` after a non-canceled click. |
+| `name` | `string` | `null` | Forwarded to the inner native button. |
+| `disabled` | `boolean` | `false` | Disables the inner button and sets the `disabled` custom state. |
+| [`loading-text`](#loading-state) | `string` | `""` | Text shown beside the loading indicator while loading. |
+| `button-style` | `string` | `""` | Inline style forwarded to the inner button. Prefer CSS variables for reusable styling. |
+| `color` | `'primary' \| 'secondary' \| 'positive' \| 'danger' \| 'warning' \| 'light' \| 'dark'` | `primary` | Visual color token used by CSS. |
+| `variant` | `'solid' \| 'outline' \| 'ghost' \| 'text'` | `solid` | Visual variant used by CSS. |
+| `size` | `'xs' \| 'sm' \| 'md' \| 'lg' \| 'xl'` | `md` style defaults | Visual size used by CSS. |
+
+### Properties
+
+| name | type | readonly | description |
+| --- | --- | --- | --- |
+| [`isLoading`](#loading-state) | `boolean` | no | Shows or hides the loading UI. |
+| `loadingText` | `string` | no | Text shown beside the loading indicator. |
+| `disabled` | `boolean` | no | Enables or disables the component. |
+| `name` | `string \| null` | no | Reflects the `name` attribute. |
+
+### Events
+
+| event | cancelable | when it fires |
+| --- | --- | --- |
+| `click` | yes | Re-dispatched from the inner native button. Call `event.preventDefault()` to stop the inner click behavior and prevent form submit. |
+
+```js
+const button = document.querySelector('jb-button');
+
+button.addEventListener('click', (event) => {
+  console.log('clicked', event.target);
+});
+```
+
+## Loading state
+
+You can show loading by setting `element.isLoading = true`.
+
+```js
+const button = document.querySelector('jb-button');
+button.isLoading = true;
+button.loadingText = 'Saving';
+```
+
+You can also set loading text in markup:
+
+```html
+<jb-button loading-text="Saving">Save</jb-button>
+```
+
+When the button is loading, the slotted button content is hidden and the loading indicator is shown. Disable the button separately if the user must not click it while loading:
+
+```html
+<jb-button disabled loading-text="Saving">Save</jb-button>
+```
+
+## Form usage
+
+`jb-button` is form-associated. When `type="submit"` and the `click` event is not canceled, the component calls `requestSubmit()` on its associated form.
+
+```html
+<form>
+  <jb-button type="submit">Submit</jb-button>
+</form>
+```
+
+## Slot
+
+`jb-button` has a default slot for button content. You can pass text, icons, or both.
+
+```html
+<jb-button>
+  <svg aria-hidden="true"></svg>
+  Save
+</jb-button>
+```
 
 ### change button style
 
@@ -55,6 +151,18 @@ the other way of injecting style to jb-button is by providing CSS variable in co
     --jb-button-height: 40px;
     /* set button margin for example for zero margin:*/
     --jb-button-margin: 0 0;
+}
+```
+
+You can also style the host for state-specific situations:
+
+```css
+jb-button:state(disabled) {
+  --jb-button-box-shadow: none;
+}
+
+jb-button[variant="outline"][color="danger"] {
+  --jb-button-border-width: 2px;
 }
 ```
 
@@ -129,3 +237,24 @@ if you want to set a custom style to this web-component all you need is to set C
 - see [All JB Design system Component List](https://javadbat.github.io/design-system/) for more components
 
 - use [Contribution Guide](https://github.com/javadbat/design-system/blob/main/docs/contribution-guide.md) if you want to contribute in this component.
+
+## AI agent notes
+
+This package includes [`custom-elements.json`](./custom-elements.json) so documentation tools, IDEs, and AI coding agents can discover the tag name, attributes, events, slot, CSS variables, and public properties.
+
+The package also exposes `"customElements": "custom-elements.json"` in `package.json`, which gives tools a stable package-level pointer to the manifest. This field is documented by the Custom Elements Manifest project in its [Referencing manifests from npm packages](https://github.com/webcomponents/custom-elements-manifest#referencing-manifests-from-npm-packages) section.
+
+In `custom-elements.json`, the `exports` array describes what this module makes available:
+
+| kind | meaning |
+| --- | --- |
+| `js` | A JavaScript/TypeScript export from the module, such as `JBButtonWebComponent`. |
+| `custom-element-definition` | The custom element registration for a tag name, such as `jb-button`. |
+
+Each export points to a declaration with `name` and `module`, so tools can connect the public export or tag name back to the class metadata.
+
+- Import `jb-button` once before using `<jb-button>`.
+- Put visible button content in the default slot.
+- Use `isLoading` for loading UI and `disabled` when clicks must be blocked.
+- Use `type="submit"` only inside forms where submitting is intended.
+- Use `event.preventDefault()` on `click` to cancel the component click behavior.
