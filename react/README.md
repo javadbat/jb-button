@@ -1,6 +1,10 @@
 # JBButton React
 
-this component is React.js wrapper for [jb-button](https://www.npmjs.com/package/jb-button) web component
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/jb-button)
+[![GitHub license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://raw.githubusercontent.com/javadbat/jb-button/main/LICENSE)
+[![NPM Version](https://img.shields.io/npm/v/jb-button-react)](https://www.npmjs.com/package/jb-button-react)
+![GitHub Created At](https://img.shields.io/github/created-at/javadbat/jb-button)
+
 JBButton is a simple button `react component` with some additional feature.
 
 - custom styling
@@ -46,6 +50,3 @@ you can show loading by setting props , isLoading = true you can add text to loa
 ```
 ## change button style
     react component depends on css variable for customization so there is no difference between react component and web-component in styling . to learn more about styling jb-button see [jb-button](https://github.com/javadbat/jb-button) styling section.
-
-
-
