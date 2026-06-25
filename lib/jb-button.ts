@@ -10,7 +10,7 @@ import { createMouseEvent } from 'jb-core';
 export class JBButtonWebComponent extends HTMLElement {
   #internals?: ElementInternals;
   static formAssociated = true
-  elements?: ElementsObject
+  elements!: ElementsObject
   #isLoading = false;
   get isLoading() {
     return this.#isLoading;
@@ -37,14 +37,14 @@ export class JBButtonWebComponent extends HTMLElement {
     this.#disabled = value;
     this.elements.button.disabled = value;
     if (value) {
-      this.#internals.states?.add("disabled");
+      this.#internals?.states?.add("disabled");
     } else {
-      this.#internals.states?.delete("disabled");
+      this.#internals?.states?.delete("disabled");
     }
   }
 
   get name(){
-    return this.getAttribute("name")
+    return this.getAttribute("name") || "";
   }
   set name(value: string) {
     if(value){
