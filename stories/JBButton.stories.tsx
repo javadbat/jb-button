@@ -1,9 +1,9 @@
 import './styles.css';
 import type { Meta, StoryObj } from '@storybook/react';
-import { JBButton, type Props } from "jb-button/react";
+import { JBButton } from "jb-button/react";
 import React, { Fragment } from 'react';
 
-const meta: Meta<Props> = {
+const meta = {
   title: "Components/form elements/JBButton",
   component: JBButton,
   argTypes: {
@@ -13,9 +13,9 @@ const meta: Meta<Props> = {
     children: "button"
   }
 
-};
+} satisfies Meta<typeof JBButton>;
 export default meta;
-type Story = StoryObj<typeof JBButton>;
+type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
