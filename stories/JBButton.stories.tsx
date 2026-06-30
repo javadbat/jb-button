@@ -1,7 +1,6 @@
 import './styles.css';
 import type { Meta, StoryObj } from '@storybook/react';
 import { JBButton } from "jb-button/react";
-import React, { Fragment } from 'react';
 import { expect, fn, userEvent, waitFor } from 'storybook/test';
 
 const meta = {
