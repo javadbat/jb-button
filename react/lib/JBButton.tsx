@@ -6,22 +6,7 @@ import type { ColorVariants, JBButtonWebComponent, SizeVariants, StyleVariants }
 import { type EventProps, useEvents } from './events-hook.js';
 import { type JBButtonAttributes, useJBButtonAttribute } from './attributes-hook.js';
 import type { JBElementStandardProps } from 'jb-core/react';
-
-declare module "react" {
-    // eslint-disable-next-line @typescript-eslint/no-namespace
-    namespace JSX {
-      interface IntrinsicElements {
-        'jb-button': JBButtonType;
-      }
-      interface JBButtonType extends React.DetailedHTMLProps<React.HTMLAttributes<JBButtonWebComponent>, JBButtonWebComponent> {
-        "loading-text"?:string;
-        "variant"?:StyleVariants;
-        "size"?:SizeVariants;
-        "color"?:ColorVariants;
-        "name"?:string;
-      }
-    }
-}
+import './module-declaration.js';
 
 export const JBButton = React.forwardRef((props:Props, ref) => {
   const element = React.useRef<JBButtonWebComponent>(null);
