@@ -2,6 +2,7 @@ import './styles.css';
 import type { Meta, StoryObj } from '@storybook/react';
 import { JBButton } from "jb-button/react";
 import React, { Fragment } from 'react';
+import { expect, fn, userEvent, waitFor } from 'storybook/test';
 
 const meta = {
   title: "Components/form elements/JBButton",
@@ -246,6 +247,24 @@ export const Disabled: Story = {
   args: {
     loadingText: "",
     disabled: true,
+  },
+  play: async ({ canvasElement }) => {
+    const button = canvasElement.querySelector("jb-button");
+    const innerButton = button?.shadowRoot?.querySelector("button");
+    const onClick = fn();
+
+    expect(button).toBeTruthy();
+    expect(innerButton).toBeTruthy();
+
+    button?.addEventListener("click", onClick);
+
+    await waitFor(() => {
+      expect(innerButton?.disabled).toBe(true);
+    });
+
+    await userEvent.click(innerButton!);
+
+    expect(onClick).not.toHaveBeenCalled();
   }
 };
 export const DisabledOutlined: Story = {
@@ -288,12 +307,26 @@ export const LoadingDisabled: Story = {
     isLoading: true,
     disabled: true,
     loadingText: "please wait",
-  }
+  },
+  
 };
 export const HightOverflow: Story = {
   args: {
     children: "primary button With Height overflow",
     style: { width: '7rem' }
+  },
+  play: async ({ canvasElement }) => {
+    const button = canvasElement.querySelector("jb-button");
+    const innerButton = button?.shadowRoot?.querySelector("button");
+    const rootFontSize = Number.parseFloat(getComputedStyle(document.documentElement).fontSize);
+    const defaultButtonHeight = 2.5 * rootFontSize;
+
+    expect(button).toBeTruthy();
+    expect(innerButton).toBeTruthy();
+
+    await waitFor(() => {
+      expect(innerButton!.getBoundingClientRect().height).toBeGreaterThan(defaultButtonHeight);
+    });
   }
 };
 export const CustomizedWidth: Story = {
