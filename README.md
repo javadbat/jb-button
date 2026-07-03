@@ -140,15 +140,15 @@ When the button is loading, the slotted button content is hidden and the loading
 you can inject your custom style by attribute to button.
 
 ```HTML
-<jb-button button-style="height:36px;"></jb-button>
+<jb-button button-style="height:2.25rem;"></jb-button>
 ```
 
 the other way of injecting style to jb-button is by providing CSS variable in component parent element to set some attribute for example to set button height:
 
 ```css
 .your-jb-button-wrapper{
-    /*default height of button is 44px but it will change it to 40px*/
-    --jb-button-height: 40px;
+    /*default height of button is 2.75rem but it will change it to 2.5rem*/
+    --jb-button-height: 2.5rem;
     /* set button margin for example for zero margin:*/
     --jb-button-margin: 0 0;
 }
@@ -175,7 +175,7 @@ if you want to set a custom style to this web-component all you need is to set C
 | --jb-button-border-radius          | web-component border-radius                                                 |
 | --jb-button-bgcolor-hover          | button bg-color when user hover                                             |
 | --jb-button-bgcolor-pressed        | button bg-color when user pressed                                           |
-| --jb-button-height                 | button height default is 44px                                               |
+| --jb-button-height                 | button height default is 2.75rem                                               |
 | --jb-button-text-shadow            | button text shadow                                                          |
 | --jb-button-color                  | color of text in button                                                     |
 | --jb-button-box-shadow             | box shadow of the button component                                          |
