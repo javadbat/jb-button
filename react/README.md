@@ -61,12 +61,34 @@ Set `disabled` too if the user must not click the button while loading:
 </JBButton>
 ```
 
+## Form usage
+
+Use `type="submit"` inside a form when the button should submit. The underlying `jb-button` is form-associated and calls the associated form submit flow when the click is not canceled.
+
+```jsx
+<form>
+  <JBButton type="submit">Submit</JBButton>
+</form>
+```
+
 ## Events
 
 ### onClick
 ```jsx
   <JBButton onClick={(event) => console.log(event)}></JBButton>
 ```
+
+## Slot
+
+Pass button content as React children. Text, icons, and mixed content are rendered in the default slot.
+
+```jsx
+<JBButton>
+  <span aria-hidden="true">+</span>
+  Add item
+</JBButton>
+```
+
 ## change button style
     react component depends on CSS variable for customization so there is no difference between react component and web-component in styling . to learn more about styling jb-button see [jb-button](https://github.com/javadbat/jb-button) styling section.
 
