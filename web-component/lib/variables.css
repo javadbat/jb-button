@@ -6,14 +6,14 @@
   --base-color:var(--theme-color);
   --base-color-hover: oklch(from var(--base-color) calc(l + 0.07) calc(c + 0.07) h);
   --base-color-pressed: oklch(from var(--base-color) calc(l - 0.1) calc(c - 0.05) h);
-  /*variable used in elements*/
+  /* Size */
   --height: var(--jb-button-height, 2.5rem);
   --font-size: var(--jb-button-font-size, 1rem);
   --padding: var(--jb-button-padding, 0.5rem 1rem);
   --border-radius: var(--jb-button-border-radius, var(--jb-radius));
   --icon-size: var(--jb-button-icon-size, 1.5rem);
   --content-gap: 0.5rem;
-  /*colors variables*/
+  /* Theme/Color */
   --bgcolor: var(--jb-button-bgcolor,var(--base-color));
   --bgcolor-hover: var(--jb-button-bgcolor-hover, var(--base-color-hover));
   --bgcolor-pressed: var(--jb-button-bgcolor-pressed,var(--base-color-pressed));
@@ -26,9 +26,18 @@
   --border-color-hover: var(--jb-button-border-color-hover, var(--base-color-hover));
   --border-color-pressed: var(--jb-button-border-color-pressed, var(--base-color-pressed));
   --border-width: var(--jb-button-border-width, 0);
+  /* Other */
+  --margin: var(--jb-button-margin, 0 0);
+  --box-shadow: var(--jb-button-box-shadow, none);
+  --border-style: var(--jb-button-border-style, solid);
+  --font-weight: var(--jb-button-font-weight, bold);
+  --cursor: var(--jb-button-cursor, pointer);
+  --text-shadow: var(--jb-button-text-shadow, none);
+  --cursor-disabled: var(--jb-button-cursor-disabled, not-allowed);
+  --text-shadow-disabled: var(--jb-button-text-shadow-disabled, var(--text-shadow));
 }
 
-/*colors*/
+/* Theme/Color */
 :host([color="positive"]){
   --theme-color:var(--jb-button-positive, var(--jb-green))
 }
@@ -92,7 +101,7 @@
 }
 
 
-/*size*/
+/* Size */
 :host([size="xs"]){
   --height: var(--jb-button-height-xs, 1.5rem);
   --font-size: var(--jb-button-font-size-xs, 0.75rem);

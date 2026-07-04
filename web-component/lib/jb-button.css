@@ -8,8 +8,8 @@
   width: inherit;
   height: auto;
   box-sizing: border-box;
-  margin: var(--jb-button-margin, 0 0);
-  box-shadow: var(--jb-button-box-shadow, none);
+  margin: var(--margin);
+  box-shadow: var(--box-shadow);
 
   button {
     width: inherit;
@@ -20,16 +20,16 @@
     background-color: var(--bgcolor);
     border-color: var(--border-color);
     border-width: var(--border-width);
-    border-style: var(--jb-button-border-style, solid);
+    border-style: var(--border-style);
     color: var(--color);
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: var(--font-size);
-    font-weight: var(--jb-button-font-weight, bold);
-    cursor: var(--jb-button-cursor, pointer);
+    font-weight: var(--font-weight);
+    cursor: var(--cursor);
     transition: ease 0.3s all;
-    text-shadow: var(--jb-button-text-shadow, none);
+    text-shadow: var(--text-shadow);
     padding: var(--padding);
     box-sizing: border-box;
 
@@ -65,8 +65,8 @@
     }
 
     &:disabled {
-      cursor: var(--jb-button-cursor-disabled, not-allowed);
-      text-shadow: var(--jb-button-text-shadow-disabled, var(--jb-button-text-shadow, none));
+      cursor: var(--cursor-disabled);
+      text-shadow: var(--text-shadow-disabled);
     }
 
     .button-content {
