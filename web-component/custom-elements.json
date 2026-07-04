@@ -145,7 +145,7 @@
               "description": "Button text color."
             },
             {
-              "name": "--jb-button-bgcolor",
+              "name": "--jb-button-bg-color",
               "description": "Button background color."
             },
             {

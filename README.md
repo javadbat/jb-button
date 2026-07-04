@@ -173,8 +173,8 @@ if you want to set a custom style to this web-component all you need is to set C
 | --jb-button-margin                 | web-component margin                                                        |
 | --jb-button-padding                | web-component margin                                                        |
 | --jb-button-border-radius          | web-component border-radius                                                 |
-| --jb-button-bgcolor-hover          | button bg-color when user hover                                             |
-| --jb-button-bgcolor-pressed        | button bg-color when user pressed                                           |
+| --jb-button-bg-color-hover          | button bg-color when user hover                                             |
+| --jb-button-bg-color-pressed        | button bg-color when user pressed                                           |
 | --jb-button-height                 | button height default is 2.75rem                                               |
 | --jb-button-text-shadow            | button text shadow                                                          |
 | --jb-button-color                  | color of text in button                                                     |
@@ -188,13 +188,13 @@ if you want to set a custom style to this web-component all you need is to set C
 | --jb-button-text-shadow-disabled   | text shadow of button when disabled                                         |
 | --jb-button-loading-color          | jb-loading icon color default is text color value                           |
 | --jb-button-loading-color-disabled | jb-loading icon color when disabled default is text color value             |
-| --jb-button-bgcolor | Customize bgcolor. |
-| --jb-button-bgcolor-ghost | Customize bgcolor ghost. |
-| --jb-button-bgcolor-ghost-hover | Customize bgcolor ghost hover. |
-| --jb-button-bgcolor-ghost-pressed | Customize bgcolor ghost pressed. |
-| --jb-button-bgcolor-outline | Customize bgcolor outline. |
-| --jb-button-bgcolor-outline-hover | Customize bgcolor outline hover. |
-| --jb-button-bgcolor-outline-pressed | Customize bgcolor outline pressed. |
+| --jb-button-bg-color | Customize bg-color. |
+| --jb-button-bg-color-ghost | Customize bg-color ghost. |
+| --jb-button-bg-color-ghost-hover | Customize bg-color ghost hover. |
+| --jb-button-bg-color-ghost-pressed | Customize bg-color ghost pressed. |
+| --jb-button-bg-color-outline | Customize bg-color outline. |
+| --jb-button-bg-color-outline-hover | Customize bg-color outline hover. |
+| --jb-button-bg-color-outline-pressed | Customize bg-color outline pressed. |
 | --jb-button-border-color | Customize border color. |
 | --jb-button-border-color-hover | Customize border color hover. |
 | --jb-button-border-color-pressed | Customize border color pressed. |

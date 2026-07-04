@@ -14,9 +14,9 @@
   --icon-size: var(--jb-button-icon-size, 1.5rem);
   --content-gap: 0.5rem;
   /* Theme/Color */
-  --bgcolor: var(--jb-button-bgcolor,var(--base-color));
-  --bgcolor-hover: var(--jb-button-bgcolor-hover, var(--base-color-hover));
-  --bgcolor-pressed: var(--jb-button-bgcolor-pressed,var(--base-color-pressed));
+  --bg-color: var(--jb-button-bg-color,var(--base-color));
+  --bg-color-hover: var(--jb-button-bg-color-hover, var(--base-color-hover));
+  --bg-color-pressed: var(--jb-button-bg-color-pressed,var(--base-color-pressed));
   --color:var(--jb-button-color, var(--jb-white));
   --color-hover:var(--jb-button-color-hover, var(--color));
   --color-pressed:var(--jb-button-color-pressed, var(--color));
@@ -70,9 +70,9 @@
 
 /*variants*/
 :host([variant="outline"]){
-  --bgcolor: var(--jb-button-bgcolor-outline, var(--jb-white));
-  --bgcolor-hover: var(--jb-button-bgcolor-outline-hover, var(--jb-neutral-10));
-  --bgcolor-pressed: var(--jb-button-bgcolor-outline-pressed, var(--jb-neutral-9));
+  --bg-color: var(--jb-button-bg-color-outline, var(--jb-white));
+  --bg-color-hover: var(--jb-button-bg-color-outline-hover, var(--jb-neutral-10));
+  --bg-color-pressed: var(--jb-button-bg-color-outline-pressed, var(--jb-neutral-9));
   --color:var(--base-color);
   --color-hover:var(--base-color-hover);
   --color-pressed:var(--base-color-pressed);
@@ -80,9 +80,9 @@
   --border-width: var(--jb-button-border-width, 1px);
 }
 :host([variant="ghost"]){
-  --bgcolor: var(--jb-button-bgcolor-ghost, transparent);
-  --bgcolor-hover: var(--jb-button-bgcolor-ghost-hover, var(--jb-neutral-10));
-  --bgcolor-pressed: var(--jb-button-bgcolor-ghost-pressed, var(--jb-neutral-9));
+  --bg-color: var(--jb-button-bg-color-ghost, transparent);
+  --bg-color-hover: var(--jb-button-bg-color-ghost-hover, var(--jb-neutral-10));
+  --bg-color-pressed: var(--jb-button-bg-color-ghost-pressed, var(--jb-neutral-9));
   --color:var(--base-color);
   --color-hover:var(--base-color-hover);
   --color-pressed:var(--base-color-pressed);
@@ -90,9 +90,9 @@
   --border-width: 0px;
 }
 :host([variant="text"]){
-  --bgcolor:  transparent;
-  --bgcolor-hover: transparent;
-  --bgcolor-pressed: transparent;
+  --bg-color:  transparent;
+  --bg-color-hover: transparent;
+  --bg-color-pressed: transparent;
   --color:var(--base-color);
   --color-hover:var(--base-color-hover);
   --color-pressed:var(--base-color-pressed);
@@ -139,8 +139,8 @@
 :host(:state(disabled)[variant="outline"]){
   --color:var(--base-color);
   --loading-color:var(--color);
-  --bgcolor-hover: var(--bgcolor);
-  --bgcolor-pressed: var(--bgcolor);
+  --bg-color-hover: var(--bg-color);
+  --bg-color-pressed: var(--bg-color);
 }
 
 :host([color="light"][variant="ghost"]),
