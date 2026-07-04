@@ -3,16 +3,16 @@
   /*theme color change base on user selected color attribute*/
   --theme-color:var(--jb-button-primary, var(--jb-primary));
   /*--base-color will change in different status like disabled ,...*/
-  --base-color:var(--theme-color);
-  --base-color-hover: oklch(from var(--base-color) calc(l + 0.07) calc(c + 0.07) h);
-  --base-color-pressed: oklch(from var(--base-color) calc(l - 0.1) calc(c - 0.05) h);
+  --base-color: var(--jb-button-base-color, var(--theme-color));
+  --base-color-hover: var(--jb-button-base-color-hover, oklch(from var(--base-color) calc(l + 0.07) calc(c + 0.07) h));
+  --base-color-pressed: var(--jb-button-base-color-pressed, oklch(from var(--base-color) calc(l - 0.1) calc(c - 0.05) h));
   /* Size */
   --height: var(--jb-button-height, 2.5rem);
   --font-size: var(--jb-button-font-size, 1rem);
   --padding: var(--jb-button-padding, 0.5rem 1rem);
   --border-radius: var(--jb-button-border-radius, var(--jb-radius));
   --icon-size: var(--jb-button-icon-size, 1.5rem);
-  --content-gap: 0.5rem;
+  --content-gap: var(--jb-button-content-gap, 0.5rem);
   /* Theme/Color */
   --bg-color: var(--jb-button-bg-color,var(--base-color));
   --bg-color-hover: var(--jb-button-bg-color-hover, var(--base-color-hover));
@@ -62,8 +62,8 @@
 /* states */
 :host(:state(disabled)){
   --base-color: var(--jb-button-disabled, hsl(from var(--theme-color) h 12% 66.1));
-  --base-color-hover:var(--base-color);
-  --base-color-pressed:var(--base-color);
+  --base-color-hover: var(--jb-button-base-color-hover-disabled, var(--base-color));
+  --base-color-pressed: var(--jb-button-base-color-pressed-disabled, var(--base-color));
   --color:var(--jb-button-color-disabled, var(--jb-neutral-3));
   --loading-color:var(--jb-button-loading-color-disabled, var(--color));
 }
@@ -73,31 +73,31 @@
   --bg-color: var(--jb-button-bg-color-outline, var(--jb-white));
   --bg-color-hover: var(--jb-button-bg-color-outline-hover, var(--jb-neutral-10));
   --bg-color-pressed: var(--jb-button-bg-color-outline-pressed, var(--jb-neutral-9));
-  --color:var(--base-color);
-  --color-hover:var(--base-color-hover);
-  --color-pressed:var(--base-color-pressed);
-  --loading-color:var(--base-color);
+  --color: var(--jb-button-color-outline, var(--base-color));
+  --color-hover: var(--jb-button-color-outline-hover, var(--base-color-hover));
+  --color-pressed: var(--jb-button-color-outline-pressed, var(--base-color-pressed));
+  --loading-color: var(--jb-button-loading-color-outline, var(--base-color));
   --border-width: var(--jb-button-border-width, 1px);
 }
 :host([variant="ghost"]){
   --bg-color: var(--jb-button-bg-color-ghost, transparent);
   --bg-color-hover: var(--jb-button-bg-color-ghost-hover, var(--jb-neutral-10));
   --bg-color-pressed: var(--jb-button-bg-color-ghost-pressed, var(--jb-neutral-9));
-  --color:var(--base-color);
-  --color-hover:var(--base-color-hover);
-  --color-pressed:var(--base-color-pressed);
-  --loading-color:var(--base-color);
-  --border-width: 0px;
+  --color: var(--jb-button-color-ghost, var(--base-color));
+  --color-hover: var(--jb-button-color-ghost-hover, var(--base-color-hover));
+  --color-pressed: var(--jb-button-color-ghost-pressed, var(--base-color-pressed));
+  --loading-color: var(--jb-button-loading-color-ghost, var(--base-color));
+  --border-width: var(--jb-button-border-width-ghost, 0px);
 }
 :host([variant="text"]){
-  --bg-color:  transparent;
-  --bg-color-hover: transparent;
-  --bg-color-pressed: transparent;
-  --color:var(--base-color);
-  --color-hover:var(--base-color-hover);
-  --color-pressed:var(--base-color-pressed);
-  --loading-color:var(--base-color);
-  --border-width: 0px;
+  --bg-color: var(--jb-button-bg-color-text, transparent);
+  --bg-color-hover: var(--jb-button-bg-color-text-hover, transparent);
+  --bg-color-pressed: var(--jb-button-bg-color-text-pressed, transparent);
+  --color: var(--jb-button-color-text, var(--base-color));
+  --color-hover: var(--jb-button-color-text-hover, var(--base-color-hover));
+  --color-pressed: var(--jb-button-color-text-pressed, var(--base-color-pressed));
+  --loading-color: var(--jb-button-loading-color-text, var(--base-color));
+  --border-width: var(--jb-button-border-width-text, 0px);
 }
 
 
@@ -108,7 +108,7 @@
   --padding: var(--jb-button-padding-xs, 0.125rem 0.25rem);
   --border-radius: var(--jb-button-border-radius-xs, var(--jb-radius-xs));
   --icon-size: var(--jb-button-icon-size-xs, 1rem);
-  --content-gap:0.125rem;
+  --content-gap: var(--jb-button-content-gap-xs, 0.125rem);
 }
 :host([size="sm"]){
   --height: var(--jb-button-height-sm, 2rem);
@@ -116,7 +116,7 @@
   --padding: var(--jb-button-padding-sm, 0.25rem 0.5rem);
   --border-radius: var(--jb-button-border-radius-sm, var(--jb-radius-sm));
   --icon-size: var(--jb-button-icon-size-sm, 1.25rem);
-  --content-gap:0.25rem;
+  --content-gap: var(--jb-button-content-gap-sm, 0.25rem);
 }
 :host([size="lg"]){
   --height: var(--jb-button-height-lg, 3rem);
@@ -124,7 +124,7 @@
   --padding: var(--jb-button-padding-lg, 0.75rem 1.5rem);
   --border-radius: var(--jb-button-border-radius-lg, var(--jb-radius-lg));
   --icon-size: var(--jb-button-icon-size-lg, 1.75rem);
-  --content-gap:0.75rem;
+  --content-gap: var(--jb-button-content-gap-lg, 0.75rem);
 }
 :host([size="xl"]){
   --height: var(--jb-button-height-xl, 4rem);
@@ -132,15 +132,15 @@
   --padding: var(--jb-button-padding-xl, 1rem 2rem);
   --border-radius: var(--jb-button-border-radius-xl, var(--jb-radius-xl));
   --icon-size: var(--jb-button-icon-size-xl, 2.25rem);
-  --content-gap:1rem;
+  --content-gap: var(--jb-button-content-gap-xl, 1rem);
 }
 /* Combined situation */
 
 :host(:state(disabled)[variant="outline"]){
-  --color:var(--base-color);
-  --loading-color:var(--color);
-  --bg-color-hover: var(--bg-color);
-  --bg-color-pressed: var(--bg-color);
+  --color: var(--jb-button-color-outline-disabled, var(--base-color));
+  --loading-color: var(--jb-button-loading-color-outline-disabled, var(--color));
+  --bg-color-hover: var(--jb-button-bg-color-outline-hover-disabled, var(--bg-color));
+  --bg-color-pressed: var(--jb-button-bg-color-outline-pressed-disabled, var(--bg-color));
 }
 
 :host([color="light"][variant="ghost"]),
@@ -149,5 +149,5 @@
   --base-color-hover:var(--jb-neutral-4);
   --loading-color-hover:var(--jb-neutral-4);
   /*formula must be the same but its's base on --base-color-hover*/
-  --base-color-pressed: oklch(from var(--base-color-hover) calc(l - 0.1) calc(c - 0.05) h);
+  --base-color-pressed: var(--jb-button-base-color-pressed-light, oklch(from var(--base-color-hover) calc(l - 0.1) calc(c - 0.05) h));
 }

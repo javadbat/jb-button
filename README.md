@@ -188,7 +188,14 @@ if you want to set a custom style to this web-component all you need is to set C
 | --jb-button-text-shadow-disabled   | text shadow of button when disabled                                         |
 | --jb-button-loading-color          | jb-loading icon color default is text color value                           |
 | --jb-button-loading-color-disabled | jb-loading icon color when disabled default is text color value             |
+| --jb-button-loading-color-outline | Customize outline variant loading color. |
+| --jb-button-loading-color-outline-disabled | Customize disabled outline variant loading color. |
+| --jb-button-loading-color-ghost | Customize ghost variant loading color. |
+| --jb-button-loading-color-text | Customize text variant loading color. |
 | --jb-button-bg-color | Customize bg-color. |
+| --jb-button-bg-color-text | Customize text variant bg-color. |
+| --jb-button-bg-color-text-hover | Customize text variant bg-color hover. |
+| --jb-button-bg-color-text-pressed | Customize text variant bg-color pressed. |
 | --jb-button-bg-color-ghost | Customize bg-color ghost. |
 | --jb-button-bg-color-ghost-hover | Customize bg-color ghost hover. |
 | --jb-button-bg-color-ghost-pressed | Customize bg-color ghost pressed. |
@@ -204,7 +211,24 @@ if you want to set a custom style to this web-component all you need is to set C
 | --jb-button-border-radius-xs | Customize border radius xs. |
 | --jb-button-border-style | Customize border style. |
 | --jb-button-border-width | Customize border width. |
+| --jb-button-border-width-ghost | Customize ghost variant border width. |
+| --jb-button-border-width-text | Customize text variant border width. |
+| --jb-button-content-gap | Customize content gap. |
+| --jb-button-content-gap-xs | Customize content gap xs. |
+| --jb-button-content-gap-sm | Customize content gap sm. |
+| --jb-button-content-gap-lg | Customize content gap lg. |
+| --jb-button-content-gap-xl | Customize content gap xl. |
 | --jb-button-color-pressed | Customize color pressed. |
+| --jb-button-color-outline | Customize outline variant color. |
+| --jb-button-color-outline-hover | Customize outline variant color hover. |
+| --jb-button-color-outline-pressed | Customize outline variant color pressed. |
+| --jb-button-color-outline-disabled | Customize disabled outline variant color. |
+| --jb-button-color-ghost | Customize ghost variant color. |
+| --jb-button-color-ghost-hover | Customize ghost variant color hover. |
+| --jb-button-color-ghost-pressed | Customize ghost variant color pressed. |
+| --jb-button-color-text | Customize text variant color. |
+| --jb-button-color-text-hover | Customize text variant color hover. |
+| --jb-button-color-text-pressed | Customize text variant color pressed. |
 | --jb-button-danger | Customize danger. |
 | --jb-button-dark | Customize dark. |
 | --jb-button-disabled | Customize disabled. |
