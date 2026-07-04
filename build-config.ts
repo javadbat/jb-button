@@ -3,8 +3,9 @@ import type { ReactComponentBuildConfig, WebComponentBuildConfig } from "../../t
 export const webComponentList: WebComponentBuildConfig[] = [
   {
     name: "jb-button",
-    path: "./lib/jb-button.ts",
-    outputPath: "./dist/jb-button.js",
+    path: "./web-component/lib/jb-button.ts",
+    outputPath: "./web-component/dist/jb-button.js",
+    tsConfigPath: "./web-component/tsconfig.json",
     external: ["jb-core","jb-loading"],
     globals:{
       "jb-core":"JBCore",

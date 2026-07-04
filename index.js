@@ -1,2 +1,2 @@
-import './dist/jb-button.js';
-export * from './dist/jb-button.js';
+import './web-component/dist/jb-button.js';
+export * from './web-component/dist/jb-button.js';
