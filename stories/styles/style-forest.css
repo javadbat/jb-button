@@ -1,0 +1,38 @@
+jb-button.forest-style {
+  --jb-button-height: 2.75rem;
+  --jb-button-padding: 0.625rem 1.125rem;
+  --jb-button-border-radius: 0.875rem;
+  --jb-button-font-size: 0.95rem;
+  --jb-button-font-weight: 800;
+  --jb-button-content-gap: 0.5rem;
+  --jb-button-primary: #2f6b45;
+  --jb-button-secondary: #f6d365;
+  --jb-button-danger: #dc2626;
+  --jb-button-bg-color-hover: #3d8057;
+  --jb-button-bg-color-pressed: #245337;
+  --jb-button-color: #fff7d6;
+  --jb-button-border-color: rgb(246 211 101 / 0.36);
+  --jb-button-border-width: 1px;
+  --jb-button-box-shadow: 0 0.8rem 1.8rem rgb(20 83 45 / 0.24);
+  --jb-button-bg-color-outline: rgb(23 55 37 / 0.68);
+  --jb-button-bg-color-outline-hover: rgb(246 211 101 / 0.16);
+  --jb-button-bg-color-outline-pressed: rgb(246 211 101 / 0.26);
+  --jb-button-bg-color-ghost-hover: rgb(246 211 101 / 0.14);
+  --jb-button-bg-color-ghost-pressed: rgb(246 211 101 / 0.24);
+  --jb-button-bg-color-text-hover: rgb(246 211 101 / 0.12);
+  --jb-button-bg-color-text-pressed: rgb(246 211 101 / 0.22);
+}
+
+jb-button.forest-style[color="light"] {
+  --jb-button-color: var(--jb-background);
+  --jb-button-color-hover: #245337;
+  --jb-button-color-pressed: var(--jb-background);
+  --jb-button-border-color: rgb(246 211 101 / 0.5);
+  --jb-button-bg-color-hover: #fff1bd;
+  --jb-button-bg-color-pressed: #f6d365;
+}
+
+jb-button.forest-style svg {
+  width: var(--jb-button-icon-size);
+  height: var(--jb-button-icon-size);
+}

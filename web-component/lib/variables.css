@@ -100,6 +100,12 @@
   --border-width: var(--jb-button-border-width-text, 0px);
 }
 
+:host([color="light"][variant="text"]){
+  --color: var(--jb-button-color-text, var(--jb-button-color, var(--base-color)));
+  --color-hover: var(--jb-button-color-text-hover, var(--jb-button-color-hover, var(--base-color-hover)));
+  --color-pressed: var(--jb-button-color-text-pressed, var(--jb-button-color-pressed, var(--base-color-pressed)));
+}
+
 
 /* Size */
 :host([size="xs"]){

@@ -1,0 +1,38 @@
+jb-button.fluent-style {
+  --jb-button-height: 2.5rem;
+  --jb-button-padding: 0.5rem 1rem;
+  --jb-button-border-radius: 0.25rem;
+  --jb-button-font-size: 0.875rem;
+  --jb-button-font-weight: 600;
+  --jb-button-content-gap: 0.5rem;
+  --jb-button-primary: var(--jb-focus-color);
+  --jb-button-secondary: #605e5c;
+  --jb-button-danger: #a4262c;
+  --jb-button-bg-color-hover: var(--jb-primary-hover);
+  --jb-button-bg-color-pressed: var(--jb-primary-pressed);
+  --jb-button-color: var(--jb-text-contrast);
+  --jb-button-border-color: transparent;
+  --jb-button-border-width: 1px;
+  --jb-button-box-shadow: none;
+  --jb-button-bg-color-outline: var(--jb-text-contrast);
+  --jb-button-bg-color-outline-hover: var(--jb-background);
+  --jb-button-bg-color-outline-pressed: var(--jb-surface-hover);
+  --jb-button-bg-color-ghost-hover: var(--jb-background);
+  --jb-button-bg-color-ghost-pressed: var(--jb-surface-hover);
+  --jb-button-bg-color-text-hover: var(--jb-background);
+  --jb-button-bg-color-text-pressed: var(--jb-surface-hover);
+}
+
+jb-button.fluent-style[color="light"] {
+  --jb-button-color: var(--jb-text-primary);
+  --jb-button-color-hover: var(--jb-text-primary);
+  --jb-button-color-pressed: var(--jb-text-primary);
+  --jb-button-border-color: #8a8886;
+  --jb-button-bg-color-hover: var(--jb-background);
+  --jb-button-bg-color-pressed: var(--jb-surface-hover);
+}
+
+jb-button.fluent-style svg {
+  width: var(--jb-button-icon-size);
+  height: var(--jb-button-icon-size);
+}

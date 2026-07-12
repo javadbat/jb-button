@@ -1,0 +1,38 @@
+jb-button.cupertino-style {
+  --jb-button-height: 2.625rem;
+  --jb-button-padding: 0.55rem 1rem;
+  --jb-button-border-radius: 0.75rem;
+  --jb-button-font-size: 1rem;
+  --jb-button-font-weight: 600;
+  --jb-button-content-gap: 0.4rem;
+  --jb-button-primary: var(--jb-focus-color);
+  --jb-button-secondary: #5856d6;
+  --jb-button-danger: var(--jb-success);
+  --jb-button-bg-color-hover: #0a84ff;
+  --jb-button-bg-color-pressed: #0066d6;
+  --jb-button-color: var(--jb-text-contrast);
+  --jb-button-border-color: rgb(60 60 67 / 0.18);
+  --jb-button-border-width: 1px;
+  --jb-button-box-shadow: 0 0.5rem 1rem rgb(0 122 255 / 0.14);
+  --jb-button-bg-color-outline: rgb(242 242 247 / 0.78);
+  --jb-button-bg-color-outline-hover: rgb(0 122 255 / 0.12);
+  --jb-button-bg-color-outline-pressed: rgb(0 122 255 / 0.2);
+  --jb-button-bg-color-ghost-hover: rgb(0 122 255 / 0.1);
+  --jb-button-bg-color-ghost-pressed: rgb(0 122 255 / 0.18);
+  --jb-button-bg-color-text-hover: rgb(0 122 255 / 0.08);
+  --jb-button-bg-color-text-pressed: rgb(0 122 255 / 0.16);
+}
+
+jb-button.cupertino-style[color="light"] {
+  --jb-button-color: var(--jb-text-primary);
+  --jb-button-color-hover: var(--jb-focus-color);
+  --jb-button-color-pressed: #0066d6;
+  --jb-button-border-color: rgb(60 60 67 / 0.18);
+  --jb-button-bg-color-hover: var(--jb-background);
+  --jb-button-bg-color-pressed: var(--jb-surface-hover);
+}
+
+jb-button.cupertino-style svg {
+  width: var(--jb-button-icon-size);
+  height: var(--jb-button-icon-size);
+}

@@ -6,9 +6,10 @@ export const webComponentList: WebComponentBuildConfig[] = [
     path: "./web-component/lib/jb-button.ts",
     outputPath: "./web-component/dist/jb-button.js",
     tsConfigPath: "./web-component/tsconfig.json",
-    external: ["jb-core","jb-loading"],
+    external: ["jb-core", "jb-core/theme", "jb-loading"],
     globals:{
       "jb-core":"JBCore",
+      "jb-core/theme":"JBCoreTheme",
       "jb-loading":"JBLoading"
     },
     umdName: "JBButton",

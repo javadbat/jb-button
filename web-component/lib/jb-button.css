@@ -9,7 +9,6 @@
   height: auto;
   box-sizing: border-box;
   margin: var(--margin);
-  box-shadow: var(--box-shadow);
 
   button {
     width: inherit;
@@ -32,6 +31,7 @@
     text-shadow: var(--text-shadow);
     padding: var(--padding);
     box-sizing: border-box;
+    box-shadow: var(--box-shadow);
 
     &:focus {
       outline: none;

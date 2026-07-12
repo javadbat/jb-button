@@ -1,0 +1,39 @@
+jb-button.carbon-style {
+  --jb-button-height: 2.5rem;
+  --jb-button-padding: 0.55rem 1rem;
+  --jb-button-border-radius: 0.25rem;
+  --jb-button-font-size: 0.95rem;
+  --jb-button-font-weight: 600;
+  --jb-button-content-gap: 0.5rem;
+  --jb-button-primary: var(--jb-primary);
+  --jb-button-secondary: var(--jb-text-disabled);
+  --jb-button-danger: #da1e28;
+  --jb-button-bg-color-hover: var(--jb-primary-hover);
+  --jb-button-bg-color-pressed: var(--jb-primary-pressed);
+  --jb-button-color: var(--jb-text-contrast);
+  --jb-button-border-color: currentColor;
+  --jb-button-box-shadow: none;
+  --jb-button-bg-color-outline: transparent;
+  --jb-button-bg-color-outline-hover: rgb(15 98 254 / 0.12);
+  --jb-button-bg-color-outline-pressed: rgb(15 98 254 / 0.2);
+  --jb-button-bg-color-ghost-hover: rgb(15 98 254 / 0.12);
+  --jb-button-bg-color-ghost-pressed: rgb(15 98 254 / 0.2);
+  --jb-button-bg-color-text-hover: rgb(15 98 254 / 0.12);
+  --jb-button-bg-color-text-pressed: rgb(15 98 254 / 0.2);
+  --jb-button-disabled: var(--jb-border-color);
+  --jb-button-color-disabled: #a8a8a8;
+}
+
+jb-button.carbon-style[color="light"] {
+  --jb-button-color: var(--jb-background);
+  --jb-button-color-hover: var(--jb-background);
+  --jb-button-color-pressed: var(--jb-background);
+  --jb-button-border-color: #e0e0e0;
+  --jb-button-bg-color-hover: var(--jb-text-primary);
+  --jb-button-bg-color-pressed: #e0e0e0;
+}
+
+jb-button.carbon-style svg {
+  width: var(--jb-button-icon-size);
+  height: var(--jb-button-icon-size);
+}

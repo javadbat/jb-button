@@ -1,0 +1,38 @@
+jb-button.porcelain-style {
+  --jb-button-height: 2.5rem;
+  --jb-button-padding: 0.55rem 1rem;
+  --jb-button-border-radius: 0.625rem;
+  --jb-button-font-size: 0.95rem;
+  --jb-button-font-weight: 700;
+  --jb-button-content-gap: 0.45rem;
+  --jb-button-primary: #2f80ed;
+  --jb-button-secondary: #4d6882;
+  --jb-button-danger: #d14343;
+  --jb-button-bg-color-hover: #1d6fd6;
+  --jb-button-bg-color-pressed: #1555aa;
+  --jb-button-color: var(--jb-surface);
+  --jb-button-border-color: #b9d7f2;
+  --jb-button-border-width: 1px;
+  --jb-button-box-shadow: 0 0.6rem 1.4rem rgb(47 128 237 / 0.16);
+  --jb-button-bg-color-outline: var(--jb-surface);
+  --jb-button-bg-color-outline-hover: #e7f1ff;
+  --jb-button-bg-color-outline-pressed: #dbeafe;
+  --jb-button-bg-color-ghost-hover: #e7f1ff;
+  --jb-button-bg-color-ghost-pressed: #dbeafe;
+  --jb-button-bg-color-text-hover: #edf6ff;
+  --jb-button-bg-color-text-pressed: #dbeafe;
+}
+
+jb-button.porcelain-style[color="light"] {
+  --jb-button-color: var(--jb-text-primary);
+  --jb-button-color-hover: var(--jb-focus-color);
+  --jb-button-color-pressed: var(--jb-primary-pressed);
+  --jb-button-border-color: #b9d7f2;
+  --jb-button-bg-color-hover: #edf6ff;
+  --jb-button-bg-color-pressed: #dbeafe;
+}
+
+jb-button.porcelain-style svg {
+  width: var(--jb-button-icon-size);
+  height: var(--jb-button-icon-size);
+}

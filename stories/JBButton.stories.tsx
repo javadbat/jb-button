@@ -1,5 +1,5 @@
 import './styles.css';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { JBButton } from "jb-button/react";
 import { expect, fn, userEvent, waitFor } from 'storybook/test';
 

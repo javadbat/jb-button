@@ -1,0 +1,387 @@
+import { Meta, Source, Story, Title } from '@storybook/addon-docs/blocks';
+import * as StyleStories from './Styles.stories';
+import antDesignThemeCss from '../../../docs/styles/ant-design.css?raw';
+import auroraThemeCss from '../../../docs/styles/aurora.css?raw';
+import bootstrapThemeCss from '../../../docs/styles/bootstrap.css?raw';
+import candyThemeCss from '../../../docs/styles/candy.css?raw';
+import carbonThemeCss from '../../../docs/styles/carbon.css?raw';
+import cupertinoThemeCss from '../../../docs/styles/cupertino.css?raw';
+import fluentThemeCss from '../../../docs/styles/fluent.css?raw';
+import forestThemeCss from '../../../docs/styles/forest.css?raw';
+import materialThemeCss from '../../../docs/styles/material.css?raw';
+import porcelainThemeCss from '../../../docs/styles/porcelain.css?raw';
+import sunsetThemeCss from '../../../docs/styles/sunset.css?raw';
+import terminalThemeCss from '../../../docs/styles/terminal.css?raw';
+import antDesignButtonCss from './styles/style-ant-design.css?raw';
+import auroraButtonCss from './styles/style-aurora.css?raw';
+import bootstrapButtonCss from './styles/style-bootstrap.css?raw';
+import candyButtonCss from './styles/style-candy.css?raw';
+import carbonButtonCss from './styles/style-carbon.css?raw';
+import cupertinoButtonCss from './styles/style-cupertino.css?raw';
+import fluentButtonCss from './styles/style-fluent.css?raw';
+import forestButtonCss from './styles/style-forest.css?raw';
+import materialButtonCss from './styles/style-material.css?raw';
+import porcelainButtonCss from './styles/style-porcelain.css?raw';
+import sunsetButtonCss from './styles/style-sunset.css?raw';
+import terminalButtonCss from './styles/style-terminal.css?raw';
+
+<Meta title="Components/form elements/JBButton/Styling" />
+
+<Title>Styling</Title>
+
+`JBButton` styling is variable-driven. Use `--jb-button-*` variables on the host to control size, colors, variants, loading color, disabled behavior, and content spacing.
+
+## Live Gallery
+
+<Story of={StyleStories.Gallery} />
+
+<Source of={StyleStories.Gallery} />
+
+## Common Design Tokens
+
+Use the core theme docs as the source of truth for shared design-system variables:
+
+- [Theme Colors](../../jb-core/theme/stories/colors.mdx) explains the general color palette variables, default colors, customization approaches, and color generation helpers.
+- [Theme Sizes](../../jb-core/theme/stories/sizes.mdx) explains shared size and radius variables.
+- [Theme Custom Galleries](https://javadbat.github.io/design-system/?path=/docs/theme-custom-material--docs) gathers the shared custom style recipes across components.
+
+Button recipes should use those common tokens where possible, then map them into `--jb-button-*` variables where the button needs component-specific values.
+
+## Styling Model
+
+Use four layers when styling button examples:
+
+- Common design tokens are documented in [Theme Colors](../../jb-core/theme/stories/colors.mdx) and [Theme Sizes](../../jb-core/theme/stories/sizes.mdx).
+- Reusable example theme packs live in [`docs/styles`](https://github.com/javadbat/design-system/tree/main/docs/styles) and can be shared across components.
+- Component recipe files live in [`modules/jb-button/stories/styles`](https://github.com/javadbat/design-system/tree/main/modules/jb-button/stories/styles).
+- Public component variables use `--jb-button-*` on `jb-button`.
+
+Each example uses one shared example theme pack from [`docs/styles`](https://github.com/javadbat/design-system/tree/main/docs/styles) and one button-specific recipe from [`modules/jb-button/stories/styles`](https://github.com/javadbat/design-system/tree/main/modules/jb-button/stories/styles). The style story applies both classes directly to `JBButton`.
+
+## Recommended Customization Path
+
+1. Use `--jb-button-*` variables first for size, color, border, radius, shadow, content gap, and loading color.
+2. Use `variant`, `color`, and `size` attributes before creating separate CSS classes for common button families.
+3. Override variant-specific variables such as `--jb-button-bg-color-outline-hover` only when the general variables are not specific enough.
+4. Use `jb-button:state(disabled)` for custom disabled treatment that cannot be expressed with disabled variables.
+5. Use common theme variables from [Theme Colors](../../jb-core/theme/stories/colors.mdx) and [Theme Sizes](../../jb-core/theme/stories/sizes.mdx) when the style should align with the design system.
+6. Put reusable theme-pack values in [`docs/styles`](https://github.com/javadbat/design-system/tree/main/docs/styles) only when they should be shared by multiple component demos.
+7. Add a new button variable or official part only when a needed internal surface cannot be customized with current public variables.
+
+## Parts And States
+
+`JBButton` does not currently expose CSS parts. Style the host with variables, attributes, and custom states.
+
+<table>
+  <thead>
+    <tr>
+      <th>Custom State</th>
+      <th>Meaning</th>
+      <th>Example Selector</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><code>disabled</code></td><td>Applied when the button is disabled.</td><td><code>jb-button:state(disabled)</code></td></tr>
+  </tbody>
+</table>
+
+## CSS Variables
+
+These variables belong to `JBButton`.
+
+<table>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Category</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><code>--jb-button-height</code></td><td>Size</td><td>Button height.</td></tr>
+    <tr><td><code>--jb-button-font-size</code></td><td>Size</td><td>Button text size.</td></tr>
+    <tr><td><code>--jb-button-padding</code></td><td>Size</td><td>Button padding.</td></tr>
+    <tr><td><code>--jb-button-border-radius</code></td><td>Size</td><td>Button radius.</td></tr>
+    <tr><td><code>--jb-button-icon-size</code></td><td>Size</td><td>Icon size used by slotted icon examples.</td></tr>
+    <tr><td><code>--jb-button-content-gap</code></td><td>Size</td><td>Gap between slotted button content.</td></tr>
+    <tr><td><code>--jb-button-bg-color</code></td><td>Theme/Color</td><td>Solid button background color.</td></tr>
+    <tr><td><code>--jb-button-bg-color-hover</code></td><td>Theme/Color</td><td>Background color while hovered.</td></tr>
+    <tr><td><code>--jb-button-bg-color-pressed</code></td><td>Theme/Color</td><td>Background color while pressed.</td></tr>
+    <tr><td><code>--jb-button-color</code></td><td>Theme/Color</td><td>Button text color.</td></tr>
+    <tr><td><code>--jb-button-color-hover</code></td><td>Theme/Color</td><td>Button text color while hovered.</td></tr>
+    <tr><td><code>--jb-button-color-pressed</code></td><td>Theme/Color</td><td>Button text color while pressed.</td></tr>
+    <tr><td><code>--jb-button-loading-color</code></td><td>Theme/Color</td><td>Loading indicator color.</td></tr>
+    <tr><td><code>--jb-button-border-color</code></td><td>Theme/Color</td><td>Button border color.</td></tr>
+    <tr><td><code>--jb-button-border-color-hover</code></td><td>Theme/Color</td><td>Button border color while hovered.</td></tr>
+    <tr><td><code>--jb-button-border-color-pressed</code></td><td>Theme/Color</td><td>Button border color while pressed.</td></tr>
+    <tr><td><code>--jb-button-primary</code></td><td>Theme/Color</td><td>Theme color for the default/primary color button.</td></tr>
+    <tr><td><code>--jb-button-secondary</code></td><td>Theme/Color</td><td>Theme color for <code>color="secondary"</code>.</td></tr>
+    <tr><td><code>--jb-button-positive</code></td><td>Theme/Color</td><td>Theme color for <code>color="positive"</code>.</td></tr>
+    <tr><td><code>--jb-button-danger</code></td><td>Theme/Color</td><td>Theme color for <code>color="danger"</code>.</td></tr>
+    <tr><td><code>--jb-button-warning</code></td><td>Theme/Color</td><td>Theme color for <code>color="warning"</code>.</td></tr>
+    <tr><td><code>--jb-button-light</code></td><td>Theme/Color</td><td>Theme color for <code>color="light"</code>.</td></tr>
+    <tr><td><code>--jb-button-dark</code></td><td>Theme/Color</td><td>Theme color for <code>color="dark"</code>.</td></tr>
+    <tr><td><code>--jb-button-disabled</code></td><td>Theme/Color</td><td>Base disabled color.</td></tr>
+    <tr><td><code>--jb-button-color-disabled</code></td><td>Theme/Color</td><td>Text color while disabled.</td></tr>
+    <tr><td><code>--jb-button-loading-color-disabled</code></td><td>Theme/Color</td><td>Loading indicator color while disabled.</td></tr>
+    <tr><td><code>--jb-button-bg-color-outline</code></td><td>Theme/Color</td><td>Outline variant background color.</td></tr>
+    <tr><td><code>--jb-button-bg-color-outline-hover</code></td><td>Theme/Color</td><td>Outline variant hover background color.</td></tr>
+    <tr><td><code>--jb-button-bg-color-outline-pressed</code></td><td>Theme/Color</td><td>Outline variant pressed background color.</td></tr>
+    <tr><td><code>--jb-button-color-outline</code></td><td>Theme/Color</td><td>Outline variant text color.</td></tr>
+    <tr><td><code>--jb-button-color-outline-hover</code></td><td>Theme/Color</td><td>Outline variant hover text color.</td></tr>
+    <tr><td><code>--jb-button-color-outline-pressed</code></td><td>Theme/Color</td><td>Outline variant pressed text color.</td></tr>
+    <tr><td><code>--jb-button-color-outline-disabled</code></td><td>Theme/Color</td><td>Outline variant disabled text color.</td></tr>
+    <tr><td><code>--jb-button-loading-color-outline</code></td><td>Theme/Color</td><td>Outline variant loading color.</td></tr>
+    <tr><td><code>--jb-button-loading-color-outline-disabled</code></td><td>Theme/Color</td><td>Outline variant disabled loading color.</td></tr>
+    <tr><td><code>--jb-button-bg-color-ghost</code></td><td>Theme/Color</td><td>Ghost variant background color.</td></tr>
+    <tr><td><code>--jb-button-bg-color-ghost-hover</code></td><td>Theme/Color</td><td>Ghost variant hover background color.</td></tr>
+    <tr><td><code>--jb-button-bg-color-ghost-pressed</code></td><td>Theme/Color</td><td>Ghost variant pressed background color.</td></tr>
+    <tr><td><code>--jb-button-color-ghost</code></td><td>Theme/Color</td><td>Ghost variant text color.</td></tr>
+    <tr><td><code>--jb-button-color-ghost-hover</code></td><td>Theme/Color</td><td>Ghost variant hover text color.</td></tr>
+    <tr><td><code>--jb-button-color-ghost-pressed</code></td><td>Theme/Color</td><td>Ghost variant pressed text color.</td></tr>
+    <tr><td><code>--jb-button-loading-color-ghost</code></td><td>Theme/Color</td><td>Ghost variant loading color.</td></tr>
+    <tr><td><code>--jb-button-bg-color-text</code></td><td>Theme/Color</td><td>Text variant background color.</td></tr>
+    <tr><td><code>--jb-button-bg-color-text-hover</code></td><td>Theme/Color</td><td>Text variant hover background color.</td></tr>
+    <tr><td><code>--jb-button-bg-color-text-pressed</code></td><td>Theme/Color</td><td>Text variant pressed background color.</td></tr>
+    <tr><td><code>--jb-button-color-text</code></td><td>Theme/Color</td><td>Text variant text color.</td></tr>
+    <tr><td><code>--jb-button-color-text-hover</code></td><td>Theme/Color</td><td>Text variant hover text color.</td></tr>
+    <tr><td><code>--jb-button-color-text-pressed</code></td><td>Theme/Color</td><td>Text variant pressed text color.</td></tr>
+    <tr><td><code>--jb-button-loading-color-text</code></td><td>Theme/Color</td><td>Text variant loading color.</td></tr>
+    <tr><td><code>--jb-button-base-color</code></td><td>Theme/Color</td><td>Advanced base color used to compute button defaults.</td></tr>
+    <tr><td><code>--jb-button-base-color-hover</code></td><td>Theme/Color</td><td>Advanced computed hover base color.</td></tr>
+    <tr><td><code>--jb-button-base-color-pressed</code></td><td>Theme/Color</td><td>Advanced computed pressed base color.</td></tr>
+    <tr><td><code>--jb-button-base-color-hover-disabled</code></td><td>Theme/Color</td><td>Advanced disabled hover base color.</td></tr>
+    <tr><td><code>--jb-button-base-color-pressed-disabled</code></td><td>Theme/Color</td><td>Advanced disabled pressed base color.</td></tr>
+    <tr><td><code>--jb-button-margin</code></td><td>Other</td><td>Host component margin.</td></tr>
+    <tr><td><code>--jb-button-box-shadow</code></td><td>Other</td><td>Button shadow.</td></tr>
+    <tr><td><code>--jb-button-border-style</code></td><td>Other</td><td>Button border style.</td></tr>
+    <tr><td><code>--jb-button-border-width</code></td><td>Other</td><td>Button border width.</td></tr>
+    <tr><td><code>--jb-button-border-width-ghost</code></td><td>Other</td><td>Ghost variant border width.</td></tr>
+    <tr><td><code>--jb-button-border-width-text</code></td><td>Other</td><td>Text variant border width.</td></tr>
+    <tr><td><code>--jb-button-font-weight</code></td><td>Other</td><td>Button font weight.</td></tr>
+    <tr><td><code>--jb-button-cursor</code></td><td>Other</td><td>Button cursor.</td></tr>
+    <tr><td><code>--jb-button-cursor-disabled</code></td><td>Other</td><td>Button cursor while disabled.</td></tr>
+    <tr><td><code>--jb-button-text-shadow</code></td><td>Other</td><td>Button text shadow.</td></tr>
+    <tr><td><code>--jb-button-text-shadow-disabled</code></td><td>Other</td><td>Button text shadow while disabled.</td></tr>
+  </tbody>
+</table>
+
+Size-specific variables also exist for `xs`, `sm`, `lg`, and `xl` sizes using the same naming pattern, such as `--jb-button-height-sm`, `--jb-button-padding-lg`, `--jb-button-border-radius-xl`, `--jb-button-icon-size-xs`, and `--jb-button-content-gap-sm`.
+
+## Starter Recipe
+
+Use this minimal recipe when a product only needs brand alignment across button variants.
+
+```css
+jb-button.brand-button {
+  --jb-button-primary: #2563eb;
+  --jb-button-secondary: #475569;
+  --jb-button-danger: #dc2626;
+  --jb-button-border-radius: 0.75rem;
+  --jb-button-font-weight: 700;
+  --jb-button-content-gap: 0.5rem;
+  --jb-button-bg-color-hover: #1d4ed8;
+  --jb-button-bg-color-pressed: #1e40af;
+  --jb-button-box-shadow: 0 0.75rem 1.5rem rgb(37 99 235 / 0.18);
+  --jb-button-bg-color-outline: #ffffff;
+  --jb-button-bg-color-outline-hover: #eff6ff;
+  --jb-button-bg-color-ghost-hover: #eff6ff;
+  --jb-button-bg-color-text-hover: #eff6ff;
+}
+
+jb-button.brand-button:state(disabled) {
+  --jb-button-box-shadow: none;
+}
+```
+
+## Style Recipes
+
+### Carbon
+
+<Story of={StyleStories.Carbon} />
+
+<Source of={StyleStories.Carbon} />
+
+#### Shared Tokens
+
+<Source code={carbonThemeCss} language="css" />
+
+#### Button CSS
+
+<Source code={carbonButtonCss} language="css" />
+
+### Aurora
+
+<Story of={StyleStories.Aurora} />
+
+<Source of={StyleStories.Aurora} />
+
+#### Shared Tokens
+
+<Source code={auroraThemeCss} language="css" />
+
+#### Button CSS
+
+<Source code={auroraButtonCss} language="css" />
+
+### Forest
+
+<Story of={StyleStories.Forest} />
+
+<Source of={StyleStories.Forest} />
+
+#### Shared Tokens
+
+<Source code={forestThemeCss} language="css" />
+
+#### Button CSS
+
+<Source code={forestButtonCss} language="css" />
+
+### Sunset
+
+<Story of={StyleStories.Sunset} />
+
+<Source of={StyleStories.Sunset} />
+
+#### Shared Tokens
+
+<Source code={sunsetThemeCss} language="css" />
+
+#### Button CSS
+
+<Source code={sunsetButtonCss} language="css" />
+
+### Porcelain
+
+<Story of={StyleStories.Porcelain} />
+
+<Source of={StyleStories.Porcelain} />
+
+#### Shared Tokens
+
+<Source code={porcelainThemeCss} language="css" />
+
+#### Button CSS
+
+<Source code={porcelainButtonCss} language="css" />
+
+### Candy
+
+<Story of={StyleStories.Candy} />
+
+<Source of={StyleStories.Candy} />
+
+#### Shared Tokens
+
+<Source code={candyThemeCss} language="css" />
+
+#### Button CSS
+
+<Source code={candyButtonCss} language="css" />
+
+### Terminal
+
+<Story of={StyleStories.Terminal} />
+
+<Source of={StyleStories.Terminal} />
+
+#### Shared Tokens
+
+<Source code={terminalThemeCss} language="css" />
+
+#### Button CSS
+
+<Source code={terminalButtonCss} language="css" />
+
+### Material
+
+<Story of={StyleStories.Material} />
+
+<Source of={StyleStories.Material} />
+
+#### Shared Tokens
+
+<Source code={materialThemeCss} language="css" />
+
+#### Button CSS
+
+<Source code={materialButtonCss} language="css" />
+
+### Fluent
+
+<Story of={StyleStories.Fluent} />
+
+<Source of={StyleStories.Fluent} />
+
+#### Shared Tokens
+
+<Source code={fluentThemeCss} language="css" />
+
+#### Button CSS
+
+<Source code={fluentButtonCss} language="css" />
+
+### Bootstrap
+
+<Story of={StyleStories.Bootstrap} />
+
+<Source of={StyleStories.Bootstrap} />
+
+#### Shared Tokens
+
+<Source code={bootstrapThemeCss} language="css" />
+
+#### Button CSS
+
+<Source code={bootstrapButtonCss} language="css" />
+
+### Cupertino
+
+<Story of={StyleStories.Cupertino} />
+
+<Source of={StyleStories.Cupertino} />
+
+#### Shared Tokens
+
+<Source code={cupertinoThemeCss} language="css" />
+
+#### Button CSS
+
+<Source code={cupertinoButtonCss} language="css" />
+
+### Ant Design
+
+<Story of={StyleStories.AntDesign} />
+
+<Source of={StyleStories.AntDesign} />
+
+#### Shared Tokens
+
+<Source code={antDesignThemeCss} language="css" />
+
+#### Button CSS
+
+<Source code={antDesignButtonCss} language="css" />
+
+## Theme File Pattern
+
+Use [Theme Colors](../../jb-core/theme/stories/colors.mdx) and [Theme Sizes](../../jb-core/theme/stories/sizes.mdx) as the common design-token guides. Theme-pack files should keep reusable demo variables in [`docs/styles`](https://github.com/javadbat/design-system/tree/main/docs/styles), then each component should keep its own style CSS in its story [`styles`](https://github.com/javadbat/design-system/tree/main/modules/jb-button/stories/styles) folder.
+
+```css
+/* https://github.com/javadbat/design-system/blob/main/docs/styles/carbon.css */
+.theme-name-style {
+  /* shared design-system variables */
+}
+
+/* https://github.com/javadbat/design-system/blob/main/modules/jb-button/stories/styles/style-carbon.css */
+jb-button.theme-name-button {
+  /* button host variables */
+}
+
+jb-button.theme-name-button:state(disabled) {
+  /* disabled-only refinements when variables are not enough */
+}
+```
+
+This keeps common theme tokens reusable while making the `JBButton` styling API visible in one page.

@@ -1,0 +1,40 @@
+jb-button.bootstrap-style {
+  --jb-button-height: 2.375rem;
+  --jb-button-padding: 0.375rem 0.75rem;
+  --jb-button-border-radius: 0.375rem;
+  --jb-button-font-size: 1rem;
+  --jb-button-font-weight: 400;
+  --jb-button-content-gap: 0.375rem;
+  --jb-button-primary: var(--jb-focus-color);
+  --jb-button-secondary: #6c757d;
+  --jb-button-danger: #dc3545;
+  --jb-button-bg-color-hover: var(--jb-primary-hover);
+  --jb-button-bg-color-pressed: var(--jb-primary-pressed);
+  --jb-button-color: var(--jb-surface);
+  --jb-button-border-color: var(--base-color);
+  --jb-button-border-width: 1px;
+  --jb-button-box-shadow: none;
+  --jb-button-bg-color-outline: transparent;
+  --jb-button-bg-color-outline-hover: var(--jb-focus-color);
+  --jb-button-bg-color-outline-pressed: var(--jb-primary-pressed);
+  --jb-button-color-outline-hover: var(--jb-surface);
+  --jb-button-color-outline-pressed: var(--jb-surface);
+  --jb-button-bg-color-ghost-hover: rgb(13 110 253 / 0.08);
+  --jb-button-bg-color-ghost-pressed: rgb(13 110 253 / 0.16);
+  --jb-button-bg-color-text-hover: rgb(13 110 253 / 0.08);
+  --jb-button-bg-color-text-pressed: rgb(13 110 253 / 0.16);
+}
+
+jb-button.bootstrap-style[color="light"] {
+  --jb-button-color: var(--jb-text-primary);
+  --jb-button-color-hover: var(--jb-text-primary);
+  --jb-button-color-pressed: var(--jb-text-primary);
+  --jb-button-border-color: var(--jb-border-color);
+  --jb-button-bg-color-hover: var(--jb-background);
+  --jb-button-bg-color-pressed: var(--jb-surface-hover);
+}
+
+jb-button.bootstrap-style svg {
+  width: var(--jb-button-icon-size);
+  height: var(--jb-button-icon-size);
+}

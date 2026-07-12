@@ -137,6 +137,8 @@ When the button is loading, the slotted button content is hidden and the loading
 
 ### change button style
 
+For complete styling guidance, live examples, and copyable style recipes, see [Styling](https://javadbat.github.io/design-system/?path=/docs/components-form-elements-jbbutton-styling).
+
 you can inject your custom style by attribute to button.
 
 ```HTML
