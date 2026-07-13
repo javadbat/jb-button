@@ -33,8 +33,9 @@
     box-sizing: border-box;
     box-shadow: var(--box-shadow);
 
-    &:focus {
-      outline: none;
+    &:focus-visible {
+      outline: 2px solid var(--jb-button-focus-ring-color, Highlight);
+      outline-offset: 2px;
     }
 
     &:hover {

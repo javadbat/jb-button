@@ -17,6 +17,14 @@ export class JBButtonWebComponent extends HTMLElement {
   }
   set isLoading(value) {
     this.#isLoading = value;
+    const ariaBusy = value ? "true" : "false";
+    if (value) {
+      this.#internals?.states?.add("loading");
+    } else {
+      this.#internals?.states?.delete("loading");
+    }
+    if (this.#internals) this.#internals.ariaBusy = ariaBusy;
+    this.elements!.button.setAttribute("aria-busy", ariaBusy);
     if (value == true) {
       this.elements!.button.classList.add('--loading');
     } else {
@@ -36,6 +44,7 @@ export class JBButtonWebComponent extends HTMLElement {
   set disabled(value: boolean) {
     this.#disabled = value;
     this.elements.button.disabled = value;
+    if (this.#internals) this.#internals.ariaDisabled = value ? "true" : "false";
     if (value) {
       this.#internals?.states?.add("disabled");
     } else {
@@ -76,7 +85,7 @@ export class JBButtonWebComponent extends HTMLElement {
     this.#registerEventListener();
   }
   static get observedAttributes() {
-    return ['name', 'isLoading', 'loading-text', 'type', 'button-style', 'disabled'];
+    return ['name', 'isLoading', 'loading-text', 'type', 'button-style', 'disabled', 'aria-label'];
   }
   attributeChangedCallback(name: string, _oldValue: string, newValue: string) {
     // do something when an attribute has changed
@@ -105,6 +114,9 @@ export class JBButtonWebComponent extends HTMLElement {
         } else {
           this.disabled = false;
         }
+        break;
+      case 'aria-label':
+        this.elements.button.setAttribute('aria-label', value);
         break;
     }
   }
