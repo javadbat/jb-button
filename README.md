@@ -139,6 +139,8 @@ When the button is loading, the slotted button content is hidden and the loading
 
 For complete styling guidance, live examples, and copyable style recipes, see [Styling](https://javadbat.github.io/design-system/?path=/docs/components-form-elements-jbbutton-styling).
 
+The default and `xs`, `sm`, `lg`, and `xl` button heights inherit the matching `--jb-control-height-*` theme tokens. Set `--jb-button-height` or a size-specific `--jb-button-height-*` variable when one button needs a component-level override.
+
 you can inject your custom style by attribute to button.
 
 ```HTML

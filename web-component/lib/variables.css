@@ -7,7 +7,7 @@
   --base-color-hover: var(--jb-button-base-color-hover, oklch(from var(--base-color) calc(l + 0.07) calc(c + 0.07) h));
   --base-color-pressed: var(--jb-button-base-color-pressed, oklch(from var(--base-color) calc(l - 0.1) calc(c - 0.05) h));
   /* Size */
-  --height: var(--jb-button-height, 2.5rem);
+  --height: var(--jb-button-height, var(--jb-control-height-md, 2.5rem));
   --font-size: var(--jb-button-font-size, 1rem);
   --padding: var(--jb-button-padding, 0.5rem 1rem);
   --border-radius: var(--jb-button-border-radius, var(--jb-radius));
@@ -109,7 +109,7 @@
 
 /* Size */
 :host([size="xs"]){
-  --height: var(--jb-button-height-xs, 1.5rem);
+  --height: var(--jb-button-height-xs, var(--jb-control-height-xs, 1.5rem));
   --font-size: var(--jb-button-font-size-xs, 0.75rem);
   --padding: var(--jb-button-padding-xs, 0.125rem 0.25rem);
   --border-radius: var(--jb-button-border-radius-xs, var(--jb-radius-xs));
@@ -117,7 +117,7 @@
   --content-gap: var(--jb-button-content-gap-xs, 0.125rem);
 }
 :host([size="sm"]){
-  --height: var(--jb-button-height-sm, 2rem);
+  --height: var(--jb-button-height-sm, var(--jb-control-height-sm, 2rem));
   --font-size: var(--jb-button-font-size-sm, 0.875rem);
   --padding: var(--jb-button-padding-sm, 0.25rem 0.5rem);
   --border-radius: var(--jb-button-border-radius-sm, var(--jb-radius-sm));
@@ -125,7 +125,7 @@
   --content-gap: var(--jb-button-content-gap-sm, 0.25rem);
 }
 :host([size="lg"]){
-  --height: var(--jb-button-height-lg, 3rem);
+  --height: var(--jb-button-height-lg, var(--jb-control-height-lg, 3rem));
   --font-size: var(--jb-button-font-size-lg, 1.125rem);
   --padding: var(--jb-button-padding-lg, 0.75rem 1.5rem);
   --border-radius: var(--jb-button-border-radius-lg, var(--jb-radius-lg));
@@ -133,7 +133,7 @@
   --content-gap: var(--jb-button-content-gap-lg, 0.75rem);
 }
 :host([size="xl"]){
-  --height: var(--jb-button-height-xl, 4rem);
+  --height: var(--jb-button-height-xl, var(--jb-control-height-xl, 4rem));
   --font-size: var(--jb-button-font-size-xl, 1.25rem);
   --padding: var(--jb-button-padding-xl, 1rem 2rem);
   --border-radius: var(--jb-button-border-radius-xl, var(--jb-radius-xl));

@@ -4,6 +4,7 @@
 
 ### Changed
 
+- Button heights now inherit the shared `--jb-control-height-*` theme tokens for each size while preserving `--jb-button-height*` as the component-level override.
 - Breaking: renamed public CSS variables from `--jb-button-bgcolor*` to `--jb-button-bg-color*`.
 - Added public variables for computed button defaults, variant colors, text variant backgrounds, and content gaps so all local variables follow the standard `var(--jb-button-*, fallback)` pattern.
 - Added standard styling documentation, live style gallery, and reusable style recipes.
