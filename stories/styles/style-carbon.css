@@ -8,8 +8,6 @@ jb-button.carbon-style {
   --jb-button-primary: var(--jb-primary);
   --jb-button-secondary: var(--jb-text-disabled);
   --jb-button-danger: #da1e28;
-  --jb-button-bg-color-hover: var(--jb-primary-hover);
-  --jb-button-bg-color-pressed: var(--jb-primary-pressed);
   --jb-button-color: var(--jb-text-contrast);
   --jb-button-border-color: currentColor;
   --jb-button-box-shadow: none;

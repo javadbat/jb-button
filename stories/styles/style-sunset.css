@@ -8,8 +8,6 @@ jb-button.sunset-style {
   --jb-button-primary: #963f5a;
   --jb-button-secondary: var(--jb-focus-color);
   --jb-button-danger: #be123c;
-  --jb-button-bg-color-hover: #aa4d68;
-  --jb-button-bg-color-pressed: #7d2945;
   --jb-button-color: #fff7ed;
   --jb-button-border-color: rgb(255 209 102 / 0.38);
   --jb-button-border-width: 1px;
@@ -30,6 +28,10 @@ jb-button.sunset-style[color="light"] {
   --jb-button-border-color: rgb(255 209 102 / 0.46);
   --jb-button-bg-color-hover: var(--jb-text-secondary);
   --jb-button-bg-color-pressed: var(--jb-focus-color);
+}
+
+jb-button.sunset-style[color="secondary"] {
+  --jb-button-color: #4a1f2d;
 }
 
 jb-button.sunset-style svg {

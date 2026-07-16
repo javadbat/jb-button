@@ -8,8 +8,6 @@ jb-button.bootstrap-style {
   --jb-button-primary: var(--jb-focus-color);
   --jb-button-secondary: #6c757d;
   --jb-button-danger: #dc3545;
-  --jb-button-bg-color-hover: var(--jb-primary-hover);
-  --jb-button-bg-color-pressed: var(--jb-primary-pressed);
   --jb-button-color: var(--jb-surface);
   --jb-button-border-color: var(--base-color);
   --jb-button-border-width: 1px;

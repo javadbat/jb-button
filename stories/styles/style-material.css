@@ -8,8 +8,6 @@ jb-button.material-style {
   --jb-button-primary: var(--jb-primary);
   --jb-button-secondary: #625b71;
   --jb-button-danger: var(--jb-red);
-  --jb-button-bg-color-hover: #7f67be;
-  --jb-button-bg-color-pressed: #4f378b;
   --jb-button-color: var(--jb-surface);
   --jb-button-border-color: transparent;
   --jb-button-border-width: 1px;

@@ -8,8 +8,6 @@ jb-button.cupertino-style {
   --jb-button-primary: var(--jb-focus-color);
   --jb-button-secondary: #5856d6;
   --jb-button-danger: var(--jb-success);
-  --jb-button-bg-color-hover: #0a84ff;
-  --jb-button-bg-color-pressed: #0066d6;
   --jb-button-color: var(--jb-text-contrast);
   --jb-button-border-color: rgb(60 60 67 / 0.18);
   --jb-button-border-width: 1px;

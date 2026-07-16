@@ -8,8 +8,6 @@ jb-button.porcelain-style {
   --jb-button-primary: #2f80ed;
   --jb-button-secondary: #4d6882;
   --jb-button-danger: #d14343;
-  --jb-button-bg-color-hover: #1d6fd6;
-  --jb-button-bg-color-pressed: #1555aa;
   --jb-button-color: var(--jb-surface);
   --jb-button-border-color: #b9d7f2;
   --jb-button-border-width: 1px;

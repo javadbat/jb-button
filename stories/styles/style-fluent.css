@@ -8,8 +8,6 @@ jb-button.fluent-style {
   --jb-button-primary: var(--jb-focus-color);
   --jb-button-secondary: #605e5c;
   --jb-button-danger: #a4262c;
-  --jb-button-bg-color-hover: var(--jb-primary-hover);
-  --jb-button-bg-color-pressed: var(--jb-primary-pressed);
   --jb-button-color: var(--jb-text-contrast);
   --jb-button-border-color: transparent;
   --jb-button-border-width: 1px;

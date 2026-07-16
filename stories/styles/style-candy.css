@@ -8,8 +8,6 @@ jb-button.candy-style {
   --jb-button-primary: var(--jb-focus-color);
   --jb-button-secondary: #f97316;
   --jb-button-danger: #e11d48;
-  --jb-button-bg-color-hover: var(--jb-primary-hover);
-  --jb-button-bg-color-pressed: var(--jb-primary-pressed);
   --jb-button-color: var(--jb-text-contrast);
   --jb-button-border-color: #f9a8d4;
   --jb-button-border-width: 2px;
