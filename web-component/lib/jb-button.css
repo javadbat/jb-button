@@ -6,13 +6,13 @@
 
 .jb-button-web-component {
   width: inherit;
-  height: auto;
+  height: 100%;
   box-sizing: border-box;
   margin: var(--margin);
 
   button {
     width: inherit;
-    min-height: inherit;
+    height: 100%;
     box-sizing: border-box;
     font-family: inherit;
     border-radius: var(--border-radius);
