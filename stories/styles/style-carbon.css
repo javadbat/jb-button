@@ -1,12 +1,12 @@
 jb-button.carbon-style {
   --jb-button-height: 2.5rem;
   --jb-button-padding: 0.55rem 1rem;
-  --jb-button-border-radius: 0.25rem;
-  --jb-button-font-size: 0.95rem;
-  --jb-button-font-weight: 600;
+  --jb-button-border-radius: 0;
+  --jb-button-font-size: 0.875rem;
+  --jb-button-font-weight: 400;
   --jb-button-content-gap: 0.5rem;
   --jb-button-primary: var(--jb-primary);
-  --jb-button-secondary: var(--jb-text-disabled);
+  --jb-button-secondary: var(--jb-surface-hover);
   --jb-button-danger: #da1e28;
   --jb-button-color: var(--jb-text-contrast);
   --jb-button-border-color: currentColor;

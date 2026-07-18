@@ -1,9 +1,9 @@
 jb-button.aurora-style {
-  --jb-button-height: 2.75rem;
-  --jb-button-padding: 0.625rem 1.125rem;
-  --jb-button-border-radius: 1rem;
-  --jb-button-font-size: 0.95rem;
-  --jb-button-font-weight: 800;
+  --jb-button-height: 2.5rem;
+  --jb-button-padding: 0.5rem 1rem;
+  --jb-button-border-radius: 0.75rem;
+  --jb-button-font-size: 0.875rem;
+  --jb-button-font-weight: 700;
   --jb-button-content-gap: 0.5rem;
   --jb-button-primary: #8b5cf6;
   --jb-button-secondary: #06b6d4;
@@ -11,7 +11,7 @@ jb-button.aurora-style {
   --jb-button-color: #ffffff;
   --jb-button-border-color: rgb(255 255 255 / 0.26);
   --jb-button-border-width: 1px;
-  --jb-button-box-shadow: 0 0.75rem 1.75rem rgb(79 70 229 / 0.22);
+  --jb-button-box-shadow: 0 0.5rem 1.25rem rgb(79 70 229 / 0.18);
   --jb-button-bg-color-outline: rgb(15 23 42 / 0.42);
   --jb-button-bg-color-outline-hover: rgb(139 92 246 / 0.18);
   --jb-button-bg-color-outline-pressed: rgb(139 92 246 / 0.28);

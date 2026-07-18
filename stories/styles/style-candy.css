@@ -1,17 +1,17 @@
 jb-button.candy-style {
-  --jb-button-height: 2.75rem;
-  --jb-button-padding: 0.625rem 1.125rem;
+  --jb-button-height: 2.5rem;
+  --jb-button-padding: 0.5rem 1rem;
   --jb-button-border-radius: 999rem;
-  --jb-button-font-size: 0.95rem;
-  --jb-button-font-weight: 800;
+  --jb-button-font-size: 0.875rem;
+  --jb-button-font-weight: 700;
   --jb-button-content-gap: 0.5rem;
   --jb-button-primary: var(--jb-focus-color);
-  --jb-button-secondary: #f97316;
+  --jb-button-secondary: #8b5cf6;
   --jb-button-danger: #e11d48;
   --jb-button-color: var(--jb-text-contrast);
   --jb-button-border-color: #f9a8d4;
-  --jb-button-border-width: 2px;
-  --jb-button-box-shadow: 0 0.6rem 1.2rem rgb(236 72 153 / 0.22);
+  --jb-button-border-width: 1px;
+  --jb-button-box-shadow: 0 0.4rem 0.9rem rgb(236 72 153 / 0.18);
   --jb-button-bg-color-outline: #fff1f2;
   --jb-button-bg-color-outline-hover: #fce7f3;
   --jb-button-bg-color-outline-pressed: #fbcfe8;

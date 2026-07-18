@@ -1,6 +1,6 @@
 jb-button.fluent-style {
-  --jb-button-height: 2.5rem;
-  --jb-button-padding: 0.5rem 1rem;
+  --jb-button-height: 2.25rem;
+  --jb-button-padding: 0.375rem 0.875rem;
   --jb-button-border-radius: 0.25rem;
   --jb-button-font-size: 0.875rem;
   --jb-button-font-weight: 600;
