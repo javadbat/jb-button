@@ -1,6 +1,7 @@
 jb-button.bootstrap-style {
   --jb-button-height: 2.375rem;
-  --jb-button-padding: 0.375rem 0.75rem;
+  --jb-button-inline-padding: 0.75rem;
+  --jb-button-block-padding: 0.375rem;
   --jb-button-border-radius: 0.375rem;
   --jb-button-font-size: 1rem;
   --jb-button-font-weight: 400;

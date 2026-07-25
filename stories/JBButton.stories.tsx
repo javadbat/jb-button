@@ -8,6 +8,7 @@ const meta = {
   component: JBButton,
   argTypes: {
     loadingText: { control: 'text' },
+    square: { control: 'boolean' },
   },
   args: {
     children: "button"
@@ -23,6 +24,13 @@ export const Primary: Story = {
     children: "primary button",
     loadingText: "loading text",
     disabled: false,
+    square: false,
+  }
+};
+export const Square: Story = {
+  args: {
+    square: true,
+    children: "S",
   }
 };
 export const WithIcon: Story = {

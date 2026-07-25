@@ -61,7 +61,7 @@ Each example uses one shared example theme pack from [`docs/styles`](https://git
 ## Recommended Customization Path
 
 1. Use `--jb-button-*` variables first for size, color, border, radius, shadow, content gap, and loading color.
-2. Use `variant`, `color`, and `size` attributes before creating separate CSS classes for common button families.
+2. Use `variant`, `color`, `size`, and `square` attributes before creating separate CSS classes for common button families.
 3. Override variant-specific variables such as `--jb-button-bg-color-outline-hover` only when the general variables are not specific enough.
 4. Use `jb-button:state(disabled)` for custom disabled treatment that cannot be expressed with disabled variables.
 5. Use common theme variables from [Theme Colors](../../jb-core/theme/stories/colors.mdx) and [Theme Sizes](../../jb-core/theme/stories/sizes.mdx) when the style should align with the design system.
@@ -85,6 +85,14 @@ Each example uses one shared example theme pack from [`docs/styles`](https://git
   </tbody>
 </table>
 
+## Layout Attributes
+
+The boolean `square` attribute makes `--inline-padding` use the resolved `--block-padding` value. This ignores `--jb-button-inline-padding` and follows the active base or size-specific block-padding variable.
+
+```html
+<jb-button square aria-label="Add item">+</jb-button>
+```
+
 ## CSS Variables
 
 These variables belong to `JBButton`.
@@ -100,7 +108,8 @@ These variables belong to `JBButton`.
   <tbody>
     <tr><td><code>--jb-button-height</code></td><td>Size</td><td>Button height.</td></tr>
     <tr><td><code>--jb-button-font-size</code></td><td>Size</td><td>Button text size.</td></tr>
-    <tr><td><code>--jb-button-padding</code></td><td>Size</td><td>Button padding.</td></tr>
+    <tr><td><code>--jb-button-inline-padding</code></td><td>Size</td><td>Button inline padding.</td></tr>
+    <tr><td><code>--jb-button-block-padding</code></td><td>Size</td><td>Button block padding.</td></tr>
     <tr><td><code>--jb-button-border-radius</code></td><td>Size</td><td>Button radius.</td></tr>
     <tr><td><code>--jb-button-icon-size</code></td><td>Size</td><td>Icon size used by slotted icon examples.</td></tr>
     <tr><td><code>--jb-button-content-gap</code></td><td>Size</td><td>Gap between slotted button content.</td></tr>
@@ -166,7 +175,7 @@ These variables belong to `JBButton`.
   </tbody>
 </table>
 
-Size-specific variables also exist for `xs`, `sm`, `lg`, and `xl` sizes using the same naming pattern, such as `--jb-button-height-sm`, `--jb-button-padding-lg`, `--jb-button-border-radius-xl`, `--jb-button-icon-size-xs`, and `--jb-button-content-gap-sm`.
+Size-specific variables also exist for `xs`, `sm`, `lg`, and `xl` sizes using the same naming pattern, such as `--jb-button-height-sm`, `--jb-button-inline-padding-lg`, `--jb-button-block-padding-lg`, `--jb-button-border-radius-xl`, `--jb-button-icon-size-xs`, and `--jb-button-content-gap-sm`.
 
 ## Starter Recipe
 

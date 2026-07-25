@@ -1,6 +1,7 @@
 jb-button.carbon-style {
   --jb-button-height: 2.5rem;
-  --jb-button-padding: 0.55rem 1rem;
+  --jb-button-inline-padding: 1rem;
+  --jb-button-block-padding: 0.55rem;
   --jb-button-border-radius: 0;
   --jb-button-font-size: 0.875rem;
   --jb-button-font-weight: 400;

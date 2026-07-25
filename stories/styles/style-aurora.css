@@ -1,6 +1,7 @@
 jb-button.aurora-style {
   --jb-button-height: 2.5rem;
-  --jb-button-padding: 0.5rem 1rem;
+  --jb-button-inline-padding: 1rem;
+  --jb-button-block-padding: 0.5rem;
   --jb-button-border-radius: 0.75rem;
   --jb-button-font-size: 0.875rem;
   --jb-button-font-weight: 700;

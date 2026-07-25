@@ -29,7 +29,8 @@
     cursor: var(--cursor);
     transition: ease 0.3s all;
     text-shadow: var(--text-shadow);
-    padding: var(--padding);
+    padding-inline: var(--inline-padding);
+    padding-block: var(--block-padding);
     box-sizing: border-box;
     box-shadow: var(--box-shadow);
 

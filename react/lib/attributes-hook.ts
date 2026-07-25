@@ -4,6 +4,7 @@ import { type RefObject, useEffect } from "react";
 export type JBButtonAttributes = {
   isLoading?: boolean,
   disabled?: boolean,
+  square?: boolean,
 }
 export function useJBButtonAttribute(element: RefObject<JBButtonWebComponent | null>, props: JBButtonAttributes) {
   useEffect(() => {
@@ -18,4 +19,11 @@ export function useJBButtonAttribute(element: RefObject<JBButtonWebComponent | n
       element.current.isLoading = props.isLoading || false;
     }
   }, [props.isLoading]);
+  useEffect(() => {
+    if (props.square) {
+      element.current?.setAttribute("square", "");
+    } else {
+      element.current?.removeAttribute("square");
+    }
+  }, [props.square]);
 }

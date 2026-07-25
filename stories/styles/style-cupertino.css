@@ -1,6 +1,7 @@
 jb-button.cupertino-style {
   --jb-button-height: 2.625rem;
-  --jb-button-padding: 0.55rem 1rem;
+  --jb-button-inline-padding: 1rem;
+  --jb-button-block-padding: 0.55rem;
   --jb-button-border-radius: 0.75rem;
   --jb-button-font-size: 1rem;
   --jb-button-font-weight: 600;

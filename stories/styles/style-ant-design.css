@@ -2,7 +2,8 @@ jb-button.ant-design-style {
   --jb-button-height: 2rem;
   --jb-button-height-sm: 1.5rem;
   --jb-button-height-lg: 2.5rem;
-  --jb-button-padding: 0.25rem 0.9375rem;
+  --jb-button-inline-padding: 0.9375rem;
+  --jb-button-block-padding: 0.25rem;
   --jb-button-border-radius: 0.375rem;
   --jb-button-border-radius-sm: 0.25rem;
   --jb-button-border-radius-lg: 0.5rem;

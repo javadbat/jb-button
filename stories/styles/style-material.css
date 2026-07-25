@@ -1,5 +1,6 @@
 jb-button.material-style {
-  --jb-button-padding: 0 1.5rem;
+  --jb-button-inline-padding: 1.5rem;
+  --jb-button-block-padding: 0;
   --jb-button-border-radius: 1.25rem;
   --jb-button-font-size: 0.875rem;
   --jb-button-font-weight: 500;

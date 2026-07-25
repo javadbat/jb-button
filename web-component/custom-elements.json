@@ -71,6 +71,13 @@
               "type": {
                 "text": "'xs' | 'sm' | 'md' | 'lg' | 'xl'"
               }
+            },
+            {
+              "name": "square",
+              "description": "Makes inline padding equal to block padding, ignoring the configured inline padding.",
+              "type": {
+                "text": "boolean"
+              }
             }
           ],
           "members": [
@@ -125,8 +132,12 @@
               "description": "Host margin."
             },
             {
-              "name": "--jb-button-padding",
-              "description": "Inner button padding."
+              "name": "--jb-button-inline-padding",
+              "description": "Inner button inline padding."
+            },
+            {
+              "name": "--jb-button-block-padding",
+              "description": "Inner button block padding."
             },
             {
               "name": "--jb-button-border-radius",

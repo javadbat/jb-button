@@ -70,6 +70,7 @@ you can just add script tag to your html file and then use web component however
 | `color` | `'primary' \| 'secondary' \| 'positive' \| 'danger' \| 'warning' \| 'light' \| 'dark'` | `primary` | Visual color token used by CSS. |
 | `variant` | `'solid' \| 'outline' \| 'ghost' \| 'text'` | `solid` | Visual variant used by CSS. |
 | `size` | `'xs' \| 'sm' \| 'md' \| 'lg' \| 'xl'` | `md` style defaults | Visual size used by CSS. |
+| `square` | `boolean` | `false` | Makes inline padding equal to block padding, ignoring `--jb-button-inline-padding`. |
 
 ### Properties
 
@@ -92,6 +93,14 @@ const button = document.querySelector('jb-button');
 button.addEventListener('click', (event) => {
   console.log('clicked', event.target);
 });
+```
+
+## Square buttons
+
+Use the `square` attribute for compact icon buttons or other controls that need equal inline and block padding. The button uses its resolved block padding on both axes, including size-specific block padding.
+
+```html
+<jb-button square aria-label="Add item">+</jb-button>
 ```
 
 ## Loading state
@@ -177,7 +186,8 @@ if you want to set a custom style to this web-component all you need is to set C
 | CSS variable name                  | description                                                                 |
 | -------------                      | -------------                                                               |
 | --jb-button-margin                 | web-component margin                                                        |
-| --jb-button-padding                | web-component margin                                                        |
+| --jb-button-inline-padding         | button inline padding                                                       |
+| --jb-button-block-padding          | button block padding                                                        |
 | --jb-button-border-radius          | web-component border-radius                                                 |
 | --jb-button-bg-color-hover          | button bg-color when user hover                                             |
 | --jb-button-bg-color-pressed        | button bg-color when user pressed                                           |
@@ -252,10 +262,14 @@ if you want to set a custom style to this web-component all you need is to set C
 | --jb-button-icon-size-xl | Customize icon size xl. |
 | --jb-button-icon-size-xs | Customize icon size xs. |
 | --jb-button-light | Customize light. |
-| --jb-button-padding-lg | Customize padding lg. |
-| --jb-button-padding-sm | Customize padding sm. |
-| --jb-button-padding-xl | Customize padding xl. |
-| --jb-button-padding-xs | Customize padding xs. |
+| --jb-button-inline-padding-lg | Customize inline padding lg. |
+| --jb-button-inline-padding-sm | Customize inline padding sm. |
+| --jb-button-inline-padding-xl | Customize inline padding xl. |
+| --jb-button-inline-padding-xs | Customize inline padding xs. |
+| --jb-button-block-padding-lg | Customize block padding lg. |
+| --jb-button-block-padding-sm | Customize block padding sm. |
+| --jb-button-block-padding-xl | Customize block padding xl. |
+| --jb-button-block-padding-xs | Customize block padding xs. |
 | --jb-button-positive | Customize positive. |
 | --jb-button-primary | Customize primary. |
 | --jb-button-secondary | Customize secondary. |
@@ -286,5 +300,6 @@ Each export points to a declaration with `name` and `module`, so tools can conne
 - Import `jb-button` once before using `<jb-button>`.
 - Put visible button content in the default slot.
 - Use `isLoading` for loading UI and `disabled` when clicks must be blocked.
+- Use `square` for icon-only or compact buttons that need equal inline and block padding.
 - Use `type="submit"` only inside forms where submitting is intended.
 - Use `event.preventDefault()` on `click` to cancel the component click behavior.

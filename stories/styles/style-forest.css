@@ -1,6 +1,7 @@
 jb-button.forest-style {
   --jb-button-height: 2.75rem;
-  --jb-button-padding: 0.625rem 1.125rem;
+  --jb-button-inline-padding: 1.125rem;
+  --jb-button-block-padding: 0.625rem;
   --jb-button-border-radius: 0.875rem;
   --jb-button-font-size: 0.95rem;
   --jb-button-font-weight: 800;

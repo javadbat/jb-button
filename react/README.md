@@ -44,6 +44,15 @@ Use `JBButton` for React actions that need JB Design System styling, loading sta
 | `color` | `'primary' \| 'secondary' \| 'positive' \| 'danger' \| 'warning' \| 'light' \| 'dark'` | Visual color variant. |
 | `variant` | `'solid' \| 'outline' \| 'ghost' \| 'text'` | Visual style variant. |
 | `size` | `'xs' \| 'sm' \| 'md' \| 'lg' \| 'xl'` | Visual size variant. |
+| `square` | `boolean` | Makes inline padding equal to block padding, ignoring `--jb-button-inline-padding`. |
+
+## Square buttons
+
+Use `square` for icon-only or compact buttons that need equal inline and block padding:
+
+```jsx
+<JBButton square aria-label="Add item">+</JBButton>
+```
 
 ## Loading state
 
@@ -102,3 +111,4 @@ For web-component behavior, events, slots, and CSS variables, see [`jb-button`](
 - Put visible button content in `children`.
 - Use `isLoading` for loading UI and `disabled` when clicks must be blocked.
 - Use `loadingText`, not `loading-text`, in React props.
+- Use `square` for icon-only or compact buttons that need equal inline and block padding.

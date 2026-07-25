@@ -1,6 +1,7 @@
 jb-button.terminal-style {
   --jb-button-height: 2.5rem;
-  --jb-button-padding: 0.5rem 1rem;
+  --jb-button-inline-padding: 1rem;
+  --jb-button-block-padding: 0.5rem;
   --jb-button-border-radius: 0;
   --jb-button-font-size: 0.9rem;
   --jb-button-font-weight: 700;

@@ -12,6 +12,7 @@ declare module "react" {
         "size"?:SizeVariants;
         "color"?:ColorVariants;
         "name"?:string;
+        "square"?:boolean;
       }
     }
 }

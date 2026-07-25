@@ -1,5 +1,15 @@
 # Changelog
 
+## [4.0.0] - 2026-07-24
+
+### Changed
+
+- breaking: break --jb-button-padding into 2 variable `--jb-button-block-padding` and `--jb-button-inline-padding`
+
+### Added
+
+- add `square` attribute to make button square by using padding-block size as padding-inline size. 
+
 ## [3.10.0] - 2026-07-14
 
 ### Changed

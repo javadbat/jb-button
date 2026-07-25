@@ -15,8 +15,8 @@ export const JBButton = React.forwardRef((props:Props, ref) => {
     () => (element ? element.current : undefined),
     [element],
   );
-  const {disabled, loadingText,isLoading, variant, size, onClick,color,children, name, ...otherProps} = props;
-  useJBButtonAttribute(element,{disabled,isLoading});
+  const {disabled, loadingText,isLoading, square, variant, size, onClick,color,children, name, ...otherProps} = props;
+  useJBButtonAttribute(element,{disabled,isLoading,square});
   useEvents(element,{onClick});
 
   return (
