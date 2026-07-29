@@ -51,6 +51,9 @@ export class JBButtonWebComponent extends HTMLElement {
       this.#internals?.states?.delete("disabled");
     }
   }
+  formDisabledCallback(disabled: boolean) {
+    this.disabled = disabled;
+  }
 
   get name(){
     return this.getAttribute("name") || "";
