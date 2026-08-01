@@ -5,7 +5,7 @@ import type { ElementsObject } from './types';
 import { registerDefaultVariables } from 'jb-core/theme';
 export * from "./types.js";
 import 'jb-loading';
-import { createMouseEvent } from 'jb-core';
+import { createMouseEvent, parseBooleanAttribute } from 'jb-core';
 
 export class JBButtonWebComponent extends HTMLElement {
   #internals?: ElementInternals;
@@ -100,7 +100,7 @@ export class JBButtonWebComponent extends HTMLElement {
         this.elements.button.setAttribute('name', value);
         break;
       case 'isLoading':
-        this.isLoading = Boolean(value);
+        this.isLoading = parseBooleanAttribute(value);
         break;
       case 'loading-text':
         this.loadingText = value;
@@ -112,11 +112,7 @@ export class JBButtonWebComponent extends HTMLElement {
         this.elements!.button.setAttribute('style', value);
         break;
       case 'disabled':
-        if (value == "true" || value == "" || value == "disabled") {
-          this.disabled = true;
-        } else {
-          this.disabled = false;
-        }
+        this.disabled = parseBooleanAttribute(value);
         break;
       case 'aria-label':
         this.elements.button.setAttribute('aria-label', value);
