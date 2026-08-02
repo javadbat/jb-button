@@ -19,9 +19,7 @@ simple button web-component with some additional features:
 
 Use `jb-button` for actions that need JB Design System styling, loading state, disabled state, or form submit behavior.
 
-Demo:
-- [codepen](https://codepen.io/javadbat/pen/NWdeMwY)
-- [storybook](https://javadbat.github.io/design-system/?path=/docs/components-form-elements-jbbutton)
+Try the component in [CodePen](https://codepen.io/javadbat/pen/NWdeMwY) or explore the complete [Demo](https://javadbat.github.io/design-system/?path=/docs/components-form-elements-jbbutton).
 
 ## Using With JS Frameworks
 <a href="https://github.com/javadbat/jb-button/tree/main/react" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/React.js-jb--button%2Freact-000.svg?logo=react&logoColor=%2361DAFB" height="30" /></a>
@@ -62,21 +60,21 @@ you can just add script tag to your html file and then use web component however
 
 | name | type | default | description |
 | --- | --- | --- | --- |
-| `type` | `'button' \| 'submit' \| 'reset' \| string` | browser default | Forwarded to the inner native button. When set to `submit`, `jb-button` calls the associated form `requestSubmit()` after a non-canceled click. |
+| `type` | `'button' \| 'submit' \| 'reset' \| string` | browser default | Forwarded to the inner native button. When set to `submit`, `jb-button` calls the associated form `requestSubmit()` after a non-canceled click. [Demo](https://javadbat.github.io/design-system/?path=/story/components-form-elements-jbbutton--form-submit) |
 | `name` | `string` | `null` | Forwarded to the inner native button. |
-| `disabled` | `boolean` | `false` | Disables the inner button and sets the `disabled` custom state. |
-| [`loading-text`](#loading-state) | `string` | `""` | Text shown beside the loading indicator while loading. |
-| `button-style` | `string` | `""` | Inline style forwarded to the inner button. Prefer CSS variables for reusable styling. |
-| `color` | `'primary' \| 'secondary' \| 'positive' \| 'danger' \| 'warning' \| 'light' \| 'dark'` | `primary` | Visual color token used by CSS. |
-| `variant` | `'solid' \| 'outline' \| 'ghost' \| 'text'` | `solid` | Visual variant used by CSS. |
-| `size` | `'xs' \| 'sm' \| 'md' \| 'lg' \| 'xl'` | `md` style defaults | Visual size used by CSS. |
-| `square` | `boolean` | `false` | Makes inline padding equal to block padding, ignoring `--jb-button-inline-padding`. |
+| `disabled` | `boolean` | `false` | Disables the inner button and sets the `disabled` custom state. [Demo](https://javadbat.github.io/design-system/?path=/story/components-form-elements-jbbutton--disabled) |
+| [`loading-text`](#loading-state) | `string` | `""` | Text shown beside the loading indicator while loading. [Demo](https://javadbat.github.io/design-system/?path=/story/components-form-elements-jbbutton--loading-with-text) |
+| `button-style` | `string` | `""` | Inline style forwarded to the inner button. Prefer CSS variables for reusable styling. [Demo](https://javadbat.github.io/design-system/?path=/story/components-form-elements-jbbutton-style--gallery) |
+| `color` | `'primary' \| 'secondary' \| 'positive' \| 'danger' \| 'warning' \| 'light' \| 'dark'` | `primary` | Visual color token used by CSS. [Demo](https://javadbat.github.io/design-system/?path=/story/components-form-elements-jbbutton--variants) |
+| `variant` | `'solid' \| 'outline' \| 'ghost' \| 'text'` | `solid` | Visual variant used by CSS. [Demo](https://javadbat.github.io/design-system/?path=/story/components-form-elements-jbbutton--variants) |
+| `size` | `'xs' \| 'sm' \| 'md' \| 'lg' \| 'xl'` | `md` style defaults | Visual size used by CSS. [Demo](https://javadbat.github.io/design-system/?path=/story/components-form-elements-jbbutton--with-icon) |
+| `square` | `boolean` | `false` | Makes inline padding equal to block padding, ignoring `--jb-button-inline-padding`. [Demo](https://javadbat.github.io/design-system/?path=/story/components-form-elements-jbbutton--square) |
 
 ### Properties
 
 | name | type | readonly | description |
 | --- | --- | --- | --- |
-| [`isLoading`](#loading-state) | `boolean` | no | Shows or hides the loading UI. |
+| [`isLoading`](#loading-state) | `boolean` | no | Shows or hides the loading UI. [Demo](https://javadbat.github.io/design-system/?path=/story/components-form-elements-jbbutton--loading-with-text) |
 | `loadingText` | `string` | no | Text shown beside the loading indicator. |
 | `disabled` | `boolean` | no | Enables or disables the component. |
 | `name` | `string \| null` | no | Reflects the `name` attribute. |
@@ -85,7 +83,7 @@ you can just add script tag to your html file and then use web component however
 
 | event | cancelable | when it fires |
 | --- | --- | --- |
-| `click` | yes | Re-dispatched from the inner native button. Call `event.preventDefault()` to stop the inner click behavior and prevent form submit. |
+| `click` | yes | Re-dispatched from the inner native button. Call `event.preventDefault()` to stop the inner click behavior and prevent form submit. [Demo](https://javadbat.github.io/design-system/?path=/story/components-form-elements-jbbutton--cancelable-click) |
 
 ```js
 const button = document.querySelector('jb-button');
@@ -97,7 +95,7 @@ button.addEventListener('click', (event) => {
 
 ## Square buttons
 
-Use the `square` attribute for compact icon buttons or other controls that need equal inline and block padding. The button uses its resolved block padding on both axes, including size-specific block padding.
+Use the `square` attribute for compact icon buttons or other controls that need equal inline and block padding. The button uses its resolved block padding on both axes, including size-specific block padding; see the [Demo](https://javadbat.github.io/design-system/?path=/story/components-form-elements-jbbutton--square).
 
 ```html
 <jb-button square aria-label="Add item">+</jb-button>
@@ -105,7 +103,7 @@ Use the `square` attribute for compact icon buttons or other controls that need 
 
 ## Loading state
 
-You can show loading by setting `element.isLoading = true`.
+You can show loading by setting `element.isLoading = true`; see the [Demo](https://javadbat.github.io/design-system/?path=/story/components-form-elements-jbbutton--loading-with-text). For a non-interactive loading state, see the [disabled loading Demo](https://javadbat.github.io/design-system/?path=/story/components-form-elements-jbbutton--loading-disabled).
 
 ```js
 const button = document.querySelector('jb-button');
@@ -127,7 +125,7 @@ When the button is loading, the slotted button content is hidden and the loading
 
 ## Form usage
 
-`jb-button` is form-associated. When `type="submit"` and the `click` event is not canceled, the component calls `requestSubmit()` on its associated form.
+`jb-button` is form-associated. When `type="submit"` and the `click` event is not canceled, the component calls `requestSubmit()` on its associated form; see the [Demo](https://javadbat.github.io/design-system/?path=/story/components-form-elements-jbbutton--form-submit).
 
 ```html
 <form>
@@ -137,7 +135,7 @@ When the button is loading, the slotted button content is hidden and the loading
 
 ## Slot
 
-`jb-button` has a default slot for button content. You can pass text, icons, or both.
+`jb-button` has a default slot for button content. You can pass text, icons, or both; see the [button-content Demo](https://javadbat.github.io/design-system/?path=/story/components-form-elements-jbbutton--with-icon).
 
 ```html
 <jb-button>

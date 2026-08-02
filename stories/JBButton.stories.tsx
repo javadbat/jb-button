@@ -33,6 +33,54 @@ export const Square: Story = {
     children: "S",
   }
 };
+export const FormSubmit: Story = {
+  render: () => (
+    <form onSubmit={(event) => event.preventDefault()}>
+      <JBButton type="submit">Submit form</JBButton>
+    </form>
+  ),
+  play: async ({ canvasElement }) => {
+    const form = canvasElement.querySelector("form");
+    const button = canvasElement.querySelector("jb-button");
+    const innerButton = button?.shadowRoot?.querySelector("button");
+    const onSubmit = fn((event: SubmitEvent) => event.preventDefault());
+
+    expect(form).toBeTruthy();
+    expect(innerButton).toBeTruthy();
+
+    form?.addEventListener("submit", onSubmit);
+    await userEvent.click(innerButton!);
+
+    expect(onSubmit).toHaveBeenCalledOnce();
+  }
+};
+export const CancelableClick: Story = {
+  render: () => (
+    <form onSubmit={(event) => event.preventDefault()}>
+      <JBButton type="submit" onClick={(event) => event.preventDefault()}>Cancel submit from click</JBButton>
+    </form>
+  ),
+  play: async ({ canvasElement }) => {
+    const form = canvasElement.querySelector("form");
+    const button = canvasElement.querySelector("jb-button");
+    const innerButton = button?.shadowRoot?.querySelector("button");
+    const onClick = fn((_event: Event) => {});
+    const onSubmit = fn((event: SubmitEvent) => event.preventDefault());
+
+    expect(form).toBeTruthy();
+    expect(button).toBeTruthy();
+    expect(innerButton).toBeTruthy();
+
+    button?.addEventListener("click", onClick);
+    form?.addEventListener("submit", onSubmit);
+    await userEvent.click(innerButton!);
+
+    expect(onClick).toHaveBeenCalledOnce();
+    expect(onClick.mock.calls[0][0].cancelable).toBe(true);
+    expect(onClick.mock.calls[0][0].defaultPrevented).toBe(true);
+    expect(onSubmit).not.toHaveBeenCalled();
+  }
+};
 export const WithIcon: Story = {
   render: () => {
     const icon = (
