@@ -6,6 +6,10 @@
 
 - Added the standard `formDisabledCallback()` to synchronize the component disabled state with disabled forms and fieldsets.
 
+### Changed
+
+- Updated component color defaults to use the shared semantic content and surface tokens.
+
 ## [4.0.0] - 2026-07-24
 
 ### Changed
