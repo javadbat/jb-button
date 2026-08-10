@@ -9,11 +9,11 @@ jb-button.fluent-style {
   --jb-button-primary: var(--jb-focus-color);
   --jb-button-secondary: #605e5c;
   --jb-button-danger: #a4262c;
-  --jb-button-color: var(--jb-text-contrast);
+  --jb-button-color: var(--jb-text-inverse);
   --jb-button-border-color: transparent;
   --jb-button-border-width: 1px;
   --jb-button-box-shadow: none;
-  --jb-button-bg-color-outline: var(--jb-text-contrast);
+  --jb-button-bg-color-outline: var(--jb-text-inverse);
   --jb-button-bg-color-outline-hover: var(--jb-background);
   --jb-button-bg-color-outline-pressed: var(--jb-surface-hover);
   --jb-button-bg-color-ghost-hover: var(--jb-background);

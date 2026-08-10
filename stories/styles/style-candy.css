@@ -9,7 +9,7 @@ jb-button.candy-style {
   --jb-button-primary: var(--jb-focus-color);
   --jb-button-secondary: #8b5cf6;
   --jb-button-danger: #e11d48;
-  --jb-button-color: var(--jb-text-contrast);
+  --jb-button-color: var(--jb-text-inverse);
   --jb-button-border-color: #f9a8d4;
   --jb-button-border-width: 1px;
   --jb-button-box-shadow: 0 0.4rem 0.9rem rgb(236 72 153 / 0.18);
