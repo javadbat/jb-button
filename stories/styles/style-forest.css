@@ -23,9 +23,9 @@ jb-button.forest-style {
 }
 
 jb-button.forest-style[color="light"] {
-  --jb-button-color: var(--jb-background);
+  --jb-button-color: var(--jb-surface-secondary);
   --jb-button-color-hover: #245337;
-  --jb-button-color-pressed: var(--jb-background);
+  --jb-button-color-pressed: var(--jb-surface-secondary);
   --jb-button-border-color: rgb(246 211 101 / 0.5);
   --jb-button-bg-color-hover: #fff1bd;
   --jb-button-bg-color-pressed: #f6d365;

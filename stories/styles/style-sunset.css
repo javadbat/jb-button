@@ -23,11 +23,11 @@ jb-button.sunset-style {
 }
 
 jb-button.sunset-style[color="light"] {
-  --jb-button-color: var(--jb-text-inverse);
+  --jb-button-color: var(--jb-content-inverse);
   --jb-button-color-hover: #7d2945;
-  --jb-button-color-pressed: var(--jb-text-inverse);
+  --jb-button-color-pressed: var(--jb-content-inverse);
   --jb-button-border-color: rgb(255 209 102 / 0.46);
-  --jb-button-bg-color-hover: var(--jb-text-secondary);
+  --jb-button-bg-color-hover: var(--jb-content-secondary);
   --jb-button-bg-color-pressed: var(--jb-focus-color);
 }
 
