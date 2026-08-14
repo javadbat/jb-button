@@ -48,6 +48,6 @@
   "customElements": "web-component/custom-elements.json",
   "dependencies": {
     "jb-core":"^0.34.0",
-    "jb-loading":"^1.8.0"
+    "jb-loading":"^1.8.1"
   }
 }
