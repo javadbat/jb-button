@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## [4.1.0] - 2026-08-14
 
 ### Added
 
@@ -9,6 +9,8 @@
 ### Changed
 
 - Updated component color defaults to use the shared semantic content and surface tokens.
+- Extended the SSR-safe `JBBaseComponent`, guarded custom-element registration, and deferred loading-component evaluation so the package can be imported without browser globals.
+- Preserved the React client boundary in the published React entry point and generated bundles.
 
 ## [4.0.0] - 2026-07-24
 

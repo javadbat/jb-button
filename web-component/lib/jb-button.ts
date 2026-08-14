@@ -4,10 +4,10 @@ import { renderHTML } from './render';
 import type { ElementsObject } from './types';
 import { registerDefaultVariables } from 'jb-core/theme';
 export * from "./types.js";
-import 'jb-loading';
-import { createMouseEvent, parseBooleanAttribute } from 'jb-core';
+import { createMouseEvent, JBBaseComponent, parseBooleanAttribute } from 'jb-core';
+void import("jb-loading");
 
-export class JBButtonWebComponent extends HTMLElement {
+export class JBButtonWebComponent extends JBBaseComponent {
   #internals?: ElementInternals;
   static formAssociated = true
   elements!: ElementsObject
@@ -139,8 +139,6 @@ export class JBButtonWebComponent extends HTMLElement {
     return this.dispatchEvent(event);
   }
 }
-const myElementNotExists = !customElements.get('jb-button');
-if (myElementNotExists) {
-  window.customElements.define('jb-button', JBButtonWebComponent);
+if (globalThis.customElements && !globalThis.customElements.get("jb-button")) {
+  globalThis.customElements.define("jb-button", JBButtonWebComponent);
 }
-
