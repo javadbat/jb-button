@@ -4,7 +4,7 @@ import { renderHTML } from './render';
 import type { ElementsObject } from './types';
 import { registerDefaultVariables } from 'jb-core/theme';
 export * from "./types.js";
-import { createMouseEvent, JBBaseComponent, parseBooleanAttribute } from 'jb-core';
+import { createMouseEvent, JBBaseComponent, parseBooleanAttribute, defineWebComponent } from 'jb-core';
 void import("jb-loading");
 
 export class JBButtonWebComponent extends JBBaseComponent {
@@ -139,6 +139,4 @@ export class JBButtonWebComponent extends JBBaseComponent {
     return this.dispatchEvent(event);
   }
 }
-if (globalThis.customElements && !globalThis.customElements.get("jb-button")) {
-  globalThis.customElements.define("jb-button", JBButtonWebComponent);
-}
+defineWebComponent('jb-button', JBButtonWebComponent);
