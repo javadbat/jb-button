@@ -140,3 +140,9 @@ export class JBButtonWebComponent extends JBBaseComponent {
   }
 }
 defineWebComponent('jb-button', JBButtonWebComponent);
+
+declare global {
+  interface HTMLElementTagNameMap {
+    "jb-button": JBButtonWebComponent;
+  }
+}
