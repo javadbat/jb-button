@@ -63,6 +63,7 @@ you can just add script tag to your html file and then use web component however
 | `type` | `'button' \| 'submit' \| 'reset' \| string` | browser default | Forwarded to the inner native button. When set to `submit`, `jb-button` calls the associated form `requestSubmit()` after a non-canceled click. [Demo](https://javadbat.github.io/design-system/?path=/story/components-form-elements-jbbutton--form-submit) |
 | `name` | `string` | `null` | Forwarded to the inner native button. |
 | `disabled` | `boolean` | `false` | Disables the inner button and sets the `disabled` custom state. [Demo](https://javadbat.github.io/design-system/?path=/story/components-form-elements-jbbutton--disabled) |
+| [`is-loading`](#loading-state) | `boolean` | `false` | Shows the loading UI. Loading does not automatically disable the button. |
 | [`loading-text`](#loading-state) | `string` | `""` | Text shown beside the loading indicator while loading. [Demo](https://javadbat.github.io/design-system/?path=/story/components-form-elements-jbbutton--loading-with-text) |
 | `button-style` | `string` | `""` | Inline style forwarded to the inner button. Prefer CSS variables for reusable styling. [Demo](https://javadbat.github.io/design-system/?path=/story/components-form-elements-jbbutton-style--gallery) |
 | `color` | `'primary' \| 'secondary' \| 'positive' \| 'danger' \| 'warning' \| 'light' \| 'dark'` | `primary` | Visual color token used by CSS. [Demo](https://javadbat.github.io/design-system/?path=/story/components-form-elements-jbbutton--variants) |
@@ -114,13 +115,13 @@ button.loadingText = 'Saving';
 You can also set loading text in markup:
 
 ```html
-<jb-button loading-text="Saving">Save</jb-button>
+<jb-button is-loading loading-text="Saving">Save</jb-button>
 ```
 
 When the button is loading, the slotted button content is hidden and the loading indicator is shown. Disable the button separately if the user must not click it while loading:
 
 ```html
-<jb-button disabled loading-text="Saving">Save</jb-button>
+<jb-button is-loading disabled loading-text="Saving">Save</jb-button>
 ```
 
 ## Form usage

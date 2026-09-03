@@ -38,6 +38,13 @@
               }
             },
             {
+              "name": "is-loading",
+              "description": "Shows the loading indicator. Empty attribute and true mean true.",
+              "type": {
+                "text": "boolean"
+              }
+            },
+            {
               "name": "loading-text",
               "description": "Text shown beside the loading indicator while isLoading is true.",
               "type": {

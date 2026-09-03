@@ -2,6 +2,7 @@ import './styles.css';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { JBButton } from "jb-button/react";
 import { expect, fn, userEvent, waitFor } from 'storybook/test';
+import type { JBButtonWebComponent } from 'jb-button';
 
 const meta = {
   title: "Components/form elements/JBButton",
@@ -336,7 +337,14 @@ export const Loading: Story = {
     type: "primary",
     children: "with loading",
     isLoading: true,
-  }
+  },
+  play: async ({ canvasElement }) => {
+    const button = canvasElement.querySelector<JBButtonWebComponent>('jb-button')!;
+    await waitFor(() => {
+      expect(button.isLoading).toBe(true);
+      expect(button.hasAttribute('is-loading')).toBe(true);
+    });
+  },
 };
 
 export const LoadingWithText: Story = {

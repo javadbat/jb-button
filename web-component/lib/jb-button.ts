@@ -16,16 +16,17 @@ export class JBButtonWebComponent extends JBBaseComponent {
     return this.#isLoading;
   }
   set isLoading(value) {
-    this.#isLoading = value;
-    const ariaBusy = value ? "true" : "false";
-    if (value) {
+    this.#isLoading = Boolean(value);
+    this.toggleAttribute("is-loading", this.#isLoading);
+    const ariaBusy = this.#isLoading ? "true" : "false";
+    if (this.#isLoading) {
       this.#internals?.states?.add("loading");
     } else {
       this.#internals?.states?.delete("loading");
     }
     if (this.#internals) this.#internals.ariaBusy = ariaBusy;
     this.elements!.button.setAttribute("aria-busy", ariaBusy);
-    if (value == true) {
+    if (this.#isLoading) {
       this.elements!.button.classList.add('--loading');
     } else {
       this.elements!.button.classList.remove('--loading');
@@ -88,7 +89,7 @@ export class JBButtonWebComponent extends JBBaseComponent {
     this.#registerEventListener();
   }
   static get observedAttributes() {
-    return ['name', 'isLoading', 'loading-text', 'type', 'button-style', 'disabled', 'aria-label'];
+    return ['name', 'is-loading', 'loading-text', 'type', 'button-style', 'disabled', 'aria-label'];
   }
   attributeChangedCallback(name: string, _oldValue: string, newValue: string) {
     // do something when an attribute has changed
@@ -99,7 +100,7 @@ export class JBButtonWebComponent extends JBBaseComponent {
       case 'name':
         this.elements.button.setAttribute('name', value);
         break;
-      case 'isLoading':
+      case 'is-loading':
         this.isLoading = parseBooleanAttribute(value);
         break;
       case 'loading-text':

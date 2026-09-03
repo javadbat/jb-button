@@ -8,6 +8,7 @@ declare module "react" {
       }
       interface JBButtonType extends React.DetailedHTMLProps<React.HTMLAttributes<JBButtonWebComponent>, JBButtonWebComponent> {
         "loading-text"?:string;
+        "is-loading"?:string;
         "variant"?:StyleVariants;
         "size"?:SizeVariants;
         "color"?:ColorVariants;
