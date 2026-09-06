@@ -1,10 +1,16 @@
 # Changelog
 
+## [5.1.0] - 2026-09-06
+### Feature:
+
+- Apply size to .icon and img
+
 ## [5.0.0] - 2026-09-03
 
 ### Changed
 
 - Breaking: corrected the loading HTML attribute to `is-loading`; the JavaScript and React API remains `isLoading`.
+
 
 ## [4.2.0] - 2026-08-23
 

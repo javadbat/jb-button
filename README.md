@@ -145,6 +145,30 @@ When the button is loading, the slotted button content is hidden and the loading
 </jb-button>
 ```
 
+### Icons in button content
+
+Slotted `svg` and `img` elements are automatically sized to match the button's
+icon size. You can apply the `icon` class to another slotted element to give it
+the same behavior:
+
+```html
+<jb-button size="lg">
+  <span class="icon" aria-hidden="true">+</span>
+  Add item
+</jb-button>
+```
+
+The `.icon` element receives the button's resolved icon width and height, which
+change with the button's `size` attribute. This also works with custom icon
+elements:
+
+```html
+<jb-button>
+  <my-add-icon class="icon" aria-hidden="true"></my-add-icon>
+  Add item
+</jb-button>
+```
+
 ### change button style
 
 For complete styling guidance, live examples, and copyable style recipes, see [Styling](https://javadbat.github.io/design-system/?path=/docs/components-form-elements-jbbutton-styling).

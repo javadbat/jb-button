@@ -103,9 +103,11 @@
       text-box-edge: ex alphabetic;
     }
 
-    ::slotted(svg) {
-      width: var(--icon-size);
-      height: var(--icon-size);
+    ::slotted(svg),
+    ::slotted(img),
+    ::slotted(.icon){
+      width: var(--button-icon-size);
+      height: var(--button-icon-size);
     }
   }
 }

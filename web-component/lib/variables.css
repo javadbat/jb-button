@@ -12,7 +12,7 @@
   --inline-padding: var(--jb-button-inline-padding, 1rem);
   --block-padding: var(--jb-button-block-padding, 0.5rem);
   --border-radius: var(--jb-button-border-radius, var(--jb-radius));
-  --icon-size: var(--jb-button-icon-size, 1.5rem);
+  --button-icon-size: var(--jb-button-icon-size, 1.5rem);
   --content-gap: var(--jb-button-content-gap, 0.5rem);
   /* Theme/Color */
   --bg-color: var(--jb-button-bg-color,var(--base-color));
@@ -115,7 +115,7 @@
   --inline-padding: var(--jb-button-inline-padding-xs, 0.25rem);
   --block-padding: var(--jb-button-block-padding-xs, 0.125rem);
   --border-radius: var(--jb-button-border-radius-xs, var(--jb-radius-xs));
-  --icon-size: var(--jb-button-icon-size-xs, 1rem);
+  --button-icon-size: var(--jb-button-icon-size-xs, 1rem);
   --content-gap: var(--jb-button-content-gap-xs, 0.125rem);
 }
 :host([size="sm"]){
@@ -124,7 +124,7 @@
   --inline-padding: var(--jb-button-inline-padding-sm, 0.5rem);
   --block-padding: var(--jb-button-block-padding-sm, 0.25rem);
   --border-radius: var(--jb-button-border-radius-sm, var(--jb-radius-sm));
-  --icon-size: var(--jb-button-icon-size-sm, 1.25rem);
+  --button-icon-size: var(--jb-button-icon-size-sm, 1.25rem);
   --content-gap: var(--jb-button-content-gap-sm, 0.25rem);
 }
 :host([size="lg"]){
@@ -133,7 +133,7 @@
   --inline-padding: var(--jb-button-inline-padding-lg, 1.5rem);
   --block-padding: var(--jb-button-block-padding-lg, 0.75rem);
   --border-radius: var(--jb-button-border-radius-lg, var(--jb-radius-lg));
-  --icon-size: var(--jb-button-icon-size-lg, 1.75rem);
+  --button-icon-size: var(--jb-button-icon-size-lg, 1.75rem);
   --content-gap: var(--jb-button-content-gap-lg, 0.75rem);
 }
 :host([size="xl"]){
@@ -142,7 +142,7 @@
   --inline-padding: var(--jb-button-inline-padding-xl, 2rem);
   --block-padding: var(--jb-button-block-padding-xl, 1rem);
   --border-radius: var(--jb-button-border-radius-xl, var(--jb-radius-xl));
-  --icon-size: var(--jb-button-icon-size-xl, 2.25rem);
+  --button-icon-size: var(--jb-button-icon-size-xl, 2.25rem);
   --content-gap: var(--jb-button-content-gap-xl, 1rem);
 }
 :host([square]){
@@ -158,8 +158,7 @@
 }
 
 :host([color="light"][variant="ghost"]),
-:host([color="light"][variant="outline"])
-{
+:host([color="light"][variant="outline"]){
   --base-color-hover:var(--jb-neutral-4);
   --loading-color-hover:var(--jb-neutral-4);
   /*formula must be the same but its's base on --base-color-hover*/

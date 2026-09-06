@@ -3,6 +3,8 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { JBButton } from "jb-button/react";
 import { expect, fn, userEvent, waitFor } from 'storybook/test';
 import type { JBButtonWebComponent } from 'jb-button';
+import "jb-icons/react";
+import "jb-icons/plus";
 
 const meta = {
   title: "Components/form elements/JBButton",
@@ -101,6 +103,20 @@ export const WithIcon: Story = {
       </div>
     )
   }
+};
+
+export const JBIconsBySize: Story = {
+  name: "JB icons by button size",
+  render: () => (
+    <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", alignItems: "flex-start" }}>
+      {(["xs", "sm", "md", "lg", "xl"] as const).map((size) => (
+        <JBButton key={size} size={size}>
+          <jb-icon-plus className="icon" aria-hidden="true" />
+          {size.toUpperCase()} button
+        </JBButton>
+      ))}
+    </div>
+  ),
 };
 export const Variants: Story = {
   render: () => {
