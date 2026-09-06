@@ -47,7 +47,7 @@
   },
   "customElements": "web-component/custom-elements.json",
   "dependencies": {
-    "jb-core":"^0.35.0",
-    "jb-loading":"^1.8.1"
+    "jb-core":"^0.36.0",
+    "jb-loading":"^2.1.0"
   }
 }
