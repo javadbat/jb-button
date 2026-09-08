@@ -1,4 +1,5 @@
-jb-button.candy-style {
+.candy-style {
+  --jb-button-dark: var(--jb-content-primary);
   --jb-button-height: 2.5rem;
   --jb-button-inline-padding: 1rem;
   --jb-button-block-padding: 0.5rem;
@@ -9,19 +10,28 @@ jb-button.candy-style {
   --jb-button-primary: var(--jb-focus-color);
   --jb-button-secondary: #8b5cf6;
   --jb-button-danger: #e11d48;
-  --jb-button-color: var(--jb-content-inverse);
   --jb-button-border-color: #f9a8d4;
   --jb-button-border-width: 1px;
-  --jb-button-box-shadow: 0 0.4rem 0.9rem rgb(236 72 153 / 0.18);
   --jb-button-bg-color-outline: #fff1f2;
   --jb-button-bg-color-outline-hover: #fce7f3;
   --jb-button-bg-color-outline-pressed: #fbcfe8;
   --jb-button-bg-color-ghost-hover: #fce7f3;
+  --jb-button-color-ghost-hover: var(--jb-button-dark);
   --jb-button-bg-color-ghost-pressed: #fbcfe8;
   --jb-button-bg-color-text-hover: #fff1f2;
   --jb-button-bg-color-text-pressed: #fce7f3;
   --jb-button-disabled: #f9a8d4;
   --jb-button-color-disabled: #831843;
+}
+
+jb-button.candy-style {
+  --jb-button-color: var(--jb-content-inverse);
+}
+
+jb-button.candy-style:not([variant]),
+jb-button.candy-style[variant="solid"],
+jb-button.candy-style[variant="outline"] {
+  --jb-button-box-shadow: 0 0.4rem 0.9rem rgb(236 72 153 / 0.18);
 }
 
 jb-button.candy-style[color="light"] {

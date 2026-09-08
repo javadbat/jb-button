@@ -1,4 +1,5 @@
-jb-button.material-style {
+.material-style {
+  --jb-button-dark: var(--jb-content-primary);
   --jb-button-inline-padding: 1.5rem;
   --jb-button-block-padding: 0;
   --jb-button-border-radius: 1.25rem;
@@ -8,7 +9,6 @@ jb-button.material-style {
   --jb-button-primary: var(--jb-primary);
   --jb-button-secondary: var(--jb-secondary);
   --jb-button-danger: var(--jb-error);
-  --jb-button-color: var(--jb-on-primary);
   --jb-button-border-color: transparent;
   --jb-button-border-width: 1px;
   --jb-button-box-shadow: none;
@@ -16,12 +16,17 @@ jb-button.material-style {
   --jb-button-bg-color-outline-hover: var(--jb-state-hover);
   --jb-button-bg-color-outline-pressed: var(--jb-state-pressed);
   --jb-button-bg-color-ghost-hover: var(--jb-state-hover);
+  --jb-button-color-ghost-hover: var(--jb-button-dark);
   --jb-button-bg-color-ghost-pressed: var(--jb-state-pressed);
   --jb-button-bg-color-text-hover: var(--jb-state-hover);
   --jb-button-bg-color-text-pressed: var(--jb-state-pressed);
   --jb-button-border-color-hover: transparent;
   --jb-button-border-color-pressed: transparent;
   letter-spacing: 0.00625rem;
+}
+
+jb-button.material-style {
+  --jb-button-color: var(--jb-on-primary);
 }
 
 jb-button.material-style[color="light"] {

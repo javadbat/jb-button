@@ -1,4 +1,5 @@
-jb-button.sunset-style {
+.sunset-style {
+  --jb-button-dark: var(--jb-content-primary);
   --jb-button-height: 2.75rem;
   --jb-button-inline-padding: 1.125rem;
   --jb-button-block-padding: 0.625rem;
@@ -9,17 +10,26 @@ jb-button.sunset-style {
   --jb-button-primary: #963f5a;
   --jb-button-secondary: var(--jb-focus-color);
   --jb-button-danger: #be123c;
-  --jb-button-color: #fff7ed;
   --jb-button-border-color: rgb(255 209 102 / 0.38);
   --jb-button-border-width: 1px;
-  --jb-button-box-shadow: 0 0.8rem 1.8rem rgb(127 29 29 / 0.22);
   --jb-button-bg-color-outline: rgb(150 63 90 / 0.18);
   --jb-button-bg-color-outline-hover: rgb(255 209 102 / 0.16);
   --jb-button-bg-color-outline-pressed: rgb(255 209 102 / 0.26);
   --jb-button-bg-color-ghost-hover: rgb(255 209 102 / 0.14);
+  --jb-button-color-ghost-hover: var(--jb-button-dark);
   --jb-button-bg-color-ghost-pressed: rgb(255 209 102 / 0.24);
   --jb-button-bg-color-text-hover: rgb(255 209 102 / 0.12);
   --jb-button-bg-color-text-pressed: rgb(255 209 102 / 0.22);
+}
+
+jb-button.sunset-style {
+  --jb-button-color: #fff7ed;
+}
+
+jb-button.sunset-style:not([variant]),
+jb-button.sunset-style[variant="solid"],
+jb-button.sunset-style[variant="outline"] {
+  --jb-button-box-shadow: 0 0.8rem 1.8rem rgb(127 29 29 / 0.22);
 }
 
 jb-button.sunset-style[color="light"] {

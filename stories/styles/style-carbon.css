@@ -1,4 +1,5 @@
-jb-button.carbon-style {
+.carbon-style {
+  --jb-button-dark: var(--jb-content-primary);
   --jb-button-height: 2.5rem;
   --jb-button-inline-padding: 1rem;
   --jb-button-block-padding: 0.55rem;
@@ -9,18 +10,22 @@ jb-button.carbon-style {
   --jb-button-primary: var(--jb-primary);
   --jb-button-secondary: var(--jb-surface-hover);
   --jb-button-danger: #da1e28;
-  --jb-button-color: var(--jb-content-inverse);
   --jb-button-border-color: currentColor;
   --jb-button-box-shadow: none;
   --jb-button-bg-color-outline: transparent;
   --jb-button-bg-color-outline-hover: rgb(15 98 254 / 0.12);
   --jb-button-bg-color-outline-pressed: rgb(15 98 254 / 0.2);
   --jb-button-bg-color-ghost-hover: rgb(15 98 254 / 0.12);
+  --jb-button-color-ghost-hover: var(--jb-button-dark);
   --jb-button-bg-color-ghost-pressed: rgb(15 98 254 / 0.2);
   --jb-button-bg-color-text-hover: rgb(15 98 254 / 0.12);
   --jb-button-bg-color-text-pressed: rgb(15 98 254 / 0.2);
   --jb-button-disabled: var(--jb-border-color);
   --jb-button-color-disabled: #a8a8a8;
+}
+
+jb-button.carbon-style {
+  --jb-button-color: var(--jb-content-inverse);
 }
 
 jb-button.carbon-style[color="light"] {

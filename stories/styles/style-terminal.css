@@ -1,4 +1,5 @@
-jb-button.terminal-style {
+.terminal-style {
+  --jb-button-dark: var(--jb-content-primary);
   --jb-button-height: 2.5rem;
   --jb-button-inline-padding: 1rem;
   --jb-button-block-padding: 0.5rem;
@@ -9,18 +10,27 @@ jb-button.terminal-style {
   --jb-button-primary: #16a34a;
   --jb-button-secondary: #22c55e;
   --jb-button-danger: #fb7185;
-  --jb-button-color: #020617;
   --jb-button-border-color: #22c55e;
   --jb-button-border-width: 1px;
-  --jb-button-box-shadow: 0 0 0 1px #22c55e;
   --jb-button-bg-color-outline: #020617;
   --jb-button-bg-color-outline-hover: #052e16;
   --jb-button-bg-color-outline-pressed: #064e3b;
   --jb-button-bg-color-ghost-hover: #052e16;
+  --jb-button-color-ghost-hover: var(--jb-button-dark);
   --jb-button-bg-color-ghost-pressed: #064e3b;
   --jb-button-bg-color-text-hover: #052e16;
   --jb-button-bg-color-text-pressed: #064e3b;
   font-family: Consolas, "Courier New", monospace;
+}
+
+jb-button.terminal-style {
+  --jb-button-color: #020617;
+}
+
+jb-button.terminal-style:not([variant]),
+jb-button.terminal-style[variant="solid"],
+jb-button.terminal-style[variant="outline"] {
+  --jb-button-box-shadow: 0 0 0 1px #22c55e;
 }
 
 jb-button.terminal-style[color="light"] {

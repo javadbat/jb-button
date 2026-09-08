@@ -1,4 +1,5 @@
-jb-button.porcelain-style {
+.porcelain-style {
+  --jb-button-dark: var(--jb-content-primary);
   --jb-button-height: 2.5rem;
   --jb-button-inline-padding: 1rem;
   --jb-button-block-padding: 0.55rem;
@@ -9,17 +10,26 @@ jb-button.porcelain-style {
   --jb-button-primary: #2f80ed;
   --jb-button-secondary: #4d6882;
   --jb-button-danger: #d14343;
-  --jb-button-color: var(--jb-surface-primary);
   --jb-button-border-color: #b9d7f2;
   --jb-button-border-width: 1px;
-  --jb-button-box-shadow: 0 0.6rem 1.4rem rgb(47 128 237 / 0.16);
   --jb-button-bg-color-outline: var(--jb-surface-primary);
   --jb-button-bg-color-outline-hover: #e7f1ff;
   --jb-button-bg-color-outline-pressed: #dbeafe;
   --jb-button-bg-color-ghost-hover: #e7f1ff;
+  --jb-button-color-ghost-hover: var(--jb-button-dark);
   --jb-button-bg-color-ghost-pressed: #dbeafe;
   --jb-button-bg-color-text-hover: #edf6ff;
   --jb-button-bg-color-text-pressed: #dbeafe;
+}
+
+jb-button.porcelain-style {
+  --jb-button-color: var(--jb-surface-primary);
+}
+
+jb-button.porcelain-style:not([variant]),
+jb-button.porcelain-style[variant="solid"],
+jb-button.porcelain-style[variant="outline"] {
+  --jb-button-box-shadow: 0 0.6rem 1.4rem rgb(47 128 237 / 0.16);
 }
 
 jb-button.porcelain-style[color="light"] {

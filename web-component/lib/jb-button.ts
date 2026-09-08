@@ -1,6 +1,6 @@
 import CSS from './jb-button.css';
 import VariableCSS from './variables.css';
-import { renderHTML } from './render';
+import { renderHTML, renderLoadingHTML } from './render';
 import type { ElementsObject } from './types';
 import { registerDefaultVariables } from 'jb-core/theme';
 export * from "./types.js";
@@ -12,6 +12,7 @@ export class JBButtonWebComponent extends JBBaseComponent {
   static formAssociated = true
   elements!: ElementsObject
   #isLoading = false;
+  #loadingText = '';
   get isLoading() {
     return this.#isLoading;
   }
@@ -27,16 +28,25 @@ export class JBButtonWebComponent extends JBBaseComponent {
     if (this.#internals) this.#internals.ariaBusy = ariaBusy;
     this.elements!.button.setAttribute("aria-busy", ariaBusy);
     if (this.#isLoading) {
+      this.#renderLoading();
       this.elements!.button.classList.add('--loading');
     } else {
       this.elements!.button.classList.remove('--loading');
+      this.elements!.button.querySelector('.loading-wrapper')?.remove();
     }
   }
   get loadingText() {
-    return this.elements!.loadingText.innerHTML;
+    return this.#loadingText;
   }
   set loadingText(value) {
-    this.elements!.loadingText.innerHTML = value;
+    this.#loadingText = value;
+    const loadingTextElement = this.elements!.button.querySelector<HTMLElement>('.loading-text');
+    if (loadingTextElement) loadingTextElement.innerHTML = value;
+  }
+  #renderLoading() {
+    if (this.elements!.button.querySelector('.loading-wrapper')) return;
+    this.elements!.button.insertAdjacentHTML('beforeend', renderLoadingHTML());
+    this.elements!.button.querySelector<HTMLElement>('.loading-text')!.innerHTML = this.#loadingText;
   }
   #disabled = false;
   get disabled() {
@@ -83,8 +93,7 @@ export class JBButtonWebComponent extends JBBaseComponent {
     element.innerHTML = html;
     shadowRoot.appendChild(element.content.cloneNode(true));
     this.elements = {
-      button: shadowRoot.querySelector('button')!,
-      loadingText: shadowRoot.querySelector('.loading-text')!
+      button: shadowRoot.querySelector('button')!
     };
     this.#registerEventListener();
   }
