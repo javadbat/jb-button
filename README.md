@@ -217,7 +217,8 @@ if you want to set a custom style to this web-component all you need is to set C
 | --jb-button-height                 | button height default is 2.75rem                                               |
 | --jb-button-text-shadow            | button text shadow                                                          |
 | --jb-button-color                  | color of text in button                                                     |
-| --jb-button-box-shadow             | box shadow of the button component                                          |
+| --jb-button-box-shadow             | button box shadow; defaults to `--jb-control-shadow`                        |
+| --jb-corner-shape                  | button corner shape token                                                   |
 | --jb-button-font-weight            | font weight of button default is `bold`                                     |
 | --jb-button-font-size              | font size of button default is `1.2em`                                      |
 | --jb-button-color-hover            | color of button in hover state                                              |

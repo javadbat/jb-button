@@ -29,7 +29,8 @@
   --border-width: var(--jb-button-border-width, 0);
   /* Other */
   --margin: var(--jb-button-margin, 0 0);
-  --box-shadow: var(--jb-button-box-shadow, none);
+  --box-shadow: var(--jb-button-box-shadow, var(--jb-control-shadow));
+  --box-corner-shape: var(--jb-corner-shape);
   --border-style: var(--jb-button-border-style, solid);
   --font-weight: var(--jb-button-font-weight, bold);
   --cursor: var(--jb-button-cursor, pointer);

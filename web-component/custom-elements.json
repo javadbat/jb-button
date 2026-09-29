@@ -151,6 +151,14 @@
               "description": "Inner button border radius."
             },
             {
+              "name": "--jb-button-box-shadow",
+              "description": "Inner button box shadow. Defaults to the --jb-control-shadow design token."
+            },
+            {
+              "name": "--jb-corner-shape",
+              "description": "Design token that controls the inner button corner shape."
+            },
+            {
               "name": "--jb-button-height",
               "description": "Default button height."
             },

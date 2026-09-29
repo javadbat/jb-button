@@ -1,6 +1,13 @@
 # Changelog
 
+## [5.2.0] - 2026-09-28
+
+### Added
+
+- add corner shape and box-shadow design system token support.
+
 ## [5.1.0] - 2026-09-06
+
 ### Feature:
 
 - Apply size to .icon and img

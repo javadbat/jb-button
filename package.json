@@ -19,7 +19,7 @@
     "web component",
     "react component"
   ],
-  "version": "5.1.1",
+  "version": "5.2.0",
   "bugs": "https://github.com/javadbat/jb-button/issues",
   "homepage":"https://javadbat.github.io/design-system/?path=/docs/components-form-elements-jbbutton",
   "license": "MIT",
@@ -47,7 +47,7 @@
   },
   "customElements": "web-component/custom-elements.json",
   "dependencies": {
-    "jb-core":"^0.37.0",
+    "jb-core":"^0.38.0",
     "jb-loading":"^2.1.1"
   }
 }

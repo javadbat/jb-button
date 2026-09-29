@@ -16,6 +16,7 @@
     box-sizing: border-box;
     font-family: inherit;
     border-radius: var(--border-radius);
+    corner-shape: var(--box-corner-shape);
     background-color: var(--bg-color);
     border-color: var(--border-color);
     border-width: var(--border-width);
@@ -33,7 +34,6 @@
     padding-block: var(--block-padding);
     box-sizing: border-box;
     box-shadow: var(--box-shadow);
-
     &:focus-visible {
       outline: 2px solid var(--jb-button-focus-ring-color, Highlight);
       outline-offset: 2px;
