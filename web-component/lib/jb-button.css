@@ -44,7 +44,7 @@
       color: var(--color-hover);
       border-color: var(--border-color-hover);
       transition: ease 0.3s all;
-
+      box-shadow: var(--box-shadow-hover);
       .loading-wrapper {
         --jb-loading-color: var(--loading-color-hover, var(--loading-color));
       }

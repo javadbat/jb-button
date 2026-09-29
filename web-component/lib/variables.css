@@ -30,6 +30,7 @@
   /* Other */
   --margin: var(--jb-button-margin, 0 0);
   --box-shadow: var(--jb-button-box-shadow, var(--jb-control-shadow));
+  --box-shadow-hover: var(--jb-button-box-shadow-hover, var(--jb-control-shadow-focus));
   --box-corner-shape: var(--jb-corner-shape);
   --border-style: var(--jb-button-border-style, solid);
   --font-weight: var(--jb-button-font-weight, bold);
@@ -90,6 +91,9 @@
   --color-pressed: var(--jb-button-color-ghost-pressed, var(--base-color-pressed));
   --loading-color: var(--jb-button-loading-color-ghost, var(--base-color));
   --border-width: var(--jb-button-border-width-ghost, 0px);
+  --box-shadow: var(--jb-button-box-shadow-ghost, none);
+  /* ghost has now box-shadow in  normal and has shadow on focus  */
+  --box-shadow-hover: var(--jb-button-box-shadow-hover, var(--jb-control-shadow-focus));;
 }
 :host([variant="text"]){
   --bg-color: var(--jb-button-bg-color-text, transparent);
@@ -100,6 +104,9 @@
   --color-pressed: var(--jb-button-color-text-pressed, var(--base-color-pressed));
   --loading-color: var(--jb-button-loading-color-text, var(--base-color));
   --border-width: var(--jb-button-border-width-text, 0px);
+   /* text has now box-shadow in both normal and focus  */
+  --box-shadow: var(--jb-button-box-shadow-text, none);
+  --box-shadow-hover: var(--jb-button-box-shadow-text-hover, none);
 }
 
 :host([color="light"][variant="text"]){
